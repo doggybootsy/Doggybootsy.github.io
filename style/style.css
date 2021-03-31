@@ -100,8 +100,7 @@ body::after {
 
 .main-content {
   width: calc(100vw);
-  height: calc(100vh - 45px);
-  margin-top: 40px;
+  height: calc(100vh - 44.3px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
