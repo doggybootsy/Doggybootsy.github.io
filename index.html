@@ -5,42 +5,31 @@
     <meta name="keywords" content="Doggybootsy, css, scss, powercord">
     <meta name="author" content="Doggybootsy">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body class="platform-web dark-theme">
     <div id="appmount">
         <nav class="navbar">
             <div>
-                <a class="logo" href="https://doggybootsy.github.io/">Doggybootsy</a>
+                <a class="logo url" href="https://doggybootsy.github.io/">Doggybootsy</a>
             </div>
             <div>
                 <a class="sites discord url" href="https://discord.gg/vjNfC8ECeq">Discord</a>
             </div>
         </nav>
         <div class="main-content">
-            <div class="scrollbar-1" style="overflow: hidden scroll; padding-right: 0px;">
+            <div class="scrollbar" style="overflow: hidden scroll; padding-right: 0px;">
                 <div class="content">
 
-<div class="container-fd " id="Bubblecord">
-    <a href="https://github.com/doggybootsy/bubblecord" class="url git">Bubblecord</a>
-    <div class="outer">
-        <div class="preview">
-            <img src="https://github.com/doggybootsy/bubblecord/raw/main/Preview/Screen%20Shot%202021-03-12%20at%2011.55.01%20PM.png"
-                alt="Preview photo" height="auto">
-        </div>
-    </div>
-</div>
-
-<div class="container-fd " id="Fluentcord">
-    <a href="https://github.com/doggybootsy/Fluentcord" class="url git">Fluentcord</a>
-    <div class="outer">
-        <div class="preview">
-            <img src="https://github.com/doggybootsy/FluentCord/blob/main/Previews/MacOs.png?raw=true"
-                alt="Preview photo" height="auto">
-        </div>
-    </div>
-</div>
-
+                <div class="card card-theme " id="Bubblecord">
+                    <a href="https://github.com/doggybootsy/bubblecord" class="url git">Bubblecord</a>
+                    <div class="outer">
+                        <div class="preview">
+                            <img src="https://github.com/doggybootsy/bubblecord/raw/main/Preview/Screen%20Shot%202021-03-12%20at%2011.55.01%20PM.png" alt="Preview photo" height="auto">
+                        </div>
+                    </div>
+                </div>
+                
                 </div>
             </div>
         </div>
@@ -48,9 +37,18 @@
 <!--
 
 -->
-<style>
-body::-webkit-scrollbar-track {
-  background: orange;        /* color of the tracking area */
-}
-</style>
+<script type="text/javascript" src="vanilla-tilt.js"></script>
+
+<script type="text/javascript">
+    VanillaTilt.init(document.querySelectorAll(".card-theme"), {
+        max: 5,
+        speed: 500,
+        glare: true,
+        "max-glare": .5,
+    });
+
+    //It also supports NodeList
+    VanillaTilt.init(document.querySelectorAll(".card-theme"));
+</script>
+
 </body>
