@@ -8,17 +8,32 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body class="platform-web dark-theme">
+    <style>
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, .1);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .4); 
+}
+    </style>
     <div id="appmount">
         <nav class="navbar">
             <div>
                 <a class="logo url" href="https://doggybootsy.github.io/">Doggybootsy</a>
             </div>
             <div>
-                <a class="sites discord url" href="#">Discord</a>
+                <a class="sites discord url" href="https://discord.gg/vjNfC8ECeq">Discord</a>
             </div>
         </nav>
         <div class="main-content">
-            <div class="scrollbar" style="overflow: hidden scroll; padding-right: 0px;">
+            <div class="scrollbar" style="overflow: hidden auto; padding-right: 0px;">
                 <div class="content">
 
                 <div class="card card-theme " id="Bubblecord">
@@ -29,7 +44,34 @@
                         </div>
                     </div>
                 </div>
-                
+
+                <div class="card card-theme " id="Bubblecord">
+                    <a href="https://github.com/doggybootsy/bubblecord" class="url git">Bubblecord</a>
+                    <div class="outer">
+                        <div class="preview">
+                            <img src="https://github.com/doggybootsy/bubblecord/raw/main/Preview/Screen%20Shot%202021-03-12%20at%2011.55.01%20PM.png" alt="Preview photo" height="auto">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-theme " id="Bubblecord">
+                    <a href="https://github.com/doggybootsy/bubblecord" class="url git">Bubblecord</a>
+                    <div class="outer">
+                        <div class="preview">
+                            <img src="https://github.com/doggybootsy/bubblecord/raw/main/Preview/Screen%20Shot%202021-03-12%20at%2011.55.01%20PM.png" alt="Preview photo" height="auto">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-theme " id="Bubblecord">
+                    <a href="https://github.com/doggybootsy/bubblecord" class="url git">Bubblecord</a>
+                    <div class="outer">
+                        <div class="preview">
+                            <img src="https://github.com/doggybootsy/bubblecord/raw/main/Preview/Screen%20Shot%202021-03-12%20at%2011.55.01%20PM.png" alt="Preview photo" height="auto">
+                        </div>
+                    </div>
+                </div>
+
                 </div>
             </div>
         </div>
@@ -46,9 +88,6 @@
         glare: true,
         "max-glare": .5,
     });
-
-    //It also supports NodeList
-    VanillaTilt.init(document.querySelectorAll(".card-theme"));
 </script>
 
 </body>
