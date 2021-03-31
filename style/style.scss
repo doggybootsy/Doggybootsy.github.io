@@ -1,21 +1,17 @@
-
 @font-face {
   font-family: 'Discord-logo';
   font-weight: 700;
   src: url("https://raw.githubusercontent.com/powercord-org/powercord-backend/my-awesome-branch/web/src/assets/discord-font.otf") format("opentype");
 }
-
 html,
 body,
 #appmount {
   height: 100vh;
 }
-
 * {
   margin: 0%;
   padding: 0%;
 }
-
 .dark-theme {
   --primary-background: rgb(36, 38, 38);
   --secondary-background: rgb(27, 29, 30);
@@ -31,7 +27,6 @@ body,
 
   --border-raduis:8px;
 }
-
 body {
   overflow: hidden;
   background: var(--primary-background);
@@ -61,8 +56,6 @@ body {
     backdrop-filter: blur(5px);
   }
 }
-
-
 .navbar {
   position: fixed;
   top: 0px;
@@ -92,12 +85,9 @@ body {
     color: var(--header-primary);
   }
 }
-
-
 .main-content {
   width: calc(100vw);
-  height: calc(100vh - 45px);
-  margin-top: 40px;
+  height: calc(100vh - 44.3px);
   display: flex;
   position: absolute;
   bottom: 0px;
