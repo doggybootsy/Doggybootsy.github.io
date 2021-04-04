@@ -10,6 +10,10 @@ body,
   height: 100vh;
 }
 
+#appmount {
+  z-index: 1;
+}
+
 * {
   margin: 0%;
   padding: 0%;
@@ -19,49 +23,20 @@ body,
   --primary-background: rgb(36, 38, 38);
   --secondary-background: rgb(27, 29, 30);
   --primary-border:rgb(12, 119, 164);
-  --secondary-border:rgb(164, 12, 12);
+  --card-border:rgba(255, 255, 255, .5);
+  --card-background:rgba(255, 255, 255, .1);
   --bubble-1:rgb(255, 0, 123);
   --bubble-2:rgb(166, 0, 255);
   --header-primary:rgb(222, 222, 222);
-  --header-secondary:rgb(201, 199, 199);
+  --header-secondary: var(--secondary-background);
   --text-color:#fff;
+  --trans-text-color:rgba(0, 0, 0, 0.3);
   --border-raduis:8px;
+  --discord-join:none;
 }
 
 body {
   overflow: hidden;
-  background: var(--primary-background);
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(var(--bubble-1), var(--bubble-2));
-  -webkit-clip-path: circle(280px at right 320px);
-          clip-path: circle(280px at right 320px);
-  opacity: 0.7;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(var(--bubble-2), var(--bubble-1));
-  -webkit-clip-path: circle(300px at 10px 90%);
-          clip-path: circle(300px at 10px 90%);
-  opacity: 0.7;
-  z-index: -1;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 
 .navbar {
@@ -71,8 +46,9 @@ body::after {
   width: 100vw;
   height: 40px;
   color: white;
-  background: var(--secondary-background);
-  border-bottom: 4px solid var(--secondary-border);
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.627);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.627);
   z-index: 1;
 }
 
@@ -92,28 +68,33 @@ body::after {
 .navbar .sites {
   position: absolute;
   right: 10px;
-  top: 13px;
+  top: 14px;
   font-family: Discord-logo;
   text-decoration: none;
   font-size: 1.1rem;
   color: var(--header-primary);
+  pointer-events: var(--discord-join);
+}
+
+.navbar .sites.discord {
+  pointer-events: var(--discord-join);
 }
 
 .main-content {
   width: calc(100vw);
-  height: calc(100vh - 44.3px);
+  height: calc(100vh - 40px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  top: 44.3px;
+  top: 40px;
   z-index: 0;
 }
 
 .main-content .scrollbar {
   width: 100%;
   scrollbar-width: thin;
-  scrollbar-color: var(--secondary-border) transparent;
+  scrollbar-color: var(--primary-border) transparent;
   scroll-margin-top: 20px;
 }
 
@@ -136,11 +117,10 @@ body::after {
 .main-content .scrollbar .content .card {
   position: relative;
   width: 380px;
-  height: 400px;
+  height: 300px;
   margin: 10px;
-  margin-bottom: 0px;
   border-radius: var(--border-raduis);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--card-background);
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -151,8 +131,8 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid var(--card-border);
+  border-left: 1px solid var(--card-border);
   z-index: 1;
   -webkit-box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
           box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
@@ -170,31 +150,6 @@ body::after {
   z-index: -1;
 }
 
-.main-content .scrollbar .content .card:last-child {
-  position: relative;
-  width: 380px;
-  height: 400px;
-  margin: 10px;
-  margin-bottom: 10px;
-  border-radius: var(--border-raduis);
-  background: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
-  z-index: 1;
-  -webkit-box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-          box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-}
-
 .main-content .scrollbar .content .card .url.git {
   position: absolute;
   top: 10px;
@@ -205,5 +160,126 @@ body::after {
 
 .main-content .scrollbar .content .card .outer > .preview.preview img {
   width: 100%;
+}
+
+.main-content .scrollbar .content .card .background-word {
+  position: absolute;
+  font-size: 10rem;
+  color: var(--trans-text-color);
+  z-index: -1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-content .scrollbar .content .card .desc {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  text-align: center;
+  color: var(--header-secondary);
+}
+
+@-webkit-keyframes move_wave {
+  0% {
+    -webkit-transform: translateX(0) translateZ(0) scaleY(1);
+            transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    -webkit-transform: translateX(-25%) translateZ(0) scaleY(0.55);
+            transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    -webkit-transform: translateX(0%) translateZ(0) scaleY(1);
+            transform: translateX(0%) translateZ(0) scaleY(1);
+  }
+}
+
+@keyframes move_wave {
+  0% {
+    -webkit-transform: translateX(0) translateZ(0) scaleY(1);
+            transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    -webkit-transform: translateX(-25%) translateZ(0) scaleY(0.55);
+            transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    -webkit-transform: translateX(0%) translateZ(0) scaleY(1);
+            transform: translateX(0%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  z-index: -1;
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, #86377b), color-stop(80%, #27273c));
+  background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+}
+
+.bgTop {
+  z-index: 15;
+  opacity: 0.5;
+}
+
+.bgMiddle {
+  z-index: 10;
+  opacity: 0.75;
+}
+
+.bgBottom {
+  z-index: 5;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+
+.waveTop {
+  background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.waveAnimation .waveMiddle {
+  -webkit-animation: move_wave 10s linear infinite;
+          animation: move_wave 10s linear infinite;
+}
+
+.waveAnimation .waveBottom {
+  -webkit-animation: move_wave 15s linear infinite;
+          animation: move_wave 15s linear infinite;
+}
+
+.waveAnimation {
+  top: -5px;
 }
 /*# sourceMappingURL=style.css.map */
