@@ -8,21 +8,20 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body class="platform-web dark-theme">
-    <style>
-
-/* width */
-::-webkit-scrollbar {
-  width: 8px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, .1);
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, .4); 
-}
-    </style>
+    <div class="waveWrapper waveAnimation">
+        <div class="waveWrapperInner bgTop">
+            <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+            </div>
+        </div>
+        <div class="waveWrapperInner bgMiddle">
+            <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+            </div>
+        </div>
+        <div class="waveWrapperInner bgBottom">
+            <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+            </div>
+        </div>
+    </div>
     <div id="appmount">
         <nav class="navbar">
             <div>
@@ -37,30 +36,68 @@
                 <div class="content">
 
                 <div class="card card-theme " id="Bubblecord">
-                    <a href="https://github.com/doggybootsy/bubblecord" class="url git">URl test</a>
+                    <a href="https://github.com/doggybootsy/bubblecord " class="url git">Bubblecord</a>
                     <div class="outer">
                         <div class="preview">
-                            <img src="" alt="Preview photo" height="auto">
+                            <img src="https://github.com/doggybootsy/bubblecord/raw/main/Preview/Screen%20Shot%202021-03-12%20at%2011.55.01%20PM.png" alt="Preview photo" height="auto">
                         </div>
                     </div>
+                    <p class="desc">Makes Discord bubbly</p>
+                </div>
+
+                <div class="card card-plugin " id="F8Fix">
+                    <a href="https://github.com/doggybootsy/F8Fix" class="url git">F8 Fix</a>
+                    <p class="background-word">F8</p>
+                    <p class="desc">Simple fix for F8. But adds a way to change the Keybind.</p>
                 </div>
 
                 </div>
             </div>
         </div>
+            <div class="backgroundbub"></div>
     </div>
 <!--
 
 -->
-<script type="text/javascript" src="vanilla-tilt.js"></script>
+<script type="text/javascript" src="./js/vanilla-tilt.js"></script>
 
 <script type="text/javascript">
-    VanillaTilt.init(document.querySelectorAll(".card-theme"), {
-        max: 5,
-        speed: 500,
-        glare: true,
-        "max-glare": .5,
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+            reverse: true,  // reverse the tilt direction
+            max: 5,     // max tilt rotation (degrees)
+            perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
+            speed: 50,    // Speed of the enter/exit transition
+            transition: true,   // Set a transition on enter/exit.
+            glare: true,   // if it should have a "glare" effect
+            "max-glare": .25,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
     });
 </script>
+
+<style>
+    :root{
+        --scroller-background:rgba(255, 255, 255, .1);
+        --scroller-thumb-hover:rgba(0, 0, 0, 0.4);
+        --scroller-thumb:rgba(255, 255, 255, 0.2);  
+    }
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: var(--scroller-background);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--scroller-thumb);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--scroller-thumb-hover);
+    }
+</style>
 
 </body>
