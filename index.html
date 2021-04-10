@@ -59,4 +59,17 @@
         </div>
     </div>
     <img src="https://komarev.com/ghpvc/?username=doggybootsy" data-canonical-src="https://komarev.com/ghpvc/?username=doggybootsy" alt="Profile Views Count" style="display: none;">
+        <script type="text/javascript" src="./js/vanilla-tilt.js"></script>
+        
+        <script type="text/javascript">
+            VanillaTilt.init(document.querySelectorAll(".card"), {
+                reverse: true,  // reverse the tilt direction
+                max: 5,     // max tilt rotation (degrees)
+                perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
+                speed: 50,    // Speed of the enter/exit transition
+                transition: true,   // Set a transition on enter/exit.
+                glare: true,   // if it should have a "glare" effect
+                "max-glare": .25,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+            });
+        </script>
 </body>
