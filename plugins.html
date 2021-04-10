@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="plugins"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Website for Doggybootsy">
+    <meta name="keywords" content="Doggybootsy, css, scss, powercord">
+    <meta name="author" content="Doggybootsy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+    <div id="appmount">
+        <div>
+            <nav id="nav">
+                <a href="index.html" class="logo site">Doggybootsy</a>
+                <div class="sites">
+                    <a class="site" href="themes.html">Themes</a>
+                    <a class="site" href="plugins.html">Plugins</a>
+                    <a class="site" href="help.html">Help</a>
+                </div>
+            </nav>
+            <div class="appmount powercord scrollbar-thick">
+
+                <div class="card card-plugin " id="F8Fix">
+                    <a href="https://github.com/doggybootsy/F8Fix" class="site git">F8 Fix</a>
+                    <p class="background-word">F8</p>
+                    <p class="desc">Simple fix for F8. But adds a way to change the Keybind.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <img src="https://komarev.com/ghpvc/?username=doggybootsy" data-canonical-src="https://komarev.com/ghpvc/?username=doggybootsy" alt="Profile Views Count" style="display: none;">
+    <script type="text/javascript" src="./js/vanilla-tilt.js"></script>
+    
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            reverse: true,  // reverse the tilt direction
+            max: 5,     // max tilt rotation (degrees)
+            perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
+            speed: 50,    // Speed of the enter/exit transition
+            transition: true,   // Set a transition on enter/exit.
+            glare: true,   // if it should have a "glare" effect
+            "max-glare": .25,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+        });
+    </script>
+</body>
