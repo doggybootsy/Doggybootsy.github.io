@@ -135,7 +135,6 @@ html body #appmount .appmount #content #navbar + #navbackdrop:not(.open) {
     bottom: 0;
     left: 0;
     position: absolute;
-    width: 100%;
   }
 }
 
