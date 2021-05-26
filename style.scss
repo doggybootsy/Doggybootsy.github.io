@@ -211,6 +211,8 @@ html{
                     color: var(--text-color);
                     display: flex;
                     background: #242338;
+                    position: sticky;
+                    bottom: 0;
                     &>.footer{
                         width: fit-content;
                         align-items: center;

@@ -262,6 +262,9 @@ html body #appmount .appmount #footer {
   display: -ms-flexbox;
   display: flex;
   background: #242338;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
 }
 
 html body #appmount .appmount #footer > .footer {
