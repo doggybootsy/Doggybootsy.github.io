@@ -3,7 +3,9 @@ nav .snippets {
 }
 
 button {
-  appearance: unset;
+  -webkit-appearance: unset;
+     -moz-appearance: unset;
+          appearance: unset;
   -webkit-writing-mode: unset;
   text-rendering: unset;
   color: unset;
@@ -14,17 +16,21 @@ button {
   text-shadow: unset;
   display: unset;
   text-align: unset;
-  align-items: unset;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
   cursor: unset;
   background-color: unset;
-  box-sizing: unset;
+  -webkit-box-sizing: unset;
+          box-sizing: unset;
   margin: unset;
   font: unset;
   padding: unset;
   border-width: unset;
   border-style: unset;
   border-color: unset;
-  border-image: unset;
+  -o-border-image: unset;
+     border-image: unset;
 }
 
 .home .home:not(svg), .snippets .snippets:not(svg), .themes .themes:not(svg) {
@@ -40,6 +46,7 @@ html body {
   background: #292841;
   overflow: hidden;
 }
+
 html body #appmount .appmount {
   position: absolute;
   top: 0px;
@@ -47,35 +54,55 @@ html body #appmount .appmount {
   bottom: 0px;
   left: 0px;
 }
+
 html body #appmount .appmount #banner {
   grid-area: hd;
   height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background: #1c1b29;
   padding: 5px;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   color: var(--text-color);
 }
+
 html body #appmount .appmount #banner > div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: auto;
 }
+
 html body #appmount .appmount #content {
   height: calc(100% - 5.6rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
+
 html body #appmount .appmount #content #navbar {
   background: #3c3a5e;
   padding: 5px;
   color: var(--text-color);
-  contain: size layout;
+  position: relative;
   overflow: hidden scroll;
   z-index: 2;
 }
+
+html body #appmount .appmount #content #navbar:not(.open) {
+  display: none;
+}
+
 html body #appmount .appmount #content #navbar + #navbackdrop {
   position: absolute;
   top: 0px;
@@ -85,13 +112,11 @@ html body #appmount .appmount #content #navbar + #navbackdrop {
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+
 html body #appmount .appmount #content #navbar + #navbackdrop:not(.open) {
   display: none;
 }
-html body #appmount .appmount #content #navbar:not(.open) {
-  width: 0 !important;
-  padding: 0 !important;
-}
+
 @media screen and (min-width: 430px) {
   html body #appmount .appmount #content #navbar.open {
     width: 200px !important;
@@ -102,6 +127,7 @@ html body #appmount .appmount #content #navbar:not(.open) {
     left: 0;
   }
 }
+
 @media screen and (max-width: 430px) {
   html body #appmount .appmount #content #navbar.open {
     top: -1px;
@@ -112,57 +138,79 @@ html body #appmount .appmount #content #navbar:not(.open) {
     width: 100%;
   }
 }
+
 html body #appmount .appmount #content #navbar > div .seperator div.name {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   z-index: 1;
 }
+
 html body #appmount .appmount #content #navbar > div .seperator.github div.line {
   width: calc(50% - 35px);
   height: 1px;
   background: #242338;
   position: absolute;
 }
+
 html body #appmount .appmount #content #navbar > div .seperator.github div.line:last-child {
   right: 5px;
-  transform: translate(0, -0.5rem);
+  -webkit-transform: translate(0, -0.5rem);
+          transform: translate(0, -0.5rem);
 }
+
 html body #appmount .appmount #content #navbar > div .seperator.github div.line:first-child {
   left: 5px;
-  transform: translate(0, 0.5rem);
+  -webkit-transform: translate(0, 0.5rem);
+          transform: translate(0, 0.5rem);
 }
+
 html body #appmount .appmount #content #navbar > div .seperator.local div.line {
   width: calc(50% - 30px);
   height: 1px;
   background: #242338;
   position: absolute;
 }
+
 html body #appmount .appmount #content #navbar > div .seperator.local div.line:last-child {
   right: 5px;
-  transform: translate(0, -0.5rem);
+  -webkit-transform: translate(0, -0.5rem);
+          transform: translate(0, -0.5rem);
 }
+
 html body #appmount .appmount #content #navbar > div .seperator.local div.line:first-child {
   left: 5px;
-  transform: translate(0, 0.5rem);
+  -webkit-transform: translate(0, 0.5rem);
+          transform: translate(0, 0.5rem);
 }
+
 html body #appmount .appmount #content #navbar > div .navcontent {
   color: var(--text-color);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   text-decoration: none;
   width: 98%;
   margin-top: 4px;
-  padding-right: 0.5rem;
+  padding-right: .5rem;
   border-radius: 0 1rem 1rem 0;
 }
+
 html body #appmount .appmount #content #navbar > div .navcontent .octicon {
-  transform: scale(0.85);
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
 }
+
 html body #appmount .appmount #content #navbar > div .navcontent:hover, html body #appmount .appmount #content #navbar > div .navcontent:focus {
   background: #474479;
   margin-left: -5px;
   padding-left: 5px;
 }
+
 html body #appmount .appmount #content #navbar > div .navcontent div {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin-top: auto;
   margin-bottom: auto;
@@ -174,12 +222,14 @@ html body #appmount .appmount #content #navbar > div .navcontent div {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 html body #appmount .appmount #content #main {
   color: var(--text-color);
   padding: 8px;
   overflow: hidden scroll;
   width: 100%;
 }
+
 html body #appmount .appmount #content #main .homemain {
   width: clamp(350px, 75%, 900px);
   margin-left: auto;
@@ -190,11 +240,13 @@ html body #appmount .appmount #content #main .homemain {
   border-radius: 6px;
   background: #413f66;
 }
+
 html body #appmount .appmount #content #main .aboutme {
   background: #343350;
   padding: 6px;
   border-radius: 6px;
 }
+
 html body #appmount .appmount #content #main .aboutme ul {
   list-style-type: none;
   margin-top: 5px;
@@ -202,20 +254,31 @@ html body #appmount .appmount #content #main .aboutme ul {
   padding-left: 15px;
   border-radius: 6px;
 }
+
 html body #appmount .appmount #footer {
   grid-area: ft;
   height: 3rem;
   color: var(--text-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background: #242338;
 }
+
 html body #appmount .appmount #footer > .footer {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: auto;
   text-align: center;
 }
+
 @media screen and (max-width: 430px) {
   html body #appmount .appmount #footer > .footer {
     display: none;
@@ -224,19 +287,31 @@ html body #appmount .appmount #footer > .footer {
     width: 100% !important;
   }
 }
+
 html body #appmount .appmount #footer .buttons {
   width: 12.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 html body #appmount .appmount #footer .buttons > div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: auto;
 }
+
 html:not([banner]) #content {
   height: calc(100% - 3rem) !important;
 }
+
 html:not([banner]) #banner {
   display: none !important;
 }
@@ -250,35 +325,56 @@ html:not([banner]) #banner {
   color: var(--text-color);
   cursor: pointer;
 }
+
 .btn:hover {
-  opacity: 0.93;
+  opacity: .93;
 }
+
 .btn:active {
-  opacity: 0.88;
+  opacity: .88;
 }
+
 .btn.red {
   background: #ff5555;
   border-radius: 4px;
   padding: 2px 4px;
 }
+
 .btn.blurple {
   background: #7289da;
   border-radius: 4px;
   padding: 2px 4px;
 }
+
 .btn.yellow {
   background: #f1fa8c;
   border-radius: 4px;
   padding: 2px 4px;
 }
+
 .btn.green {
   background: #50fa7b;
   border-radius: 4px;
   padding: 2px 4px;
 }
 
+::-webkit-input-placeholder, body, button, input, select, textarea {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+:-ms-input-placeholder, body, button, input, select, textarea {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::-ms-input-placeholder, body, button, input, select, textarea {
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
 ::placeholder, body, button, input, select, textarea {
-  font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -287,19 +383,23 @@ html:not([banner]) #banner {
   /* Track */
   /* Handle */
 }
+
 .scrollthin::-webkit-scrollbar {
   width: 8px;
 }
+
 .scrollthin::-webkit-scrollbar-track {
   background: transparent;
   border: 2px solid transparent;
 }
+
 .scrollthin::-webkit-scrollbar-thumb {
   background: #242338;
   background-clip: padding-box;
   border: 2px solid transparent;
   border-radius: 6rem;
 }
+
 .scrollthin::-webkit-scrollbar-button {
   display: none;
 }
@@ -309,73 +409,122 @@ html:not([banner]) #banner {
   /* Track */
   /* Handle */
 }
+
 .scrollthick::-webkit-scrollbar {
   width: 10px;
 }
+
 .scrollthick::-webkit-scrollbar-track {
   background: #242338;
   background-clip: padding-box;
   border: 2px solid transparent;
   border-radius: 6rem;
 }
+
 .scrollthick::-webkit-scrollbar-thumb {
   background: #333152;
   background-clip: padding-box;
   border: 2px solid transparent;
   border-radius: 6rem;
 }
+
 .scrollthick::-webkit-scrollbar-button {
   display: none;
 }
 
 .cardcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-grid-columns: (minmax(280px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: -ms-grid;
   display: grid;
   grid-gap: 20px;
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
+
 .cardcontainer .card {
   height: auto;
   background-color: #413f66;
+  -webkit-transition: 150ms ease;
   transition: 150ms ease;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  user-select: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   border-radius: 4px;
   width: 328px;
-  border-radius: 0.4rem;
+  border-radius: .4rem;
   margin: auto;
 }
+
 .cardcontainer .card .preview {
   width: 100%;
   display: block;
   position: relative;
   background-color: var(--bg4);
   height: 184px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-user-drag: none;
 }
+
 .cardcontainer .card .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 10px;
   padding-top: 5px;
-  contain: layout;
+  position: relative;
 }
+
 .cardcontainer .card .card-body .download {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
+
 .cardcontainer .card .card-body .report {
   position: absolute;
   right: 10px;
   bottom: 8px;
 }
+
 .cardcontainer .card .card-body * {
   margin: 0;
   margin-top: 5px;
 }
+
+#cookiesalert {
+  position: absolute;
+  background: #1c1b29;
+  color: var(--text-color);
+  bottom: 10px;
+  right: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 8px;
+}
+/*# sourceMappingURL=style.css.map */
