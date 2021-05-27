@@ -12,7 +12,7 @@ function hashmarking(){
   document.querySelector('[hash] .discordsnippets').classList.add('hashed');
 }
 
-var copy = document.querySelectorAll('pre, span>span'); 
+var copy = document.querySelectorAll('pre'); 
 for (const copied of copy) { 
   copied.onclick = function() { 
     document.execCommand("copy"); 

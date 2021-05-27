@@ -280,16 +280,26 @@ html body #appmount .appmount #content #main .discordsnippets > div[id] .copy {
   bottom: 6px;
   right: 6px;
   padding: 2px 4px;
+  height: 1rem;
+  width: 62.422px;
   background: #292841;
   border-radius: .25rem;
   opacity: 0;
   -webkit-transition: 100ms linear opacity;
   transition: 100ms linear opacity;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  font-size: 0;
 }
 
-html body #appmount .appmount #content #main .discordsnippets > div[id] .copy .url {
-  font-size: 0;
-  position: absolute;
+html body #appmount .appmount #content #main .discordsnippets > div[id] .copy::after {
+  content: 'Copy url';
+  font-size: .8rem;
+}
+
+html body #appmount .appmount #content #main .discordsnippets > div[id] .copy:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 html body #appmount .appmount #content #main .discordsnippets > div > pre {

@@ -222,13 +222,20 @@ html{
                                     bottom: 6px;
                                     right: 6px;
                                     padding: 2px 4px ;
+                                    height: 1rem;
+                                    width: 62.422px;
                                     background: #292841;
                                     border-radius: .25rem;
                                     opacity: 0;
                                     transition: 100ms linear opacity;
-                                    .url{
-                                        font-size: 0;
-                                        position: absolute;
+                                    transform: scale(.95);
+                                    font-size: 0;
+                                    &::after{
+                                        content: 'Copy url';
+                                        font-size: .8rem;
+                                    }
+                                    &:active{
+                                        transform: scale(1);
                                     }
                                 }
                             }
