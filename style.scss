@@ -204,16 +204,20 @@ html{
                             background: #343350;
                             padding: 6px;
                             border-radius: 6px;
+                            p,&>div{
+                                margin-bottom: 0;
+                                text-align: center;
+                            }
                             &.hashed>[id]:not(.selected){
                                 display: none;
+                                &~p{
+                                    margin: 0;
+                                }
                             }
                             &>div[id]{
                                 position: relative;
                                 &:not(:last-child){
                                     margin-bottom: 10px;
-                                }
-                                &:hover .copy{
-                                    opacity: 1;
                                 }
                                 .copy{
                                     bottom: 6px;
@@ -246,8 +250,14 @@ html{
                                 white-space: pre-wrap;
                                 max-height: 200px;
                                 overflow-y: auto;
-                                &[data*="Remove blocked messages.css"]{
-                                    height: 72px;
+                                cursor: default;
+                                text-align: left;
+                                &:hover ~ .copy{
+                                    opacity: 1;
+                                }
+                                & ~ .copy:hover{
+                                    opacity: 1;
+                                    cursor: pointer;
                                 }
                             }
                         }

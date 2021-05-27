@@ -83,7 +83,7 @@
                                     </div>
                                     <div  id="hideblockedmessages">
                                         Hide blocked messages
-<pre id="hideblockedmessagescontentboth" aria-type="both">[class^="groupStart-"]{
+<pre id="hideblockedmessagescontentboth" class="scrollthin" aria-type="both">[class^="groupStart-"]{
     display:none;
 }</pre>
 <pre class="btn copy">http://doggybootsy.github.io/snippets.html#hideblockedmessages</pre>
@@ -287,6 +287,219 @@
 }</pre>
 <pre class="btn copy">http://doggybootsy.github.io/snippets.html#coloredbadges</pre>
                                     </div>
+                                    <div  id="avataronlymemberslistuntilhover">
+                                        Avatar only members list until hover
+<pre id="avataronlymemberslistuntilhoverboth" class="scrollthin" aria-type="both">.membersWrap-2h-GB4{
+    min-width: unset;
+}
+.members-1998pB{
+    max-width: 65px;
+    min-width: 65px;
+    transition: .3s ease;
+}
+.members-1998pB:hover{
+    max-width: 240px;
+    min-width: 240px;
+}
+div:not(:hover)>.membersGroup-v9BXpm{
+    height: 0px;
+    padding: 0%;
+}
+div:not(:hover)>.members-1998pB>div{
+    padding-top: 10px;
+}</pre>
+<pre class="btn copy">http://doggybootsy.github.io/snippets.html#avataronlymemberslistuntilhover</pre>
+                                    </div>
+                                    <div  id="changestatuscolors">
+                                        Change status colors
+<pre id="changestatuscolorcss" class="scrollthin" aria-type="css">[mask^="url(#svg-mask-status-online"] {
+  fill: #43b581;
+}
+[mask^="url(#svg-mask-status-idle"] {
+  fill: #faa61a;
+}
+[mask^="url(#svg-mask-status-dnd"] {
+  fill: #f04747;
+}
+[mask^="url(#svg-mask-status-streaming"] {
+  fill: #593695;
+}
+[mask^="url(#svg-mask-status-offline"] {
+  fill: rgb(116, 127, 141);
+}</pre>
+<pre id="changestatuscolorsscss" class="scrollthin" aria-type="scss">$profilestatuss:(
+    online:#43b581,
+    idle:#faa61a,
+    dnd:#f04747,
+    streaming:rgb(89, 54, 149),
+    offline:rgb(116, 127, 141),
+);
+@each $name, $profilestatus in $profilestatuss{
+    [mask^="url(#svg-mask-status-#{$name}"]{
+        fill:$profilestatus;
+    }
+}</pre>
+<pre class="btn copy">http://doggybootsy.github.io/snippets.html#changestatuscolors</pre>
+                                    </div>
+                                    <div  id="transparentsettings">
+                                        transparent settings
+<pre id="transparentsettingsboth" class="scrollthin" aria-type="both">.layers-3iHuyZ>.layer-3QrUeG:first-child{
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+.layers-3iHuyZ>.layer-3QrUeG:nth-child(2),.perksModal-fSYqOq{
+        background-color: rgba(0, 0, 0, 0.85)!important;
+}
+.contentRegionScroller-26nc1e,.contentRegion-3nDuYy,.standardSidebarView-3F1I7i,
+.sidebarRegionScroller-3MXcoP{
+    background: transparent;
+}</pre>
+<pre class="btn copy">http://doggybootsy.github.io/snippets.html#transparentsettings</pre>
+                                    </div>
+                                    <div  id="fadedindicators">
+                                        faded indicators
+<pre id="tfadedindicatorsboth" class="scrollthin" aria-type="both">.unreadTop-3rAB3r{
+    width:240px;
+    border-radius: 0 !important;
+    padding: 0;
+}
+.unreadTop-3rAB3r .bar-30k2ka:not(.mention-1f5kbO){
+    border-radius: 0 !important;
+    background: linear-gradient(var(--background-accent), transparent);
+    box-shadow: none;
+}
+.unreadTop-3rAB3r .bar-30k2ka.mention-1f5kbO{
+    border-radius: 0 !important;
+    background: linear-gradient(#f04747, transparent);
+    box-shadow: none;
+}
+.unreadBottom-1_LF_w {
+    width:240px;
+    border-radius: 0 !important;
+    padding:0;
+}
+.unreadBottom-1_LF_w  .bar-30k2ka:not(.mention-1f5kbO){
+    border-radius: 0px  !important;
+    background: linear-gradient(0deg, var(--background-accent), transparent);
+    box-shadow: none;
+}
+.unreadBottom-1_LF_w  .bar-30k2ka.mention-1f5kbO{
+    border-radius: 0 !important;
+    background: linear-gradient(0deg, #f04747, transparent);
+    box-shadow: none;
+}
+.unreadMentionsIndicatorBottom-2mDYbI{
+    padding:0px;
+    height:24px;
+}
+.unreadMentionsIndicatorBottom-2mDYbI .unreadMentionsBar-1Bu1dC{
+    border-radius: 0px !important;
+    background: linear-gradient(0deg, #f04747, transparent);
+}
+.unreadMentionsIndicatorTop-2-tcdU{
+    padding:0px;
+    height:24px;
+}
+.unreadMentionsIndicatorTop-2-tcdU .unreadMentionsBar-1Bu1dC{
+    border-radius: 0 !important;
+    background: linear-gradient(#f04747, transparent);
+}
+</pre>
+<pre class="btn copy">http://doggybootsy.github.io/snippets.html#fadedindicators</pre>
+                                    </div>
+                                    <div  id="mobilejumptopresentbarmobilejumptopresentbar">
+                                        mobile jump to present barmobile jump to present bar
+<pre id="mobilejumptopresentbarmobilejumptopresentbarcss" class="scrollthin" aria-type="css">.jumpToPresentBar-G1R9s6 {
+    visibility: hidden;
+    bottom: 15px;
+  }
+.jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d {
+    visibility: visible;
+    padding: 2px;
+    background-color: var(--background-tertiary);
+    border-radius: 50%;
+    transform: scale(1.7) rotate(90deg);
+}
+.jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d:hover, .jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d:active {
+    opacity: .9;
+}
+</pre>
+<pre id="mobilejumptopresentbarmobilejumptopresentbarscss" class="scrollthin" aria-type="scss">.jumpToPresentBar-G1R9s6{
+    visibility: hidden;
+    bottom:15px;
+    .barButtonIcon-3t4V3d{
+        visibility: visible;
+        padding:2px;
+        background-color: var(--background-tertiary);
+        border-radius: 50%;
+        transform: scale(1.7) rotate(90deg);
+        &:hover,&:focus{
+            opacity: .9;
+        }
+    }
+}</pre>
+<pre class="btn copy">http://doggybootsy.github.io/snippets.html#mobilejumptopresentbarmobilejumptopresentbar</pre>
+                                    </div>
+                                    <div  id="rainbowborder">
+                                        rainbow border
+<pre id="rainbowborderboth" class="scrollthin" aria-type="both">:root{
+    --Thickness:5px;
+    --Speed:6s;
+}
+.appMount-3lHmkl{
+    margin:var(--Thickness);
+    width:calc(100% - calc(var(--Thickness) * 2))!important;
+    height:calc(100% - calc(var(--Thickness) * 2))!important;
+}
+body{
+    background-image: linear-gradient(to left, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    animation: gradient-border var(--Speed) lineaar infinite;
+    background-size: 400% 100%;
+    color: transparent !important;
+  }
+@keyframes gradient-border {
+      0%, 200% {
+        background-position: 0 0;
+    }
+  
+      99.999999999999999% {
+        background-position: 130% 0;
+    }
+}
+</pre>
+<pre class="btn copy">http://doggybootsy.github.io/snippets.html#rainbowborder</pre>
+                                    </div>
+                                    <div  id="makeswitchesbeabutton">
+                                        Make switches be a button
+<pre id="rainbowborderboth" class="scrollthin" aria-type="both">.container-3auIfb{
+   background: transparent !important;
+}
+.slider-TkfMQL{
+   left:-6px !important;
+}
+.slider-TkfMQL[style="left: 12px;"]>rect{
+   height:20px !important;
+   width:20px !important;
+   x:4px !important;
+   y:0px !important;
+   rx:5;
+   fill: var(--background-tertiary);
+}
+.slider-TkfMQL>rect{
+   height:20px !important;
+   width:20px !important;
+   x:4px !important;
+   y:0px !important;
+   rx:5;
+   fill: var(--background-secondary-alt);
+}
+.container-3auIfb{
+   width:20px;
+   height:20px;
+}</pre>
+<pre class="btn copy">http://doggybootsy.github.io/snippets.html#makeswitchesbeabutton</pre>
+                                    </div>
+                                    <p id="licensing" title="At the moment the discord snippets repo doesnt show the unlicense license.">All snippets have the <a class="btn" target="_blank" style="text-decoration: underline;" href="https://unlicense.org/">unlicense</a> license</p>
                                 </div>
                             </div>
                         </div>

@@ -256,8 +256,17 @@ html body #appmount .appmount #content #main .discordsnippets {
   border-radius: 6px;
 }
 
+html body #appmount .appmount #content #main .discordsnippets p, html body #appmount .appmount #content #main .discordsnippets > div {
+  margin-bottom: 0;
+  text-align: center;
+}
+
 html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(.selected) {
   display: none;
+}
+
+html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(.selected) ~ p {
+  margin: 0;
 }
 
 html body #appmount .appmount #content #main .discordsnippets > div[id] {
@@ -266,10 +275,6 @@ html body #appmount .appmount #content #main .discordsnippets > div[id] {
 
 html body #appmount .appmount #content #main .discordsnippets > div[id]:not(:last-child) {
   margin-bottom: 10px;
-}
-
-html body #appmount .appmount #content #main .discordsnippets > div[id]:hover .copy {
-  opacity: 1;
 }
 
 html body #appmount .appmount #content #main .discordsnippets > div[id] .copy {
@@ -310,10 +315,17 @@ html body #appmount .appmount #content #main .discordsnippets > div > pre {
   white-space: pre-wrap;
   max-height: 200px;
   overflow-y: auto;
+  cursor: default;
+  text-align: left;
 }
 
-html body #appmount .appmount #content #main .discordsnippets > div > pre[data*="Remove blocked messages.css"] {
-  height: 72px;
+html body #appmount .appmount #content #main .discordsnippets > div > pre:hover ~ .copy {
+  opacity: 1;
+}
+
+html body #appmount .appmount #content #main .discordsnippets > div > pre ~ .copy:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 html body #appmount .appmount #footer {
