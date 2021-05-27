@@ -6,7 +6,13 @@ function switchtotypeFunction(){
     document.querySelector('html').classList.toggle("scss");
     document.querySelector('html').classList.toggle("css");
 }
-var copy = document.querySelectorAll("pre"); 
+function hashmarking(){
+  document.querySelector(window.location.hash).classList.add('selected');
+  document.querySelector('html').setAttribute("hash",window.location.hash);
+  document.querySelector('[hash] .discordsnippets').classList.add('hashed');
+}
+
+var copy = document.querySelectorAll('pre, span>span'); 
 for (const copied of copy) { 
   copied.onclick = function() { 
     document.execCommand("copy"); 
@@ -19,22 +25,3 @@ for (const copied of copy) {
     };
   });
 };
-spans = document.querySelectorAll("pre");
-for (const span of spans) {
-  span.onclick = function() {
-    document.execCommand("copy");
-  }
-
-  span.addEventListener("copy", function(event) {
-    event.preventDefault();
-    if (event.clipboardData) {
-      event.clipboardData.setData("text/plain", span.textContent);
-      console.log(event.clipboardData.getData("text"))
-    }
-  });
-}
-var clipboard = new Clipboard('.copy', {
-    target: function() {
-        return document.querySelector('#hideblockedmessages');
-    }
-});

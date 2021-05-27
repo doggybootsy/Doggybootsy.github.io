@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="snippets css" banner>
+<html class="snippets css">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./style.css">
     </head>
-    <body>
+    <body onload="hashmarking()">
         <div id="appmount">
             <div class="appmount">
                 <div id="banner">
@@ -86,7 +86,7 @@
 <pre id="hideblockedmessagescontentboth" aria-type="both">[class^="groupStart-"]{
     display:none;
 }</pre>
-                                        <button class="btn copy">copy</button>
+<span class="btn copy">Copy url <span class="url">http://doggybootsy.github.io/snippets.html#hideblockedmessages</span></span>
                                     </div>
                                     <div  id="pinhomebutton">
                                         Pin home button
@@ -105,8 +105,8 @@
         position: fixed;
         transform: translate3d(0,-76px,0);
     }
-}</pre>
-                                        <button class="btn copy">copy</button>
+}</pre>                                        
+<span class="btn copy">Copy url <span class="url">http://doggybootsy.github.io/snippets.html#pinhomebutton</span></span>
                                     </div>
                                     <div  id="compactedsearchbar">
                                         Compacted searchbar
@@ -172,7 +172,7 @@
         }
     }
 }</pre>
-                                        <button class="btn copy">copy</button>
+<span class="btn copy">Copy url <span class="url">http://doggybootsy.github.io/snippets.html#compactedsearchbar</span></span>
                                     </div>
                                     <div id="coloredbadges">
                                         Colored badges
@@ -285,7 +285,7 @@
     background-size: contain !important;
     background-position: 50% !important;
 }</pre>
-                                        <button class="btn copy">copy</button>
+<span class="btn copy">Copy url <span class="url">http://doggybootsy.github.io/snippets.html#coloredbadges</span></span>
                                     </div>
                                 </div>
                             </div>
@@ -309,13 +309,5 @@
             </div>
         </div>
         <script src="../Javascript.js"></script>
-        <script>
-            document.querySelectorAll('[type="text/plain"]').forEach(e => e.contentWindow.document.body.style.color='#fbfbfb')
-        </script>
-        <script>
-            document.querySelector(window.location.hash).classList.add('selected');
-            document.querySelector('html').setAttribute("hash",window.location.hash);
-            document.querySelector('[hash] .discordsnippets').classList.add('hashed');
-        </script>
     </body>
 </html>

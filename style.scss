@@ -70,7 +70,7 @@ html{
                         color: var(--text-color);
                         position: relative;
                         overflow: hidden scroll;
-                        z-index: 2;
+                        z-index: 3;
                         &:not(.open){
                             display: none;
                         }
@@ -81,7 +81,7 @@ html{
                             bottom:0px;
                             left:0px;
                             background: rgba($color: #000000, $alpha: .5);
-                            z-index: 1;
+                            z-index: 2;
                             &:not(.open){
                                 display: none;
                             }
@@ -207,7 +207,7 @@ html{
                             background: #343350;
                             padding: 6px;
                             border-radius: 6px;
-                            &.hashed>div:not(.selected){
+                            &.hashed>[id]:not(.selected){
                                 display: none;
                             }
                             &>div[id]{
@@ -215,15 +215,20 @@ html{
                                 &:not(:last-child){
                                     margin-bottom: 10px;
                                 }
+                                &:hover .copy{
+                                    opacity: 1;
+                                }
                                 .copy{
                                     bottom: 6px;
                                     right: 6px;
                                     padding: 2px 4px ;
                                     background: #292841;
                                     border-radius: .25rem;
-                                    display: none;
-                                    &:active{
-                                        transform: translatey(1px);
+                                    opacity: 0;
+                                    transition: 100ms linear opacity;
+                                    .url{
+                                        font-size: 0;
+                                        position: absolute;
                                     }
                                 }
                             }

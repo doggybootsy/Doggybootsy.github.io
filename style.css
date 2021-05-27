@@ -96,7 +96,7 @@ html body #appmount .appmount #content #navbar {
   color: var(--text-color);
   position: relative;
   overflow: hidden scroll;
-  z-index: 2;
+  z-index: 3;
 }
 
 html body #appmount .appmount #content #navbar:not(.open) {
@@ -110,7 +110,7 @@ html body #appmount .appmount #content #navbar + #navbackdrop {
   bottom: 0px;
   left: 0px;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 2;
 }
 
 html body #appmount .appmount #content #navbar + #navbackdrop:not(.open) {
@@ -260,7 +260,7 @@ html body #appmount .appmount #content #main .discordsnippets {
   border-radius: 6px;
 }
 
-html body #appmount .appmount #content #main .discordsnippets.hashed > div:not(.selected) {
+html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(.selected) {
   display: none;
 }
 
@@ -272,18 +272,24 @@ html body #appmount .appmount #content #main .discordsnippets > div[id]:not(:las
   margin-bottom: 10px;
 }
 
+html body #appmount .appmount #content #main .discordsnippets > div[id]:hover .copy {
+  opacity: 1;
+}
+
 html body #appmount .appmount #content #main .discordsnippets > div[id] .copy {
   bottom: 6px;
   right: 6px;
   padding: 2px 4px;
   background: #292841;
   border-radius: .25rem;
-  display: none;
+  opacity: 0;
+  -webkit-transition: 100ms linear opacity;
+  transition: 100ms linear opacity;
 }
 
-html body #appmount .appmount #content #main .discordsnippets > div[id] .copy:active {
-  -webkit-transform: translatey(1px);
-          transform: translatey(1px);
+html body #appmount .appmount #content #main .discordsnippets > div[id] .copy .url {
+  font-size: 0;
+  position: absolute;
 }
 
 html body #appmount .appmount #content #main .discordsnippets > div > pre {
