@@ -276,8 +276,9 @@ html body #appmount .appmount #content #main .discordsnippets > div[id] .copy {
   bottom: 6px;
   right: 6px;
   padding: 2px 4px;
-  height: 1rem;
-  width: 62.422px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background: #292841;
   border-radius: .25rem;
   opacity: 0;
