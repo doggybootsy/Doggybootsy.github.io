@@ -256,6 +256,25 @@ html body #appmount .appmount #content #main .discordsnippets {
   border-radius: 6px;
 }
 
+html body #appmount .appmount #content #main .discordsnippets p {
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #1c1b29;
+  padding: 6px;
+  border-radius: 6px;
+  margin: 0;
+  margin-top: 4px;
+  width: calc(100% - 12px);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+  cursor: default;
+  text-align: left;
+}
+
 html body #appmount .appmount #content #main .discordsnippets p, html body #appmount .appmount #content #main .discordsnippets > div {
   margin-bottom: 0;
   text-align: center;
@@ -263,10 +282,6 @@ html body #appmount .appmount #content #main .discordsnippets p, html body #appm
 
 html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(.selected) {
   display: none;
-}
-
-html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(.selected) ~ p {
-  margin: 0;
 }
 
 html body #appmount .appmount #content #main .discordsnippets > div[id] {
