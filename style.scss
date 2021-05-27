@@ -203,6 +203,46 @@ html{
                                 border-radius: 6px;
                             }
                         }
+                        .discordsnippets{
+                            background: #343350;
+                            padding: 6px;
+                            border-radius: 6px;
+                            &.hashed>div:not(.selected){
+                                display: none;
+                            }
+                            &>div[id]{
+                                position: relative;
+                                &:not(:last-child){
+                                    margin-bottom: 10px;
+                                }
+                                .copy{
+                                    bottom: 6px;
+                                    right: 6px;
+                                    padding: 2px 4px ;
+                                    background: #292841;
+                                    border-radius: .25rem;
+                                    display: none;
+                                    &:active{
+                                        transform: translatey(1px);
+                                    }
+                                }
+                            }
+                            &>div>pre{
+                                background: #1c1b29;
+                                padding: 6px;
+                                border-radius: 6px;
+                                margin: 0;
+                                margin-top: 4px;
+                                width: calc(100% - 12px);    
+                                word-wrap: break-word;
+                                white-space: pre-wrap;
+                                max-height: 200px;
+                                overflow-y: auto;
+                                &[data*="Remove blocked messages.css"]{
+                                    height: 72px;
+                                }
+                            }
+                        }
                     }
                 }
                 #footer {
@@ -249,7 +289,18 @@ html{
         #banner{
             display: none !important;
         }
-    } 
+    }
+    &.css .discordsnippets{
+        .scss,[aria-type="scss"]{
+            display: none;
+        }
+    }
+    &.scss .discordsnippets{
+        .css,[aria-type="css"]{
+            display: none;
+        }
+        
+    }
 }
 :root{
     --text-color: #fbfbfb;
@@ -283,6 +334,9 @@ html{
         background: #50fa7b;
         border-radius: 4px;
         padding: 2px 4px;
+    }
+    &.copy{
+        position: absolute;
     }
 }
 
@@ -394,4 +448,16 @@ html{
     padding: 10px;
     border-radius: 8px;
     z-index: 1;
+}
+.switchtotype{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #1c1b29;
+    color: var(--text-color);
+    width: fit-content;
+    padding: 6px;
+    border-radius: 8px;
+    z-index: 1;
+    border: 2px solid #292841;
 }

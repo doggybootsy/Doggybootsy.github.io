@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html class="snippets" banner>
+<html class="snippets css" banner>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,14 +9,11 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
         <div id="appmount">
             <div class="appmount">
                 <div id="banner">
                     <div class="banner">
-                        Site is still under construction <a class="btn red navbaropen" href="./assets/todo.txt">TODO</a>
+                        Click the snippet to copy its text
                     </div>
                 </div>
                 <div id="content">
@@ -81,11 +74,220 @@
                     <div onclick="NavFunction()" id="navbackdrop"></div>
                     <main id="main"  class="scrollthick">
                         <div class="main">
-                            main
-                            <div>
-                                [class^="groupStart-"]{
-                                    display:none;
-                                }
+                            <div class="homemain">
+                                <div class="discordsnippets">
+                                    <div class="switchtotype">
+                                        Switch to
+                                        <button onclick="switchtotypeFunction()" class="btn blurple css">scss</button>
+                                        <button onclick="switchtotypeFunction()" class="btn blurple scss">css</button>
+                                    </div>
+                                    <div  id="hideblockedmessages">
+                                        Hide blocked messages
+<pre id="hideblockedmessagescontentboth" aria-type="both">[class^="groupStart-"]{
+    display:none;
+}</pre>
+                                        <button class="btn copy">copy</button>
+                                    </div>
+                                    <div  id="pinhomebutton">
+                                        Pin home button
+<pre id="pinhomebuttoncontentcss" aria-type="css">.guilds-1SWlCJ .scroller-1Bvpku {
+    contain: unset;
+    margin-top: 56px;
+}
+.guilds-1SWlCJ .scroller-1Bvpku .tutorialContainer-2sGCg9 {
+  position: fixed;
+  transform: translate3d(0, -76px, 0);
+}</pre>
+<pre id="pinhomebuttoncontentscss" aria-type="scss">.guilds-1SWlCJ .scroller-1Bvpku{
+    contain: unset;
+    margin-top: 56px;
+    .tutorialContainer-2sGCg9{
+        position: fixed;
+        transform: translate3d(0,-76px,0);
+    }
+}</pre>
+                                        <button class="btn copy">copy</button>
+                                    </div>
+                                    <div  id="compactedsearchbar">
+                                        Compacted searchbar
+<pre id="compactedsearchbarcontentcss" class="scrollthin" aria-type="css">.toolbar-1t6TWx .search-36MZv- {
+    order: -1;
+}
+.toolbar-1t6TWx .search-36MZv- .iconContainer-O4O2CN {
+    bottom: 4px;
+}
+.toolbar-1t6TWx .search-36MZv- .iconContainer-O4O2CN .icon-3cZ1F_ {
+    transition: all 0.6s ease;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb {
+    width: 28px;
+    transition: all 0.6s ease-in-out;
+    background: none;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb .icon-3cZ1F_ {
+    color: var(--interactive-normal);
+    height: 23px;
+    width: 23px;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb {
+    width: 240px;
+    background: var(--background-tertiary);
+    transition: all 0.6s ease-in-out;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb .icon-3cZ1F_ {
+    height: 16px;
+    width: 16px;
+    top: 4px;
+}</pre>
+<pre id="compactedsearchbarcontentscss" class="scrollthin" aria-type="scss">.toolbar-1t6TWx{
+    .search-36MZv- {
+        order: -1;
+        .iconContainer-O4O2CN{
+            bottom: 4px;
+            .icon-3cZ1F_{
+                transition: all 0.6s ease;
+            }
+        }
+        .search-2oPWTC{
+            &:not(.open-6_Y_aH) .searchBar-3dMhjb {
+                width: 28px;
+                transition: all 0.6s ease-in-out;
+                background: none;
+                .icon-3cZ1F_{
+                    color:var(--interactive-normal);
+                    height: 23px;
+                    width: 23px;
+                }
+            }
+            &.open-6_Y_aH .searchBar-3dMhjb{
+                width: 240px;
+                background: var(--background-tertiary);
+                transition: all 0.6s ease-in-out;
+                .icon-3cZ1F_{
+                    height: 16px;
+                    width: 16px;
+                    top:4px;
+                }
+            }
+        }
+    }
+}</pre>
+                                        <button class="btn copy">copy</button>
+                                    </div>
+                                    <div id="coloredbadges">
+                                        Colored badges
+<pre id="coloredbadgescontentcss" class="compact scrollthin" aria-type="css">.profileBadgeStaff-3BXdTO {
+    background: url(/assets/4358ad1fb423b346324516453750f569.svg);
+}
+.profileBadgePartner-j6Lwhr {
+    background: url(/assets/6203964d9d25c394a573fd4f6be36d97.svg);
+}
+.profileBadgeHypesquad-12E2P6 {
+    background: url(/assets/48cf0556d93901c8cb16317be2436523.svg);
+}
+.profileBadgeHypeSquadOnlineHouse1-3rBtjf {
+    background: url(/assets/64ae1208b6aefc0a0c3681e6be36f0ff.svg);
+}
+.profileBadgeHypeSquadOnlineHouse2-2oU04B {
+    background: url(/assets/48cf0556d93901c8cb16317be2436523.svg);
+}
+.profileBadgeHypeSquadOnlineHouse3-1DoJkv {
+    background: url(/assets/9fdc63ef8a3cc1617c7586286c34e4f1.svg);
+}
+.profileBadgeHypeSquadOnlineHouse1Winner-3wCl80 {
+    background: url(/assets/26a2dc8c9d70955a988cb377eec84c22.svg);
+}
+.profileBadgeHypeSquadOnlineHouse2Winner-AS5bXe {
+    background: url(/assets/88d4f11bee9ea34fee59973b33353da0.svg);
+}
+.profileBadgeHypeSquadOnlineHouse3Winner-2CwwQi {
+    background: url(/assets/3245b2cd85b787b195ea8f6e10ef5790.svg);
+}
+.profileBadgeVerifiedDeveloper-195KfD {
+    background: url(/assets/45cd06af582dcd3c6b79370b4e3630de.svg);
+}
+.profileBadgeEarlySupporter-2ng_jL {
+    background: url(/assets/23e59d799436a73c024819f84ea0b627.svg);
+}
+.profileBadgePremium-1KDZYC {
+    background: url(/assets/386884eecd36164487505ddfbac35a9d.svg);
+}
+.profileBadgeBugHunterLevel1-dbEzVz {
+    background: url(/assets/f61b8981e92feead854f52e5a1ba14f0.svg);
+}
+.profileBadgeBugHunterLevel2-3TUciC {
+    background: url(/assets/9286332d6e947c91fa91569efce431b0.svg);
+}
+.profileGuildSubscriberlvl1-3oI9tx {
+    background: url(/assets/fbb6f1e160280f0e9aeb5d7c452eefe1.svg);
+}
+.profileGuildSubscriberlvl2-r6nJHT {
+    background: url(/assets/b4b741bef6c3de9b29e2e0653e294620.svg);
+}
+.profileGuildSubscriberlvl3-38s3Dj {
+    background: url(/assets/93f5a393e22796a850931483166d7cb9.svg);
+}
+.profileGuildSubscriberlvl4-2NXrsI {
+    background: url(/assets/4c380650960c2b1e1584115d5e9ad63b.svg);
+}
+.profileGuildSubscriberlvl5-3XIa2K {
+    background: url(/assets/438dd7ecbffcf21b6cbf2773ade51a04.svg);
+}
+.profileGuildSubscriberlvl6-3e3sxW {
+    background: url(/assets/7a5f78de816fcecbbd1d5d6e635cc7dd.svg);
+}
+.profileGuildSubscriberlvl7-1dVhQT {
+    background: url(/assets/5a24b20b84fb3eafc138916729386e76.svg);
+}
+.profileGuildSubscriberlvl8-1kXdFr {
+    background: url(/assets/f31d590e1f3629cd0b614330f4a8ee2a.svg);
+}
+.profileGuildSubscriberlvl9-1d6zav {
+    background: url(/assets/9ba64f1fa91ccde0eba506c1c33f3d1a.svg);
+}
+.profileBadge-2niAfJ {
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: 50% !important;
+}</pre>
+<pre id="coloredbadgescontentscss" class="compact scrollthin" aria-type="scss">$profileBadges: (
+    BadgeStaff-3BXdTO:url(/assets/4358ad1fb423b346324516453750f569.svg),
+    BadgePartner-j6Lwhr:url(/assets/6203964d9d25c394a573fd4f6be36d97.svg),
+    BadgeHypesquad-12E2P6:url(/assets/48cf0556d93901c8cb16317be2436523.svg),
+    BadgeHypeSquadOnlineHouse1-3rBtjf:url(/assets/64ae1208b6aefc0a0c3681e6be36f0ff.svg),
+    BadgeHypeSquadOnlineHouse2-2oU04B:url(/assets/48cf0556d93901c8cb16317be2436523.svg),
+    BadgeHypeSquadOnlineHouse3-1DoJkv:url(/assets/9fdc63ef8a3cc1617c7586286c34e4f1.svg),
+    BadgeHypeSquadOnlineHouse1Winner-3wCl80:url(/assets/26a2dc8c9d70955a988cb377eec84c22.svg),
+    BadgeHypeSquadOnlineHouse2Winner-AS5bXe:url(/assets/88d4f11bee9ea34fee59973b33353da0.svg),
+    BadgeHypeSquadOnlineHouse3Winner-2CwwQi:url(/assets/3245b2cd85b787b195ea8f6e10ef5790.svg),
+    BadgeVerifiedDeveloper-195KfD:url(/assets/45cd06af582dcd3c6b79370b4e3630de.svg),
+    BadgeEarlySupporter-2ng_jL:url(/assets/23e59d799436a73c024819f84ea0b627.svg),
+    BadgePremium-1KDZYC:url(/assets/386884eecd36164487505ddfbac35a9d.svg),
+    BadgeBugHunterLevel1-dbEzVz:url(/assets/f61b8981e92feead854f52e5a1ba14f0.svg),
+    BadgeBugHunterLevel2-3TUciC:url(/assets/9286332d6e947c91fa91569efce431b0.svg),
+    GuildSubscriberlvl1-3oI9tx:url(/assets/fbb6f1e160280f0e9aeb5d7c452eefe1.svg),
+    GuildSubscriberlvl2-r6nJHT:url(/assets/b4b741bef6c3de9b29e2e0653e294620.svg),
+    GuildSubscriberlvl3-38s3Dj:url(/assets/93f5a393e22796a850931483166d7cb9.svg),
+    GuildSubscriberlvl4-2NXrsI:url(/assets/4c380650960c2b1e1584115d5e9ad63b.svg),
+    GuildSubscriberlvl5-3XIa2K:url(/assets/438dd7ecbffcf21b6cbf2773ade51a04.svg),
+    GuildSubscriberlvl6-3e3sxW:url(/assets/7a5f78de816fcecbbd1d5d6e635cc7dd.svg),
+    GuildSubscriberlvl7-1dVhQT:url(/assets/5a24b20b84fb3eafc138916729386e76.svg),
+    GuildSubscriberlvl8-1kXdFr:url(/assets/f31d590e1f3629cd0b614330f4a8ee2a.svg),
+    GuildSubscriberlvl9-1d6zav:url(/assets/9ba64f1fa91ccde0eba506c1c33f3d1a.svg),
+);
+@each $name, $profileBadge in $profileBadges{
+    .profile#{$name}{
+        background:$profileBadge;
+    }
+}
+.profileBadge-2niAfJ {
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: 50% !important;
+}</pre>
+                                        <button class="btn copy">copy</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </main>
@@ -106,11 +308,14 @@
                 </div>
             </div>
         </div>
-        <script>
-            console.log('%cHello!', 'font-weight: normal; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)')
-        </script>
-        <script src="" async defer></script>
         <script src="../Javascript.js"></script>
-        
+        <script>
+            document.querySelectorAll('[type="text/plain"]').forEach(e => e.contentWindow.document.body.style.color='#fbfbfb')
+        </script>
+        <script>
+            document.querySelector(window.location.hash).classList.add('selected');
+            document.querySelector('html').setAttribute("hash",window.location.hash);
+            document.querySelector('[hash] .discordsnippets').classList.add('hashed');
+        </script>
     </body>
 </html>
