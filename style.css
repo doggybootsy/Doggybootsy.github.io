@@ -319,7 +319,41 @@ html body #appmount .appmount #content #main .discordsnippets > div[id] .copy:ac
           transform: scale(1);
 }
 
-html body #appmount .appmount #content #main .discordsnippets > div > pre {
+html body #appmount .appmount #content #main .discordsnippets .mulitple {
+  background: #1c1b29;
+  padding: 6px;
+  border-radius: 6px;
+  margin: 0;
+  margin-top: 4px;
+  width: calc(100% - 12px);
+}
+
+html body #appmount .appmount #content #main .discordsnippets .mulitple:hover ~ .copy {
+  opacity: 1;
+}
+
+html body #appmount .appmount #content #main .discordsnippets .mulitple ~ .copy:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+html body #appmount .appmount #content #main .discordsnippets .mulitple pre {
+  background: #343350;
+  padding: 6px;
+  border-radius: 6px;
+  margin: 0;
+  margin-top: 4px;
+  width: calc(100% - 12px);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  max-height: 200px;
+}
+
+html body #appmount .appmount #content #main .discordsnippets .mulitple pre:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+html body #appmount .appmount #content #main .discordsnippets div > pre {
   background: #1c1b29;
   padding: 6px;
   border-radius: 6px;
@@ -334,11 +368,11 @@ html body #appmount .appmount #content #main .discordsnippets > div > pre {
   text-align: left;
 }
 
-html body #appmount .appmount #content #main .discordsnippets > div > pre:hover ~ .copy {
+html body #appmount .appmount #content #main .discordsnippets div > pre:hover ~ .copy {
   opacity: 1;
 }
 
-html body #appmount .appmount #content #main .discordsnippets > div > pre ~ .copy:hover {
+html body #appmount .appmount #content #main .discordsnippets div > pre ~ .copy:hover {
   opacity: 1;
   cursor: pointer;
 }

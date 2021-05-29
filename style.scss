@@ -252,7 +252,36 @@ html{
                                     }
                                 }
                             }
-                            &>div>pre{
+                            .mulitple{
+                                background: #1c1b29;
+                                padding: 6px;
+                                border-radius: 6px;
+                                margin: 0;
+                                margin-top: 4px;
+                                width: calc(100% - 12px);    
+                                &:hover ~ .copy{
+                                    opacity: 1;
+                                }
+                                & ~ .copy:hover{
+                                    opacity: 1;
+                                    cursor: pointer;
+                                }
+                                pre{
+                                    background: #343350;
+                                    padding: 6px;
+                                    border-radius: 6px;
+                                    margin: 0;
+                                    margin-top: 4px;
+                                    width: calc(100% - 12px);    
+                                    word-wrap: break-word;
+                                    white-space: pre-wrap;
+                                    max-height: 200px;
+                                    &:not(:last-child){
+                                        margin-bottom: 6px;
+                                    }
+                                }
+                            }
+                            div>pre{
                                 background: #1c1b29;
                                 padding: 6px;
                                 border-radius: 6px;
