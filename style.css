@@ -280,12 +280,8 @@ html body #appmount .appmount #content #main .discordsnippets p, html body #appm
   text-align: center;
 }
 
-html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(.selected) {
+html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(.selected):not(#licensing) {
   display: none;
-}
-
-html body #appmount .appmount #content #main .discordsnippets.hashed > [id].selected {
-  margin-bottom: 0;
 }
 
 html body #appmount .appmount #content #main .discordsnippets > div[id] {
