@@ -227,6 +227,9 @@ html{
                             &.hashed>[id]:not(.selected){
                                 display: none;
                             }
+                            &.hashed>[id].selected{
+                                margin-bottom: 0;
+                            }
                             &>div[id]{
                                 position: relative;
                                 &:not(:last-child){

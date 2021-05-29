@@ -284,6 +284,10 @@ html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(
   display: none;
 }
 
+html body #appmount .appmount #content #main .discordsnippets.hashed > [id].selected {
+  margin-bottom: 0;
+}
+
 html body #appmount .appmount #content #main .discordsnippets > div[id] {
   position: relative;
 }
