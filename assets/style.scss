@@ -58,6 +58,16 @@ html{
                                     margin-right: 10px;
                                 }
                             }
+                            .back{
+                                position: absolute;
+                                bottom: 12px;
+                                right:  62px;
+                            }
+                            .report{
+                                position: absolute;
+                                bottom: 12px;
+                                right:  12px;
+                            }
                         }
                         @media screen and (max-width: 799px) {
                             & {
@@ -65,6 +75,16 @@ html{
                                 #themepreview{
                                     margin-bottom: 10px;
                                 }
+                            }
+                            .back{
+                                position: absolute;
+                                bottom: 12px;
+                                left:  12px;
+                            }
+                            .report{
+                                position: absolute;
+                                bottom: 12px;
+                                right:  12px;
                             }
                         }
                         #themepreview{
@@ -95,16 +115,6 @@ html{
                             -o-border-radius: 6px;
                             .name,.description{
                                 text-align: center;
-                            }
-                            .back{
-                                position: absolute;
-                                bottom: 12px;
-                                right:  12px;
-                            }
-                            .report{
-                                position: absolute;
-                                bottom: 12px;
-                                right:  62px;
                             }
                             .psatop{
                                 margin-bottom: 8px;
@@ -223,5 +233,10 @@ html{
     }
     &::-webkit-scrollbar-button{
         display: none;
+    }
+}
+@media screen and (max-width: 799px) {
+    .servercolumns #main{
+        grid-template-rows: calc(100% - 210px) 210px !important;
     }
 }

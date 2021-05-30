@@ -76,6 +76,16 @@ html body #appmount .appmount #content #main {
   html body #appmount .appmount #content #main #themepreview {
     margin-right: 10px;
   }
+  html body #appmount .appmount #content #main .back {
+    position: absolute;
+    bottom: 12px;
+    right: 62px;
+  }
+  html body #appmount .appmount #content #main .report {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+  }
 }
 
 @media screen and (max-width: 799px) {
@@ -85,6 +95,16 @@ html body #appmount .appmount #content #main {
   }
   html body #appmount .appmount #content #main #themepreview {
     margin-bottom: 10px;
+  }
+  html body #appmount .appmount #content #main .back {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+  }
+  html body #appmount .appmount #content #main .report {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
   }
 }
 
@@ -117,18 +137,6 @@ html body #appmount .appmount #content #main .main {
 
 html body #appmount .appmount #content #main .main .name, html body #appmount .appmount #content #main .main .description {
   text-align: center;
-}
-
-html body #appmount .appmount #content #main .main .back {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-}
-
-html body #appmount .appmount #content #main .main .report {
-  position: absolute;
-  bottom: 12px;
-  right: 62px;
 }
 
 html body #appmount .appmount #content #main .main .psatop {
@@ -288,5 +296,12 @@ html body #appmount .appmount #content #main .main .links > .gitclone::after {
 
 .scrollthick::-webkit-scrollbar-button {
   display: none;
+}
+
+@media screen and (max-width: 799px) {
+  .servercolumns #main {
+    -ms-grid-rows: calc(100% - 210px) 210px !important;
+        grid-template-rows: calc(100% - 210px) 210px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
