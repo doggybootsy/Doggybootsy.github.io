@@ -383,7 +383,7 @@ div:not(:hover)>.members-1998pB>div{
                                     </div>
                                     <div  id="fadedindicators">
                                         faded indicators
-<pre id="tfadedindicatorsboth" class="scrollthin" aria-type="both">.unreadTop-3rAB3r{
+<pre id="fadedindicatorscss" class="scrollthin" aria-type="css">.unreadTop-3rAB3r{
     width:240px;
     border-radius: 0 !important;
     padding: 0;
@@ -430,6 +430,53 @@ div:not(:hover)>.members-1998pB>div{
     background: linear-gradient(#f04747, transparent);
 }
 </pre>
+<pre id="fadedindicatorsscss" class="scrollthin" aria-type="scss">.unreadTop-3rAB3r{
+    width:240px;
+    border-radius: 0 !important;
+    padding: 0;
+    .bar-30k2ka{
+        border-radius: 0 !important;
+        background: linear-gradient(var(--background-accent), transparent);
+        box-shadow: none;
+        &.mention-1f5kbO{
+            border-radius: 0 !important;
+            background: linear-gradient(#f04747, transparent);
+            box-shadow: none;
+        }
+    }
+}
+.unreadBottom-1_LF_w {
+    width:240px;
+    border-radius: 0 !important;
+    padding:0;
+    .bar-30k2ka{
+        border-radius: 0px  !important;
+        background: linear-gradient(0deg, var(--background-accent), transparent);
+        box-shadow: none;
+        &.mention-1f5kbO{
+            border-radius: 0 !important;
+            background: linear-gradient(0deg, #f04747, transparent);
+            box-shadow: none;
+        }
+    }
+}
+.unreadMentionsIndicatorBottom-2mDYbI{
+    padding:0px;
+    height:24px;
+    .unreadMentionsBar-1Bu1dC{
+        border-radius: 0px !important;
+        background: linear-gradient(0deg, #f04747, transparent);
+    }
+}
+.unreadMentionsIndicatorTop-2-tcdU{
+    padding:0px;
+    height:24px;
+    .unreadMentionsBar-1Bu1dC{
+        border-radius: 0 !important;
+        background: linear-gradient(#f04747, transparent);
+    }    
+}
+</pre>
 <pre class="btn copy">http://doggybootsy.github.io/snippets.html#fadedindicators</pre>
                                     </div>
                                     <div  id="mobilejumptopresentbarmobilejumptopresentbar">
@@ -467,7 +514,7 @@ div:not(:hover)>.members-1998pB>div{
                                     </div>
                                     <div  id="rainbowborder">
                                         rainbow border
-<pre id="rainbowborderboth" class="scrollthin" aria-type="both">:root{
+<pre id="rainbowbordercss" class="scrollthin" aria-type="css">:root{
     --Thickness:5px;
     --Speed:6s;
 }
@@ -481,7 +528,7 @@ body{
     animation: gradient-border var(--Speed) lineaar infinite;
     background-size: 400% 100%;
     color: transparent !important;
-  }
+}
 @keyframes gradient-border {
       0%, 200% {
         background-position: 0 0;
@@ -490,37 +537,80 @@ body{
       99.999999999999999% {
         background-position: 130% 0;
     }
+}</pre>
+<pre id="rainbowborderscss" class="scrollthin" aria-type="scss">:root{
+    --Thickness:5px;
+    --Speed:6s;
 }
-</pre>
+body{
+    background-image: linear-gradient(to left, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    animation: gradient-border var(--Speed) lineaar infinite;
+    background-size: 400% 100%;
+    color: transparent !important;
+    .appMount-3lHmkl{
+        margin:var(--Thickness);
+        width:calc(100% - calc(var(--Thickness) * 2))!important;
+        height:calc(100% - calc(var(--Thickness) * 2))!important;
+    }
+}
+@keyframes gradient-border {
+      0%, 200% {
+        background-position: 0 0;
+    }
+  
+      99.999999999999999% {
+        background-position: 130% 0;
+    }
+}</pre>
 <pre class="btn copy">http://doggybootsy.github.io/snippets.html#rainbowborder</pre>
                                     </div>
                                     <div  id="makeswitchesbeabutton">
                                         Make switches be a button
-<pre id="rainbowborderboth" class="scrollthin" aria-type="both">.container-3auIfb{
-   background: transparent !important;
+<pre id="rainbowbordercss" class="scrollthin" aria-type="css">.container-3auIfb {
+    width: 20px;
+    height: 20px;
+    background: transparent !important;
 }
-.slider-TkfMQL{
-   left:-6px !important;
+.container-3auIfb .slider-TkfMQL {
+    left: -6px !important;
 }
-.slider-TkfMQL[style="left: 12px;"]>rect{
-   height:20px !important;
-   width:20px !important;
-   x:4px !important;
-   y:0px !important;
-   rx:5;
-   fill: var(--background-tertiary);
+.container-3auIfb .slider-TkfMQL > rect {
+    height: 20px !important;
+    width: 20px !important;
+    x: 4px !important;
+    y: 0px !important;
+    rx: 5;
+    fill: var(--background-tertiary);
 }
-.slider-TkfMQL>rect{
-   height:20px !important;
-   width:20px !important;
-   x:4px !important;
-   y:0px !important;
-   rx:5;
-   fill: var(--background-secondary-alt);
-}
-.container-3auIfb{
+.container-3auIfb .slider-TkfMQL[style="left: 12px;"] > rect {
+    height: 20px !important;
+    width: 20px !important;
+    x: 4px !important;
+    y: 0px !important;
+    rx: 5;
+}</pre>
+<pre id="rainbowborderscss" class="scrollthin" aria-type="scss">.container-3auIfb{
    width:20px;
    height:20px;
+   background: transparent !important;
+   .slider-TkfMQL{
+        left:-6px !important;
+        &>rect{
+            height:20px !important;
+            width:20px !important;
+            x:4px !important;
+            y:0px !important;
+            rx:5;
+            fill: var(--background-tertiary);
+        }
+        &[style="left: 12px;"]>rect{
+            height:20px !important;
+            width:20px !important;
+            x:4px !important;
+            y:0px !important;
+            rx:5;
+        }
+    }
 }</pre>
 <pre class="btn copy">http://doggybootsy.github.io/snippets.html#makeswitchesbeabutton</pre>
                                     </div>
