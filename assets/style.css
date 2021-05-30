@@ -78,7 +78,7 @@ html body #appmount .appmount #content #main {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 799px) {
   html body #appmount .appmount #content #main {
     -ms-grid-rows: calc(100% - 180px) 180px;
         grid-template-rows: calc(100% - 180px) 180px;
@@ -129,6 +129,12 @@ html body #appmount .appmount #content #main .main .report {
   position: absolute;
   bottom: 12px;
   right: 62px;
+}
+
+html body #appmount .appmount #content #main .main .psatop {
+  margin-bottom: 8px;
+  font-size: .8rem;
+  text-align: center;
 }
 
 html body #appmount .appmount #content #main .main .links {

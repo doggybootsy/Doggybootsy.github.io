@@ -59,7 +59,7 @@ html{
                                 }
                             }
                         }
-                        @media screen and (max-width: 800px) {
+                        @media screen and (max-width: 799px) {
                             & {
                                 grid-template-rows: calc(100% - 180px) 180px;
                                 #themepreview{
@@ -105,6 +105,11 @@ html{
                                 position: absolute;
                                 bottom: 12px;
                                 right:  62px;
+                            }
+                            .psatop{
+                                margin-bottom: 8px;
+                                font-size: .8rem;
+                                text-align: center;
                             }
                             .links{
                                 margin-top: 6px;
