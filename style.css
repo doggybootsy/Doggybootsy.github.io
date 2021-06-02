@@ -319,6 +319,10 @@ html body #appmount .appmount #content #main .discordsnippets > div[id] .copy:ac
           transform: scale(1);
 }
 
+html body #appmount .appmount #content #main .discordsnippets #licensing.selected {
+  margin-top: 0;
+}
+
 html body #appmount .appmount #content #main .discordsnippets .mulitple {
   background: #1c1b29;
   padding: 6px;

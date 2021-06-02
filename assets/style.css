@@ -79,12 +79,12 @@ html body #appmount .appmount #content #main {
   html body #appmount .appmount #content #main .back {
     position: absolute;
     bottom: 12px;
-    right: 62px;
+    right: 12px;
   }
   html body #appmount .appmount #content #main .report {
     position: absolute;
     bottom: 12px;
-    right: 12px;
+    right: 62px;
   }
 }
 
