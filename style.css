@@ -418,7 +418,7 @@ html body #appmount .appmount #footer > .footer {
 }
 
 html body #appmount .appmount #footer .buttons {
-  width: 12.5rem;
+  width: 210px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
