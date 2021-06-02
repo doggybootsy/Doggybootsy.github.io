@@ -227,6 +227,16 @@ html{
                             &.hashed>[id]:not(.selected):not(#licensing){
                                 display: none;
                             }
+                            .preview{
+                                background-color: black;
+                                padding: 6px;
+                                border-radius: 6px;
+                                margin-top: 4px;
+                                *{
+                                    max-width: 360px;
+                                    max-height: 360px;
+                                }
+                            }
                             &>div[id]{
                                 position: relative;
                                 &:not(:last-child){
@@ -254,6 +264,9 @@ html{
                             }
                             #licensing.selected{
                                 margin-top: 0;
+                            }
+                            .broken{
+                                display: none !important;
                             }
                             .mulitple{
                                 background: #1c1b29;

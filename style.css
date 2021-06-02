@@ -284,6 +284,18 @@ html body #appmount .appmount #content #main .discordsnippets.hashed > [id]:not(
   display: none;
 }
 
+html body #appmount .appmount #content #main .discordsnippets .preview {
+  background-color: black;
+  padding: 6px;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+html body #appmount .appmount #content #main .discordsnippets .preview * {
+  max-width: 360px;
+  max-height: 360px;
+}
+
 html body #appmount .appmount #content #main .discordsnippets > div[id] {
   position: relative;
 }
@@ -321,6 +333,10 @@ html body #appmount .appmount #content #main .discordsnippets > div[id] .copy:ac
 
 html body #appmount .appmount #content #main .discordsnippets #licensing.selected {
   margin-top: 0;
+}
+
+html body #appmount .appmount #content #main .discordsnippets .broken {
+  display: none !important;
 }
 
 html body #appmount .appmount #content #main .discordsnippets .mulitple {
