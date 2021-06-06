@@ -7,11 +7,12 @@ function switchtotypeFunction(){
     document.querySelector('html').classList.toggle("css");
 }
 function hashmarking(){
-  document.querySelector(window.location.hash).classList.add('selected');
-  document.querySelector('html').setAttribute("hash",window.location.hash);
-  document.querySelector('[hash] .discordsnippets').classList.add('hashed');
-  document.title = 'Db | ' + window.location.hash;
-
+  if (window.location.hash !== '') {
+    document.querySelector(window.location.hash).classList.add('selected');
+    document.querySelector('html').setAttribute("hash",window.location.hash);
+    document.querySelector('[hash] .discordsnippets').classList.add('hashed');
+    document.title = 'Db | ' + window.location.hash;
+  }
 }
 
 var copy = document.querySelectorAll('pre'); 
