@@ -397,11 +397,6 @@ html body #appmount .appmount #content #main .discordsnippets div > pre ~ .copy:
   cursor: pointer;
 }
 
-html body #appmount .appmount #content #main .discordsnippets .preview ~ .copy:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
 html body #appmount .appmount #footer {
   grid-area: ft;
   height: 3rem;
@@ -704,5 +699,10 @@ html.scss .discordsnippets .css, html.scss .discordsnippets [aria-type="css"] {
   border-radius: 8px;
   z-index: 1;
   border: 2px solid #292841;
+}
+
+html body #appmount .appmount #content #main .discordsnippets > div[id] div:hover + .copy {
+  opacity: 1;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

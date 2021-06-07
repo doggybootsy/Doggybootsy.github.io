@@ -318,10 +318,6 @@ html{
                                     cursor: pointer;
                                 }
                             }
-                            .preview ~ .copy:hover{
-                                opacity: 1;
-                                cursor: pointer;
-                            }
                         }
                     }
                 }
@@ -540,4 +536,8 @@ html{
     border-radius: 8px;
     z-index: 1;
     border: 2px solid #292841;
+}
+html body #appmount .appmount #content #main .discordsnippets > div[id] div:hover+.copy{
+    opacity: 1;
+    cursor: pointer;
 }
