@@ -29,7 +29,7 @@ button {
      border-image: unset;
 }
 
-.home .home:not(svg), .snippets .snippets:not(svg), .themes .themes:not(svg) {
+.home .home:not(svg), .snippets:not([hash]) .snippets:not(svg), .themes .themes:not(svg) {
   background: #565394 !important;
   margin-left: -5px;
   padding-left: 5px;

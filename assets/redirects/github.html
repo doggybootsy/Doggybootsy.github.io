@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">  
+    </head>
+    <body onload="redirect()" style="background: #292841;">
+        <noscript>
+            <div>
+                Please enable Javascript
+            </div>
+        </noscript>
+        <div>
+            Going to <span></span>
+        </div>
+        <script>
+            const constlocation = 'https://github.com/doggybootsy';
+            document.querySelector('span').innerHTML = constlocation;
+            window.location = constlocation;
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6GTH1S9XG"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-F6GTH1S9XG');
+        </script>
+    </body>
+</html>
