@@ -397,6 +397,11 @@ html body #appmount .appmount #content #main .discordsnippets div > pre ~ .copy:
   cursor: pointer;
 }
 
+html body #appmount .appmount #content #main .discordsnippets .preview ~ .copy:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 html body #appmount .appmount #footer {
   grid-area: ft;
   height: 3rem;

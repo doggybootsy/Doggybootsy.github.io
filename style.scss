@@ -318,6 +318,10 @@ html{
                                     cursor: pointer;
                                 }
                             }
+                            .preview ~ .copy:hover{
+                                opacity: 1;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
