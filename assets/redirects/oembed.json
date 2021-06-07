@@ -1,7 +1,8 @@
 {
-    "author_name": "Author Name Field",
-    "author_url": "https://discordapp.com",
- 
-    "provider_name": "Provider Name Field",
-    "provider_url": "https://discordapp.com"
- }
+    "success": true,
+    "version": "1.0",
+    "author_name": "Doggybootsy",
+    "author_url": "https://doggybootsy.github.io/snippets.html",
+    "provider_name": "discord snippets",
+    "provider_url": "https://doggybootsy.github.io/snippets.html"
+  }
