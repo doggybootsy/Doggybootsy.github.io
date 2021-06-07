@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="./style.css">
         <meta property="og:title" content="Hide blocked messages"/>
     </head>
-    <body style="background: #292841;">
-        <div style="color: #fbfbfb; text-align: center; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+    <body onload="redirect()" style="background: #292841;">
+        <div>
             Going to <span></span>
         </div>
-        <script>
-            const constlocation = window.location.origin + '/snippets.html' + window.location.pathname.replace('/assets/redirects/','#').replace('.html','');
-            document.querySelector('span').innerHTML = constlocation;
-            window.location = constlocation;
-        </script>
+        <script src="/Javascript.js"></script>
     </body>
 </html>

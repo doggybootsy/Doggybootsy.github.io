@@ -24,7 +24,12 @@ for (const copied of copy) {
     event.preventDefault(); 
     if (event.clipboardData) { 
       event.clipboardData.setData("text/plain", copied.textContent);
-      console.log(event.clipboardData.getData("text"))
     };
   });
 };
+
+function redirect(){
+  const constlocation = window.location.origin + '/snippets.html' + window.location.pathname.replace('/assets/redirects/','#').replace('.html','');
+  document.querySelector('span').innerHTML = constlocation;
+  window.location = constlocation;
+}
