@@ -157,6 +157,10 @@ div.main{
                 padding: 6px;
                 position: relative;
                 [id]{
+                    position: relative;
+                    &:not(:first-child){
+                        margin-top: 10px;
+                    }
                     &>div:first-child{
                         font-size: 1.3rem;
                         text-align: center;
@@ -170,6 +174,7 @@ div.main{
                             transform: translate(150%);
                             opacity: 0;
                             transition: 100ms linear;
+                            cursor: pointer;
                             svg{fill: var(--interactive-selected);}
                         }
                         &::after{
@@ -177,7 +182,7 @@ div.main{
                             position: absolute;
                             right: 0;
                             transform: translate(100%);
-                            width: 16px;
+                            width: 8px;
                             height: 1.3rem;
                         }
                         &:hover .btn{
@@ -191,16 +196,29 @@ div.main{
                         height: fit-content;
                         max-height: 12rem;
                         background: var(--background-secondary-alt);
+                        overflow: hidden scroll;
+                        pre{ 
+                            word-wrap: break-word;
+                            white-space: pre-wrap;
+                        }
                     }
                     &>.copy{
                         position: absolute;
-                        right:  12px;
-                        bottom: 12px;
+                        right:  6px;
+                        bottom: 6px;
+                        z-index: 1;
                         &:not(:active){
                             transform: scale(.95);
                         }
                     }
                 }
+            }
+            .SwitchCodeType{
+                position: absolute;
+                left: 0;
+                bottom: 20px;
+                background: var(--background-floating);
+                border-radius: 0 6px 6px 0;
             }
         }
     }
@@ -367,9 +385,18 @@ button {
     font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-rendering: optimizeLegibility;
 }
+.mtk8 {
+    color: #d7ba7d;
+}
 .mtk9{
     color: #9cdcfe;
 }
 .mtk11 {
     color: #ce9178;
+}
+.mtk6 {
+    color: #b5cea8;
+}
+[page="snippets"].css .code[aria-type="scss"],[page="snippets"].scss .code[aria-type="css"]{
+    display: none;
 }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>DB | Home</title>
+        <title>DB | Snippets</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/style.css">
@@ -81,20 +81,20 @@ For my themes screenshots" class="site" href="https://discord.gg/VEEuTyhfDV">
                     <div onclick="navigation()" class="backdrop"></div>
                 </div>
                 <div class="content scrollthick">
-                    <div class="snippets">
+                    <div class="snippets css">
                         <div>
 
                             <div id="hideblockedmessages">
                                 <div>
                                     Hide blocked messages
-                                    <button class="btn">
+                                    <button copy="hideblockedmessages" class="btn hashcopy">
                                         <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
                                             <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
                                         </svg>
                                     </button>
                                 </div>
-                                <button onclick="copyToClipboard_hideblockedmessages_both()" id="myInput" class="btn blurple copy">copy</button>
-                                <div class="code" aria-type="both">
+                                <button copy="hideblockedmessages_" class="btn blurple copy">copy</button>
+                                <div class="code scrollthin" id="hideblockedmessages_css" aria-type="both">
                                     <code>
                                         <div>
                                             <span><span class="mtk1">[</span><span class="mtk9">class</span><span class="mtk1">^=</span><span class="mtk11">"groupStart-"</span><span class="mtk1">]{</span></span>
@@ -109,7 +109,97 @@ For my themes screenshots" class="site" href="https://discord.gg/VEEuTyhfDV">
                                 </div>
                             </div>
 
+
+                            <div id="compactedsearchbar">
+                                <div>
+                                    Compacted searchbar
+                                    <button copy="compactedsearchbar" class="btn hashcopy">
+                                        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <button copy="compactedsearchbar_" class="btn blurple copy">copy</button>
+                                <div class="code scrollthin" id="compactedsearchbar_css" aria-type="css">
+                                    <code>
+                                        <pre>.toolbar-1t6TWx .search-36MZv- {
+    order: -1;
+}
+.toolbar-1t6TWx .search-36MZv- .iconContainer-O4O2CN {
+    bottom: 4px;
+}
+.toolbar-1t6TWx .search-36MZv- .iconContainer-O4O2CN .icon-3cZ1F_ {
+    transition: all 0.6s ease;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb {
+    width: 28px;
+    transition: all 0.6s ease-in-out;
+    background: none;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb .icon-3cZ1F_ {
+    color: var(--interactive-normal);
+    height: 23px;
+    width: 23px;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb {
+    width: 240px;
+    background: var(--background-tertiary);
+    transition: all 0.6s ease-in-out;
+}
+.toolbar-1t6TWx .search-36MZv- .search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb .icon-3cZ1F_ {
+    height: 16px;
+    width: 16px;
+    top: 4px;
+}</pre>
+                                    </code>
+                                </div>
+                                <div class="code scrollthin" id="compactedsearchbar_scss" aria-type="scss">
+                                    <code>
+                                        <pre>.toolbar-1t6TWx{
+    .search-36MZv- {
+        order: -1;
+        .iconContainer-O4O2CN{
+            bottom: 4px;
+            .icon-3cZ1F_{
+                transition: all 0.6s ease;
+            }
+        }
+        .search-2oPWTC{
+            &:not(.open-6_Y_aH) .searchBar-3dMhjb {
+                width: 28px;
+                transition: all 0.6s ease-in-out;
+                background: none;
+                .icon-3cZ1F_{
+                    color:var(--interactive-normal);
+                    height: 23px;
+                    width: 23px;
+                }
+            }
+            &.open-6_Y_aH .searchBar-3dMhjb{
+                width: 240px;
+                background: var(--background-tertiary);
+                transition: all 0.6s ease-in-out;
+                .icon-3cZ1F_{
+                    height: 16px;
+                    width: 16px;
+                    top:4px;
+                }
+            }
+        }
+    }
+}</pre>
+                                    </code>
+                                </div>
+                            </div>
+
                         </div>
+                        
+
+                        <div class="SwitchCodeType">
+                            <span>Switch to</span>
+                            <button class="btn blurple Switchtype">scss</button>
+                        </div>
+
                     </div>
                 </div>
             </div>

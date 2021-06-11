@@ -217,6 +217,14 @@ div.main .content .snippets > div {
   position: relative;
 }
 
+div.main .content .snippets > div [id] {
+  position: relative;
+}
+
+div.main .content .snippets > div [id]:not(:first-child) {
+  margin-top: 10px;
+}
+
 div.main .content .snippets > div [id] > div:first-child {
   font-size: 1.3rem;
   text-align: center;
@@ -237,6 +245,7 @@ div.main .content .snippets > div [id] > div:first-child .btn {
   opacity: 0;
   -webkit-transition: 100ms linear;
   transition: 100ms linear;
+  cursor: pointer;
 }
 
 div.main .content .snippets > div [id] > div:first-child .btn svg {
@@ -249,7 +258,7 @@ div.main .content .snippets > div [id] > div:first-child::after {
   right: 0;
   -webkit-transform: translate(100%);
           transform: translate(100%);
-  width: 16px;
+  width: 8px;
   height: 1.3rem;
 }
 
@@ -266,17 +275,32 @@ div.main .content .snippets > div [id] > .code {
   height: fit-content;
   max-height: 12rem;
   background: var(--background-secondary-alt);
+  overflow: hidden scroll;
+}
+
+div.main .content .snippets > div [id] > .code pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 div.main .content .snippets > div [id] > .copy {
   position: absolute;
-  right: 12px;
-  bottom: 12px;
+  right: 6px;
+  bottom: 6px;
+  z-index: 1;
 }
 
 div.main .content .snippets > div [id] > .copy:not(:active) {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+div.main .content .snippets .SwitchCodeType {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  background: var(--background-floating);
+  border-radius: 0 6px 6px 0;
 }
 
 div.main > div {
@@ -490,11 +514,23 @@ button {
   text-rendering: optimizeLegibility;
 }
 
+.mtk8 {
+  color: #d7ba7d;
+}
+
 .mtk9 {
   color: #9cdcfe;
 }
 
 .mtk11 {
   color: #ce9178;
+}
+
+.mtk6 {
+  color: #b5cea8;
+}
+
+[page="snippets"].css .code[aria-type="scss"], [page="snippets"].scss .code[aria-type="css"] {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
