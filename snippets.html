@@ -1,152 +1,76 @@
 <!DOCTYPE html>
-<html class="snippets css" banner>
+<html class="css">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Db | Snippets</title>
-        <meta name="description" content="A collection of snippets for discord by Doggybootsy#1333">
+        <title>Snippets</title>
+        <meta name="description" content="Has a collection of css and sass snippets">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./style.css">
-        <meta property="og:title" content="Discord snippets" />
-        <meta content="A collection of css and scss snippets for discord by Doggybootsy#1333" property="og:description">
-        <meta content="#43B581" data-react-helmet="true" name="theme-color">
+        <link rel="stylesheet" href="./assets/style.css">
     </head>
     <body onhashchange="hashmarking()" onload="hashmarking()">
-        <div id="appmount">
-            <div class="appmount">
-                <div id="banner">
-                    <div class="banner">
-                        Click the snippet to copy its text
-                    </div>
-                </div>
-                <div id="content">
-                    <nav id="navbar" class="scrollthin">
-                        <div class="navbar">
-                            <div class="seperator local">
-                                <div class="line"></div>
-                                <div class="name">Local</div>
-                                <div class="line"></div>
-                            </div>
-                            <a class="navcontent home sites" title="home page" href="../index.html">
-                                <svg class="octicon home" height="32" viewBox="0 0 24 24" version="1.1" width="32" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"  d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 9 21 L 9 14 L 15 14 L 15 21 L 20 21 L 20 12 L 23 12 L 19 8.4003906 L 19 4 L 17 4 L 17 6.5996094 L 12 2.0996094 z"></path>
-                                </svg>
-                                <div>
-                                    Home
-                                </div>
-                            </a>
-                            <a class="navcontent themes sites" title="Themes page" href="../themes.html">
-                                <svg class="octicon home" height="32" width="32" xmlns="http://www.w3.org/2000/svg"fill="currentColor" viewBox="0 0 50 50">
-                                    <path fill-rule="evenodd" d="M 10.714844 2.0019531 C 10.328219 2.0174531 9.9449844 2.1098438 9.5839844 2.2773438 C 8.8469844 2.6213437 8.2896719 3.2386719 8.0136719 4.0136719 L 5.6738281 10.601562 C 6.3718281 10.229563 7.155 10 8 10 L 31.404297 10 L 32.8125 10 L 11.865234 2.1875 C 11.490734 2.048 11.101469 1.9864531 10.714844 2.0019531 z M 39.259766 11.457031 C 38.872016 11.441281 38.480969 11.503578 38.105469 11.642578 L 7.9707031 22.847656 C 6.4227031 23.422656 5.6196875 25.170141 6.1796875 26.744141 L 13.033203 45.988281 C 13.309203 46.761281 13.868469 47.377703 14.605469 47.720703 C 15.004469 47.907703 15.429422 48 15.857422 48 C 16.206422 48 16.557531 47.9375 16.894531 47.8125 L 47.029297 36.605469 C 48.577297 36.031469 49.380313 34.284938 48.820312 32.710938 L 41.966797 13.466797 C 41.690797 12.693797 41.131531 12.077375 40.394531 11.734375 C 40.032031 11.565375 39.647516 11.472781 39.259766 11.457031 z M 8 12 C 6.346 12 5 13.346 5 15 L 5 22.699219 C 5.56 21.937219 6.3314375 21.322656 7.2734375 20.972656 L 31.404297 12 L 8 12 z M 39.140625 13.453125 C 39.280625 13.453125 39.419781 13.483922 39.550781 13.544922 C 39.798781 13.659922 39.986078 13.870719 40.080078 14.136719 L 46.935547 33.378906 C 47.131547 33.929906 46.860031 34.536422 46.332031 34.732422 L 40.796875 36.789062 L 33.097656 15.636719 L 38.802734 13.515625 C 38.911734 13.474625 39.026625 13.453125 39.140625 13.453125 z M 37.5 16 A 1.5 1.5 0 0 0 37.5 19 A 1.5 1.5 0 0 0 37.5 16 z M 3 18.126953 L 1.1796875 23.255859 C 0.6206875 24.827859 1.4217969 26.574391 2.9667969 27.150391 L 3 27.164062 L 3 22.699219 L 3 18.126953 z M 5 29.396484 L 5 36 C 5 37.654 6.346 39 8 39 L 8.421875 39 L 5 29.396484 z"></path>
-                                </svg>
-                                <div>
-                                    Themes
-                                </div>
-                            </a>
-                            <a class="navcontent snippets sites" title="Snippets page" href="../snippets.html">
-                                <svg class="octicon home" height="32" viewBox="0 0 24 24" version="1.1" width="32" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"  d="M 3 2 L 5 20 L 11.992188 22 L 19 20 L 21 2 Z M 16.726563 10.347656 L 16.34375 16.589844 L 12.027344 18 L 7.710938 16.589844 L 7.546875 13.605469 L 9.734375 13.605469 L 9.789063 14.960938 L 12.027344 15.722656 L 14.269531 14.960938 L 14.433594 12.519531 L 9.625 12.519531 L 9.515625 10.347656 L 14.539063 10.347656 L 14.703125 8.175781 L 7.164063 8.175781 L 7 6.007813 L 17 6.007813 Z"></path>
-                                </svg>
-                                <div>
-                                    Snippets
-                                </div>
-                            </a>
-                            <div class="seperator github">
-                                <div class="line"></div>
-                                <div class="name">Github</div>
-                                <div class="line"></div>
-                            </div>
-                            <a class="navcontent github sites" title="My personal github account" href="https://github.com/doggybootsy">
-                                <svg class="octicon github" height="32" viewBox="0 0 16 16" version="1.1" width="32" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                                </svg>
-                                <div>
-                                    Doggybootsy
-                                </div>
-                            </a>
-                            <a class="navcontent github sites" title="My Discord snippets github account" href="https://github.com/discordsnippets">
-                                <svg class="octicon github" height="32" viewBox="0 0 16 16" version="1.1" width="32" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd"  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                                </svg>
-                                <div>
-                                    Discord snippets
-                                </div>
-                            </a>
-                        </div>
-                    </nav>
-                    <div onclick="NavFunction()" id="navbackdrop"></div>
-                    <main id="main"  class="scrollthick">
-                        <div class="main">
-                            <div class="homemain">
-                                <div class="discordsnippets">
-                                    <div class="switchtotype">
-                                        Switch to
-                                        <button onclick="switchtotypeFunction()" class="btn blurple css">scss</button>
-                                        <button onclick="switchtotypeFunction()" class="btn blurple scss">css</button>
-                                    </div>
-                                    <div  id="hideblockedmessages">
-                                        Hide blocked messages
-<pre id="hideblockedmessagescontentboth" class="scrollthin" aria-type="both">[class^="groupStart-"]{
-    display:none;
-}</pre>
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/hideblockedmessages.html</pre>
-                                    </div>
-                                    <div  id="removebuttonsfromform">
-                                        Remove buttons from form
-                                        <div class="mulitple">
-Emoji
-<pre>.buttonContainer-28fw2U:nth-last-of-type(1){
-    display:none;
-}</pre>
-Gif
-<pre>.buttonContainer-28fw2U:nth-of-type(1){
-    display:none;
-}</pre>
-Sticker
-<pre>.stickerButton-3OEgwj{
-    display:none;
-}</pre>
-Gift
-<pre>.buttons-3JBrkn>[aria-label]:first-child{
-    display:none;
-}</pre></div>
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/removebuttonsfromform.html</pre>
-                                    </div>
-                                    <div  id="pinhomebutton">
-                                        Pin home button
-<pre id="pinhomebuttoncontentcss" aria-type="css">.guilds-1SWlCJ .scroller-1Bvpku {
+        <div class="top">
+            <a href="/index.html">
+                <div>Doggybootsy</div>
+            </a>
+        </div>
+        
+        <main>
+            <div id="pinhomebutton" class="gh">
+<div class="codename">Pin home button
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="css">.guilds-1SWlCJ .scroller-1Bvpku {
     contain: unset;
     margin-top: 56px;
 }
 .guilds-1SWlCJ .scroller-1Bvpku .tutorialContainer-2sGCg9 {
   position: fixed;
-  transform: translate3d(0, -76px, 0);
+  transform: translate3d(0, -56px, 0);
 }
-ul.tree-2wKJdG:focus {
+.tree-2wKJdG:focus {
     outline-color: transparent;
-}</pre>
-<pre id="pinhomebuttoncontentscss" aria-type="scss">
-.guilds-1SWlCJ{
-    ul.tree-2wKJdG:focus {
+}
+.powerclock+.tutorialContainer-2sGCg9{
+    position: fixed;
+    transform: translate3d(0,-76px,0);
+}</code><code codetype="scss">.guilds-1SWlCJ{
+    .tree-2wKJdG:focus {
         outline-color: transparent;
     }
     .scroller-1Bvpku{
         contain: unset;
         margin-top: 56px;
-        .tutorialContainer-2sGCg9{
+        .powerclock+.tutorialContainer-2sGCg9{
             position: fixed;
             transform: translate3d(0,-76px,0);
         }
+        .tutorialContainer-2sGCg9{
+            position: fixed;
+            transform: translate3d(0,-56px,0);
+        }
     }
-} </pre>
-<div class="preview">
-    <img src="./assets/previews/pinhomebutton.png" alt="pinhomebuttonpreview">  
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/pinhomebutton.html</pre>
-                                    </div>
-                                    <div  id="compactedsearchbar">
-                                        Compacted searchbar
-<pre id="compactedsearchbarcontentcss" class="scrollthin" aria-type="css">.toolbar-1t6TWx .search-36MZv- {
+}</code>
+</pre>
+<div class="gg">
+    <img src="./assets/previews/pinhomebutton.png" alt="preview">
+</div>
+            </div>
+            <div id="compactedsearchbar" class="gh">
+<div class="codename">Compacted searchbar
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="css">.toolbar-1t6TWx .search-36MZv- {
     order: -1;
 }
 .toolbar-1t6TWx .search-36MZv- .iconContainer-O4O2CN {
@@ -174,8 +98,7 @@ ul.tree-2wKJdG:focus {
     height: 16px;
     width: 16px;
     top: 4px;
-}</pre>
-<pre id="compactedsearchbarcontentscss" class="scrollthin" aria-type="scss">.toolbar-1t6TWx{
+}</code><code codetype="scss">.toolbar-1t6TWx{
     .search-36MZv- {
         order: -1;
         .iconContainer-O4O2CN{
@@ -207,15 +130,190 @@ ul.tree-2wKJdG:focus {
             }
         }
     }
-}</pre>
-<div class="preview">
-    <video autoplay loop playsinline muted src="./assets/previews/compactsearchbar.mov"></video>
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/compactedsearchbar.html</pre>
-                                    </div>
-                                    <div id="coloredbadges">
-                                        Colored badges
-<pre id="coloredbadgescontentcss" class="compact scrollthin" aria-type="css">.profileBadgeStaff-3BXdTO {
+}</code>
+</pre>
+<div class="gg">
+    <video autoplay loop controls src="./assets/previews/compactsearchbar.mov"></video>
+</div>
+            </div>
+            <div id="aomluh" class="gh">
+<div class="codename">Avatar only members list until hover
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="css">.membersWrap-2h-GB4{
+    min-width: unset;
+}
+.members-1998pB{
+    max-width: 65px;
+    min-width: 65px;
+    transition: .3s ease;
+}
+.members-1998pB:hover{
+    max-width: 240px;
+    min-width: 240px;
+}
+div:not(:hover)>.membersGroup-v9BXpm{
+    height: 0px;
+    padding: 0%;
+}
+div:not(:hover)>.members-1998pB>div{
+    padding-top: 10px;
+}</code><code codetype="scss">.membersWrap-2h-GB4{
+    min-width: unset;
+    .members-1998pB{
+        max-width: 65px;
+        min-width: 65px;
+        transition: .3s ease;
+        &:hover{
+            max-width: 240px;
+            min-width: 240px;
+        }
+        .content-3YMskv:not(:hover){
+            padding-top: 10px;
+            .membersGroup-v9BXpm{
+                height: 0px;
+                padding: 0%;
+            }
+        }
+    }
+}</code>
+</pre>
+<div class="gg">
+    <video autoplay loop controls src="./assets/previews/aomluh.mov"></video>
+</div>
+            </div>
+            <div id="msbab" class="gh">
+<div class="codename">Make switches be a button
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="css">.container-3auIfb {
+    width: 20px;
+    height: 20px;
+    background: transparent !important;
+}
+.container-3auIfb .slider-TkfMQL {
+    left: -6px !important;
+}
+.container-3auIfb .slider-TkfMQL > rect {
+    height: 20px !important;
+    width: 20px !important;
+    x: 4px !important;
+    y: 0px !important;
+    rx: 5;
+    fill: var(--background-tertiary);
+}
+.container-3auIfb .slider-TkfMQL[style="left: 12px;"] > rect {
+    height: 20px !important;
+    width: 20px !important;
+    x: 4px !important;
+    y: 0px !important;
+    rx: 5;
+}</code><code codetype="scss">.container-3auIfb{
+   width:20px;
+   height:20px;
+   background: transparent !important;
+   .slider-TkfMQL{
+        left:-6px !important;
+        &>rect{
+            height:20px !important;
+            width:20px !important;
+            x:4px !important;
+            y:0px !important;
+            rx:5;
+            fill: var(--background-tertiary);
+        }
+        &[style="left: 12px;"]>rect{
+            height:20px !important;
+            width:20px !important;
+            x:4px !important;
+            y:0px !important;
+            rx:5;
+        }
+    }
+}</code>
+</pre>
+<div class="gg">
+    <video autoplay loop controls src="./assets/previews/msbab.mov"></video>
+</div>
+            </div>
+            <div id="mjatpbjtpb" class="gh">
+<div class="codename">Mobile jump to present barmobile jump to present bar
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="css">.jumpToPresentBar-G1R9s6 {
+    visibility: hidden;
+    bottom: 15px;
+  }
+.jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d {
+    visibility: visible;
+    padding: 2px;
+    background-color: var(--background-tertiary);
+    border-radius: 50%;
+    transform: scale(1.7);
+}
+.jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d:hover, .jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d:active {
+    opacity: .4;
+}</code><code codetype="scss">.jumpToPresentBar-G1R9s6{
+    visibility: hidden;
+    bottom:15px;
+    .barButtonIcon-3t4V3d{
+        visibility: visible;
+        padding:2px;
+        background-color: var(--background-tertiary);
+        border-radius: 50%;
+        transform: scale(1.7);
+        &:hover,&:focus{
+            opacity: .4;
+        }
+    }
+}</code>
+</pre>
+<div class="gg">
+    <video autoplay loop controls src="./assets/previews/mjatpbjtpb.mov"></video>
+</div>
+            </div>
+            <div id="chittms" class="gh">
+<div class="codename">Change the inbox to the mention symbol
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="both">.iconWrapper-2OrFZ1 path[d="M19 3H4.99C3.88 3 3.01 3.89 3.01 5L3 19C3 20.1 3.88 21 4.99 21H19C20.1 21 21 20.1 21 19V5C21 3.89 20.1 3 19 3ZM19 15H15C15 16.66 13.65 18 12 18C10.35 18 9 16.66 9 15H4.99V5H19V15Z"]{
+    d: path("M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.515 6.486 22 12 22 C 14.039 22 15.993 21.398 17.652 20.259 L 16.521 18.611 C 15.195 19.519 13.633 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 16.411 4 20 7.589 20 12 V 12.782 C 20 14.17 19.402 15 18.4 15 L 18.398 15.018 C 18.338 15.005 18.273 15 18.209 15 H 18 C 17.437 15 16.6 14.182 16.6 13.631 V 12 C 16.6 9.464 14.537 7.4 12 7.4 C 9.463 7.4 7.4 9.463 7.4 12 C 7.4 14.537 9.463 16.6 12 16.6 C 13.234 16.6 14.35 16.106 15.177 15.313 C 15.826 16.269 16.93 17 18 17 L 18.002 16.981 C 18.064 16.994 18.129 17 18.195 17 H 18.4 C 20.552 17 22 15.306 22 12.782 V 12 C 22 6.486 17.514 2 12 2 Z M 12 14.599 C 10.566 14.599 9.4 13.433 9.4 11.999 C 9.4 10.565 10.566 9.399 12 9.399 C 13.434 9.399 14.6 10.565 14.6 11.999 C 14.6 13.433 13.434 14.599 12 14.599 Z");
+}</code>
+</pre>
+<div class="gg">
+    <img src="./assets/previews/chittms.png" alt="preview">
+</div>
+            </div>
+            <div id="coloredbadges" class="gh">
+<div class="codename">Colored badges
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="css">.profileBadgeStaff-3BXdTO {
     background: url(/assets/4358ad1fb423b346324516453750f569.svg);
 }
 .profileBadgePartner-j6Lwhr {
@@ -288,8 +386,7 @@ ul.tree-2wKJdG:focus {
     background-repeat: no-repeat !important;
     background-size: contain !important;
     background-position: 50% !important;
-}</pre>
-<pre id="coloredbadgescontentscss" class="compact scrollthin" aria-type="scss">$profileBadges: (
+}</code><code codetype="scss">$profileBadges: (
     BadgeStaff-3BXdTO:url(/assets/4358ad1fb423b346324516453750f569.svg),
     BadgePartner-j6Lwhr:url(/assets/6203964d9d25c394a573fd4f6be36d97.svg),
     BadgeHypesquad-12E2P6:url(/assets/48cf0556d93901c8cb16317be2436523.svg),
@@ -323,109 +420,22 @@ ul.tree-2wKJdG:focus {
     background-repeat: no-repeat !important;
     background-size: contain !important;
     background-position: 50% !important;
-}</pre>
-<div class="preview">
-    <img src="./assets/previews/coloredbadges.png" alt="coloredbadgespreview">  
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/coloredbadges.html</pre>
-                                    </div>
-                                    <div  id="avataronlymemberslistuntilhover">
-                                        Avatar only members list until hover
-<pre id="avataronlymemberslistuntilhovercss" class="scrollthin" aria-type="css">.membersWrap-2h-GB4{
-    min-width: unset;
-}
-.members-1998pB{
-    max-width: 65px;
-    min-width: 65px;
-    transition: .3s ease;
-}
-.members-1998pB:hover{
-    max-width: 240px;
-    min-width: 240px;
-}
-div:not(:hover)>.membersGroup-v9BXpm{
-    height: 0px;
-    padding: 0%;
-}
-div:not(:hover)>.members-1998pB>div{
-    padding-top: 10px;
-}</pre>
-<pre id="avataronlymemberslistuntilhoverscss" class="scrollthin" aria-type="scss">.membersWrap-2h-GB4{
-    min-width: unset;
-    .members-1998pB{
-        max-width: 65px;
-        min-width: 65px;
-        transition: .3s ease;
-        &:hover{
-            max-width: 240px;
-            min-width: 240px;
-        }
-        .content-3YMskv:not(:hover){
-            padding-top: 10px;
-            .membersGroup-v9BXpm{
-                height: 0px;
-                padding: 0%;
-            }
-        }
-    }
-}</pre>
-<div class="preview">
-    <video autoplay loop playsinline muted src="./assets/previews/avataronlymemberslistuntilhover.mov"></video>
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/avataronlymemberslistuntilhover.html</pre>
-                                    </div>
-                                    <div  id="changestatuscolors">
-                                        Change status colors
-<pre id="changestatuscolorcss" class="scrollthin" aria-type="css">[mask^="url(#svg-mask-status-online"] {
-  fill: #43b581;
-}
-[mask^="url(#svg-mask-status-idle"] {
-  fill: #faa61a;
-}
-[mask^="url(#svg-mask-status-dnd"] {
-  fill: #f04747;
-}
-[mask^="url(#svg-mask-status-streaming"] {
-  fill: #593695;
-}
-[mask^="url(#svg-mask-status-offline"] {
-  fill: rgb(116, 127, 141);
-}</pre>
-<pre id="changestatuscolorsscss" class="scrollthin" aria-type="scss">$profilestatuss:(
-    online:#43b581,
-    idle:#faa61a,
-    dnd:#f04747,
-    streaming:rgb(89, 54, 149),
-    offline:rgb(116, 127, 141),
-);
-@each $name, $profilestatus in $profilestatuss{
-    [mask^="url(#svg-mask-status-#{$name}"]{
-        fill:$profilestatus;
-    }
-}</pre>
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/changestatuscolors.html</pre>
-                                    </div>
-                                    <div  id="transparentsettings">
-                                        transparent settings
-<pre id="transparentsettingsboth" class="scrollthin" aria-type="both">.layers-3iHuyZ>.layer-3QrUeG:first-child{
-    transform: scale(1) !important;
-    opacity: 1 !important;
-}
-.layers-3iHuyZ>.layer-3QrUeG:nth-child(2),.perksModal-fSYqOq{
-        background-color: rgba(0, 0, 0, 0.85)!important;
-}
-.contentRegionScroller-26nc1e,.contentRegion-3nDuYy,.standardSidebarView-3F1I7i,
-.sidebarRegionScroller-3MXcoP{
-    background: transparent;
-}</pre>
-<div class="preview">
-    <img src="./assets/previews/transparentsettings.png" alt="transparentsettingspreview">  
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/transparentsettings.html</pre>
-                                    </div>
-                                    <div  id="fadedindicators">
-                                        Faded indicators
-<pre id="fadedindicatorscss" class="scrollthin" aria-type="css">.unreadTop-3rAB3r{
+}</code>
+</pre>
+<div class="gg">
+    <img src="./assets/previews/coloredbadges.png" alt="preview">
+</div>
+            </div>
+            <div id="fadedindicators" class="gh">
+<div class="codename">Faded indicators
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="css">.unreadTop-3rAB3r{
     width:240px;
     border-radius: 0 !important;
     padding: 0;
@@ -471,8 +481,7 @@ div:not(:hover)>.members-1998pB>div{
     border-radius: 0 !important;
     background: linear-gradient(#f04747, transparent);
 }
-</pre>
-<pre id="fadedindicatorsscss" class="scrollthin" aria-type="scss">.unreadTop-3rAB3r{
+</code><code codetype="scss">.unreadTop-3rAB3r{
     width:240px;
     border-radius: 0 !important;
     padding: 0;
@@ -517,195 +526,186 @@ div:not(:hover)>.members-1998pB>div{
         border-radius: 0 !important;
         background: linear-gradient(#f04747, transparent);
     }    
-}
+}</code>
 </pre>
-<div class="preview">
-    <img src="./assets/previews/fadedindicators.png" alt="fadedindicatorspreview">  
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/fadedindicators.html</pre>
-                                    </div>
-                                    <div  id="mobilejumptopresentbarmobilejumptopresentbar">
-                                        Mobile jump to present barmobile jump to present bar
-<pre id="mobilejumptopresentbarmobilejumptopresentbarcss" class="scrollthin" aria-type="css">.jumpToPresentBar-G1R9s6 {
-    visibility: hidden;
-    bottom: 15px;
-  }
-.jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d {
-    visibility: visible;
-    padding: 2px;
-    background-color: var(--background-tertiary);
-    border-radius: 50%;
-    transform: scale(1.7);
-}
-.jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d:hover, .jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d:active {
-    opacity: .4;
-}</pre>
-<pre id="mobilejumptopresentbarmobilejumptopresentbarscss" class="scrollthin" aria-type="scss">.jumpToPresentBar-G1R9s6{
-    visibility: hidden;
-    bottom:15px;
-    .barButtonIcon-3t4V3d{
-        visibility: visible;
-        padding:2px;
-        background-color: var(--background-tertiary);
-        border-radius: 50%;
-        transform: scale(1.7);
-        &:hover,&:focus{
-            opacity: .4;
-        }
-    }
-}</pre>
-<div class="preview">
-    <video autoplay loop playsinline muted src="./assets/previews/mobilejumptopresentbarmobilejumptopresentbar.mov"></video>
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/mobilejumptopresentbarmobilejumptopresentbar.html</pre>
-                                    </div>
-                                    <div  id="rainbowborder" class="broken">
-                                        rainbow border
-<pre id="rainbowbordercss" class="scrollthin" aria-type="css">:root{
-    --Thickness:5px;
-    --Speed:6s;
-}
-.appMount-3lHmkl{
-    margin:var(--Thickness);
-    width:calc(100% - calc(var(--Thickness) * 2))!important;
-    height:calc(100% - calc(var(--Thickness) * 2))!important;
-}
-body{
-    background-image: linear-gradient(to left, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-    animation: gradient-border var(--Speed) lineaar infinite;
-    background-size: 400% 100%;
-    color: transparent !important;
-}
-@keyframes gradient-border {
-      0%, 200% {
-        background-position: 0 0;
-    }
-  
-      99.999999999999999% {
-        background-position: 130% 0;
-    }
-}</pre>
-<pre id="rainbowborderscss" class="scrollthin" aria-type="scss">:root{
-    --Thickness:5px;
-    --Speed:6s;
-}
-body{
-    background-image: linear-gradient(to left, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-    animation: gradient-border var(--Speed) lineaar infinite;
-    background-size: 400% 100%;
-    color: transparent !important;
-    .appMount-3lHmkl{
-        margin:var(--Thickness);
-        width:calc(100% - calc(var(--Thickness) * 2))!important;
-        height:calc(100% - calc(var(--Thickness) * 2))!important;
-    }
-}
-@keyframes gradient-border {
-      0%, 200% {
-        background-position: 0 0;
-    }
-  
-      99.999999999999999% {
-        background-position: 130% 0;
-    }
-}</pre>
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/rainbowborder.html</pre>
-                                    </div>
-                                    <div  id="makeswitchesbeabutton">
-                                        Make switches be a button
-<pre id="makeswitchesbeabuttoncss" class="scrollthin" aria-type="css">.container-3auIfb {
-    width: 20px;
-    height: 20px;
-    background: transparent !important;
-}
-.container-3auIfb .slider-TkfMQL {
-    left: -6px !important;
-}
-.container-3auIfb .slider-TkfMQL > rect {
-    height: 20px !important;
-    width: 20px !important;
-    x: 4px !important;
-    y: 0px !important;
-    rx: 5;
-    fill: var(--background-tertiary);
-}
-.container-3auIfb .slider-TkfMQL[style="left: 12px;"] > rect {
-    height: 20px !important;
-    width: 20px !important;
-    x: 4px !important;
-    y: 0px !important;
-    rx: 5;
-}</pre>
-<pre id="makeswitchesbeabuttonscss" class="scrollthin" aria-type="scss">.container-3auIfb{
-   width:20px;
-   height:20px;
-   background: transparent !important;
-   .slider-TkfMQL{
-        left:-6px !important;
-        &>rect{
-            height:20px !important;
-            width:20px !important;
-            x:4px !important;
-            y:0px !important;
-            rx:5;
-            fill: var(--background-tertiary);
-        }
-        &[style="left: 12px;"]>rect{
-            height:20px !important;
-            width:20px !important;
-            x:4px !important;
-            y:0px !important;
-            rx:5;
-        }
-    }
-}</pre>
-<div class="preview">
-    <video autoplay loop playsinline muted src="./assets/previews/makeswitchesbeabutton.mov"></video>
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/makeswitchesbeabutton.html</pre>
-                                    </div>
-                                    <div  id="changetheinboxtothementionsymbol">
-                                        Change the inbox to the mention symbol
-<pre id="changetheinboxtothementionsymbolboth" class="scrollthin" aria-type="both">.iconWrapper-2OrFZ1 path[d="M19 3H4.99C3.88 3 3.01 3.89 3.01 5L3 19C3 20.1 3.88 21 4.99 21H19C20.1 21 21 20.1 21 19V5C21 3.89 20.1 3 19 3ZM19 15H15C15 16.66 13.65 18 12 18C10.35 18 9 16.66 9 15H4.99V5H19V15Z"]{
-    d: path("M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.515 6.486 22 12 22 C 14.039 22 15.993 21.398 17.652 20.259 L 16.521 18.611 C 15.195 19.519 13.633 20 12 20 C 7.589 20 4 16.411 4 12 C 4 7.589 7.589 4 12 4 C 16.411 4 20 7.589 20 12 V 12.782 C 20 14.17 19.402 15 18.4 15 L 18.398 15.018 C 18.338 15.005 18.273 15 18.209 15 H 18 C 17.437 15 16.6 14.182 16.6 13.631 V 12 C 16.6 9.464 14.537 7.4 12 7.4 C 9.463 7.4 7.4 9.463 7.4 12 C 7.4 14.537 9.463 16.6 12 16.6 C 13.234 16.6 14.35 16.106 15.177 15.313 C 15.826 16.269 16.93 17 18 17 L 18.002 16.981 C 18.064 16.994 18.129 17 18.195 17 H 18.4 C 20.552 17 22 15.306 22 12.782 V 12 C 22 6.486 17.514 2 12 2 Z M 12 14.599 C 10.566 14.599 9.4 13.433 9.4 11.999 C 9.4 10.565 10.566 9.399 12 9.399 C 13.434 9.399 14.6 10.565 14.6 11.999 C 14.6 13.433 13.434 14.599 12 14.599 Z");
-}</pre>
-<div class="preview">
-    <img src="./assets/previews/changetheinboxtothementionsimble.png" alt="changetheinboxtothementionsymbolspreview">  
-</div> 
-<pre class="btn copy">http://doggybootsy.github.io/assets/redirects/changetheinboxtothementionsymbol.html</pre>
-                                    </div>
-                                    <p id="licensing" title="At the moment the discord snippets repo doesnt show the unlicense license.">All snippets have the <a class="btn" target="_blank" style="text-decoration: underline;" href="https://unlicense.org/">unlicense</a> license</p>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
+<div class="gg">
+    <img src="./assets/previews/fadedindicators.png" alt="preview">
+</div>
+            </div>
+            <div id="rsff" class="gy">
+<div class="codename">Remove stuff from form
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+                <div id="rfff" class="gh lg">
+<div class="codename">Remove file from form</div>
+<pre class="code">
+<code codetype="both">.attachWrapper-2TRKBi{
+  display:none;
+}</code>
+</pre>
                 </div>
-                <div id="footer">
-                    <div class="buttons">
-                        <div class="buttonscontent">
-                            <button onclick="NavFunction()" class="btn blurple navbaropen">
-                                Navigation
-                            </button>
-                        </div>
-                    </div>
-                    <div class="footer">
-                        <div class="footercontent">
-                            <div id="copyright">Copyright (c) 2021</div>
-                        </div>
-                    </div>
+                <div id="rgtff" class="gh lg">
+<div class="codename">Remove gift from form</div>
+<pre class="code">
+<code codetype="both">.buttons-3JBrkn>[aria-label][tabindex]{
+    display:none;
+}</code>
+</pre>
+                </div>
+                <div id="rgff" class="gh lg">
+<div class="codename">Remove gif from form</div>
+<pre class="code">
+<code codetype="both">.buttons-3JBrkn>[aria-label][tabindex]+.buttonContainer-28fw2U{
+    display:none;
+}</code>
+</pre>
+                </div>
+                <div id="rsrff" class="gh lg">
+<div class="codename">Remove stickers from form</div>
+<pre class="code">
+<code codetype="both">.stickerButton-3OEgwj{
+    display:none;
+}</code>
+</pre>
+                </div>
+                <div id="reff" class="gh lg">
+<div class="codename">Remove emoji from form
+    <div class="get_url">
+        <svg viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </div>
+</div>
+<pre class="code">
+<code codetype="both">.emojiButton-pET4wH{
+    display:none;
+}</code>
+</pre>
+                </div>
+            </div>
+            <div id="rst" class="gh">
+<div class="codename">Remove slowmode text</div>
+<pre class="code">
+<code codetype="css">.cooldownWrapper-3joyFc{
+    font-size: 0;
+}
+.slowModeIcon-1BPDC_{
+    margin: 0;
+}</code><code codetype="scss">.cooldownWrapper-3joyFc{
+    font-size: 0;
+    .slowModeIcon-1BPDC_{
+        margin: 0;
+    }
+}</code>
+</pre>
+<div class="gg">
+    <img src="./assets/previews/rst.png" alt="preview">
+</div>
+            </div>
+            <div id="rbm" class="gh lg">
+                <div class="codename">Remove Blocked messages</div>
+                <pre class="code">
+<code codetype="both">[class^="groupStart-"]{
+    display:none;
+}</code></pre>
+            </div>
+        </main>
+
+        <div id="Switchcode" class="css">
+            <div class="btn">
+                <div class="ripple ripple-dark btn-style1">
+                    <svg class="css" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
+                        <path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+                        <path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+                        <path fill="#FFF" d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"></path>
+                        <path fill="#EEE" d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"></path>
+                    </svg>
+                    <svg class="scss" focusable="false" viewbox="0 0 48 48">
+                        <path fill="#f06292" d="M36.561,12.574c-0.904-3.545-6.781-4.71-12.343-2.734c-3.31,1.176-6.894,3.022-9.471,5.432 c-3.064,2.866-3.552,5.36-3.351,6.402c0.71,3.677,5.749,6.081,7.82,7.865v0.011c-0.611,0.301-5.081,2.563-6.127,4.876 c-1.104,2.44,0.176,4.191,1.023,4.427c2.625,0.73,5.318-0.583,6.766-2.742c1.397-2.084,1.281-4.774,0.674-6.113 c0.837-0.221,1.814-0.32,3.054-0.175c3.501,0.409,4.188,2.595,4.056,3.51c-0.131,0.915-0.866,1.418-1.111,1.57 c-0.246,0.152-0.32,0.205-0.3,0.317c0.03,0.164,0.143,0.158,0.353,0.123c0.288-0.049,1.838-0.744,1.905-2.433 c0.084-2.144-1.97-4.542-5.608-4.48c-1.498,0.026-2.44,0.168-3.121,0.422c-0.05-0.057-0.102-0.114-0.154-0.171 c-2.249-2.4-6.407-4.097-6.231-7.323c0.064-1.173,0.472-4.261,7.989-8.007c6.158-3.069,11.088-2.224,11.94-0.353 c1.217,2.674-2.635,7.643-9.03,8.36c-2.437,0.273-3.72-0.671-4.039-1.023c-0.336-0.37-0.386-0.387-0.511-0.317 c-0.204,0.113-0.075,0.44,0,0.635c0.191,0.497,0.975,1.378,2.31,1.817c1.175,0.386,4.036,0.597,7.496-0.741 C34.424,20.229,37.45,16.059,36.561,12.574z M20.076,30.638c0.29,1.074,0.258,2.076-0.041,2.983c-0.033,0.101-0.07,0.2-0.11,0.299 c-0.04,0.098-0.083,0.196-0.129,0.292c-0.231,0.48-0.542,0.929-0.922,1.344c-1.16,1.265-2.78,1.743-3.474,1.34 c-0.75-0.435-0.374-2.218,0.97-3.64c1.446-1.529,3.527-2.512,3.527-2.512l-0.003-0.006C19.954,30.705,20.015,30.672,20.076,30.638z"></path>
+                    </svg>
                 </div>
             </div>
         </div>
-        <script src="../Javascript.js"></script>
-           
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6GTH1S9XG"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'G-F6GTH1S9XG');
-        </script>
+        <div id="SwitchPages_button">
+            <div class="btn">
+                <div class="ripple ripple-dark btn-style1">
+                    <svg class="waffle" focusable="false" viewbox="0 0 24 24">
+                        <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="SwitchPages_page" class="">
+            <div class="grid">
+                <a href="/index.html" local title="Homepage">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">
+                        <path d="M 8 1.320313 L 0.660156 8.132813 L 1.339844 8.867188 L 2 8.253906 L 2 14 L 7 14 L 7 9 L 9 9 L 9 14 L 14 14 L 14 8.253906 L 14.660156 8.867188 L 15.339844 8.132813 Z M 8 2.679688 L 13 7.328125 L 13 13 L 10 13 L 10 8 L 6 8 L 6 13 L 3 13 L 3 7.328125 Z"></path>
+                    </svg>
+                    <div>Home</div>
+                </a>
+                <a href="/snippets.html" local title="Has a collection of css and sass snippets">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
+                        <path fill="#f06292" d="M36.561,12.574c-0.904-3.545-6.781-4.71-12.343-2.734c-3.31,1.176-6.894,3.022-9.471,5.432 c-3.064,2.866-3.552,5.36-3.351,6.402c0.71,3.677,5.749,6.081,7.82,7.865v0.011c-0.611,0.301-5.081,2.563-6.127,4.876 c-1.104,2.44,0.176,4.191,1.023,4.427c2.625,0.73,5.318-0.583,6.766-2.742c1.397-2.084,1.281-4.774,0.674-6.113 c0.837-0.221,1.814-0.32,3.054-0.175c3.501,0.409,4.188,2.595,4.056,3.51c-0.131,0.915-0.866,1.418-1.111,1.57 c-0.246,0.152-0.32,0.205-0.3,0.317c0.03,0.164,0.143,0.158,0.353,0.123c0.288-0.049,1.838-0.744,1.905-2.433 c0.084-2.144-1.97-4.542-5.608-4.48c-1.498,0.026-2.44,0.168-3.121,0.422c-0.05-0.057-0.102-0.114-0.154-0.171 c-2.249-2.4-6.407-4.097-6.231-7.323c0.064-1.173,0.472-4.261,7.989-8.007c6.158-3.069,11.088-2.224,11.94-0.353 c1.217,2.674-2.635,7.643-9.03,8.36c-2.437,0.273-3.72-0.671-4.039-1.023c-0.336-0.37-0.386-0.387-0.511-0.317 c-0.204,0.113-0.075,0.44,0,0.635c0.191,0.497,0.975,1.378,2.31,1.817c1.175,0.386,4.036,0.597,7.496-0.741 C34.424,20.229,37.45,16.059,36.561,12.574z M20.076,30.638c0.29,1.074,0.258,2.076-0.041,2.983c-0.033,0.101-0.07,0.2-0.11,0.299 c-0.04,0.098-0.083,0.196-0.129,0.292c-0.231,0.48-0.542,0.929-0.922,1.344c-1.16,1.265-2.78,1.743-3.474,1.34 c-0.75-0.435-0.374-2.218,0.97-3.64c1.446-1.529,3.527-2.512,3.527-2.512l-0.003-0.006C19.954,30.705,20.015,30.672,20.076,30.638z"></path>
+                    </svg>
+                    <div>Snippets</div>
+                </a>
+                <a href="/themes.html" local title="Has all of my themes">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 50 50">
+                        <path d="M 10.714844 2.0019531 C 10.328219 2.0174531 9.9449844 2.1098438 9.5839844 2.2773438 C 8.8469844 2.6213437 8.2896719 3.2386719 8.0136719 4.0136719 L 5.6738281 10.601562 C 6.3718281 10.229563 7.155 10 8 10 L 31.404297 10 L 32.8125 10 L 11.865234 2.1875 C 11.490734 2.048 11.101469 1.9864531 10.714844 2.0019531 z M 39.259766 11.457031 C 38.872016 11.441281 38.480969 11.503578 38.105469 11.642578 L 7.9707031 22.847656 C 6.4227031 23.422656 5.6196875 25.170141 6.1796875 26.744141 L 13.033203 45.988281 C 13.309203 46.761281 13.868469 47.377703 14.605469 47.720703 C 15.004469 47.907703 15.429422 48 15.857422 48 C 16.206422 48 16.557531 47.9375 16.894531 47.8125 L 47.029297 36.605469 C 48.577297 36.031469 49.380313 34.284938 48.820312 32.710938 L 41.966797 13.466797 C 41.690797 12.693797 41.131531 12.077375 40.394531 11.734375 C 40.032031 11.565375 39.647516 11.472781 39.259766 11.457031 z M 8 12 C 6.346 12 5 13.346 5 15 L 5 22.699219 C 5.56 21.937219 6.3314375 21.322656 7.2734375 20.972656 L 31.404297 12 L 8 12 z M 39.140625 13.453125 C 39.280625 13.453125 39.419781 13.483922 39.550781 13.544922 C 39.798781 13.659922 39.986078 13.870719 40.080078 14.136719 L 46.935547 33.378906 C 47.131547 33.929906 46.860031 34.536422 46.332031 34.732422 L 40.796875 36.789062 L 33.097656 15.636719 L 38.802734 13.515625 C 38.911734 13.474625 39.026625 13.453125 39.140625 13.453125 z M 37.5 16 A 1.5 1.5 0 0 0 37.5 19 A 1.5 1.5 0 0 0 37.5 16 z M 3 18.126953 L 1.1796875 23.255859 C 0.6206875 24.827859 1.4217969 26.574391 2.9667969 27.150391 L 3 27.164062 L 3 22.699219 L 3 18.126953 z M 5 29.396484 L 5 36 C 5 37.654 6.346 39 8 39 L 8.421875 39 L 5 29.396484 z"></path>
+                    </svg>
+                    <div>Themes</div>
+                </a>
+                <a href="/plugins.html" local title="Has all of my Bd/Pc plugins">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                        <path d="M22,20H2V7h3V4h6v3h2V4h6v3h3V20z"></path>
+                    </svg>
+                    <div>Plugins</div>
+                </a>
+                <a href="github.com/doggybootsy" title="My github account">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    <div>Github</div>
+                </a>
+                <a href="https://discord.gg/maB2AxJHgf" title="locked
+My main discord server">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28 20">
+                        <path d="M23.0212 1.67671C21.3107 0.879656 19.5079 0.318797 17.6584 0C17.4062 0.461742 17.1749 0.934541 16.9708 1.4184C15.003 1.12145 12.9974 1.12145 11.0283 1.4184C10.819 0.934541 10.589 0.461744 10.3368 0.00546311C8.48074 0.324393 6.67795 0.885118 4.96746 1.68231C1.56727 6.77853 0.649666 11.7538 1.11108 16.652C3.10102 18.1418 5.3262 19.2743 7.69177 20C8.22338 19.2743 8.69519 18.4993 9.09812 17.691C8.32996 17.3997 7.58522 17.0424 6.87684 16.6135C7.06531 16.4762 7.24726 16.3387 7.42403 16.1847C11.5911 18.1749 16.408 18.1749 20.5763 16.1847C20.7531 16.3332 20.9351 16.4762 21.1171 16.6135C20.41 17.0369 19.6639 17.3997 18.897 17.691C19.3052 18.4993 19.7718 19.2689 20.3021 19.9945C22.6677 19.2689 24.8929 18.1364 26.8828 16.6466H26.8893C27.43 10.9731 25.9665 6.04728 23.0212 1.67671ZM9.68041 13.6383C8.39754 13.6383 7.34085 12.4453 7.34085 10.994C7.34085 9.54272 8.37155 8.34973 9.68041 8.34973C10.9893 8.34973 12.0395 9.54272 12.0187 10.994C12.0187 12.4453 10.9828 13.6383 9.68041 13.6383ZM18.3161 13.6383C17.0332 13.6383 15.9765 12.4453 15.9765 10.994C15.9765 9.54272 17.0124 8.34973 18.3161 8.34973C19.6184 8.34973 20.6751 9.54272 20.6543 10.994C20.6543 12.4453 19.6184 13.6383 18.3161 13.6383Z"></path>
+                    </svg>
+                    <div>Main</div>
+                </a>
+                <a href="https://discord.gg/VEEuTyhfDV" title="locked
+My discord server only for my screenshots for themes">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28 20">
+                        <path d="M23.0212 1.67671C21.3107 0.879656 19.5079 0.318797 17.6584 0C17.4062 0.461742 17.1749 0.934541 16.9708 1.4184C15.003 1.12145 12.9974 1.12145 11.0283 1.4184C10.819 0.934541 10.589 0.461744 10.3368 0.00546311C8.48074 0.324393 6.67795 0.885118 4.96746 1.68231C1.56727 6.77853 0.649666 11.7538 1.11108 16.652C3.10102 18.1418 5.3262 19.2743 7.69177 20C8.22338 19.2743 8.69519 18.4993 9.09812 17.691C8.32996 17.3997 7.58522 17.0424 6.87684 16.6135C7.06531 16.4762 7.24726 16.3387 7.42403 16.1847C11.5911 18.1749 16.408 18.1749 20.5763 16.1847C20.7531 16.3332 20.9351 16.4762 21.1171 16.6135C20.41 17.0369 19.6639 17.3997 18.897 17.691C19.3052 18.4993 19.7718 19.2689 20.3021 19.9945C22.6677 19.2689 24.8929 18.1364 26.8828 16.6466H26.8893C27.43 10.9731 25.9665 6.04728 23.0212 1.67671ZM9.68041 13.6383C8.39754 13.6383 7.34085 12.4453 7.34085 10.994C7.34085 9.54272 8.37155 8.34973 9.68041 8.34973C10.9893 8.34973 12.0395 9.54272 12.0187 10.994C12.0187 12.4453 10.9828 13.6383 9.68041 13.6383ZM18.3161 13.6383C17.0332 13.6383 15.9765 12.4453 15.9765 10.994C15.9765 9.54272 17.0124 8.34973 18.3161 8.34973C19.6184 8.34973 20.6751 9.54272 20.6543 10.994C20.6543 12.4453 19.6184 13.6383 18.3161 13.6383Z"></path>
+                    </svg>
+                    <div>Demo</div>
+                </a>
+                <a href="/license.html" title="Go to the license page
+This site is under the MIT License and all snippets have the unlicense license">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                        <path d="M 12 2 C 6.486 2 2 6.486 2 12 C 2 17.514 6.486 22 12 22 C 13.426 22 14.772 21.680672 16 21.138672 L 16 20.439453 C 15.674 20.146453 15.372234 19.826703 15.115234 19.470703 C 14.416234 18.490703 14 17.296 14 16 C 14 12.686 16.686 10 20 10 C 20.643 10 21.26275 10.104016 21.84375 10.291016 C 21.02975 5.5900156 16.93 2 12 2 z M 7.1015625 5.6875 L 10 8.5859375 C 9.439 8.9579375 8.9579375 9.439 8.5859375 10 L 5.6894531 7.1015625 C 6.1004531 6.5735625 6.5735625 6.0985 7.1015625 5.6875 z M 12 10 C 13.105 10 14 10.895 14 12 C 14 13.105 13.105 14 12 14 C 10.895 14 10 13.105 10 12 C 10 10.895 10.895 10 12 10 z M 20 12 C 17.791 12 16 13.791 16 16 C 16 17.476729 16.809396 18.752382 18 19.445312 L 18 24 L 20 23 L 22 24 L 22 19.445312 C 23.190604 18.752382 24 17.476729 24 16 C 24 13.791 22.209 12 20 12 z M 20 14 C 21.105 14 22 14.895 22 16 C 22 17.105 21.105 18 20 18 C 18.895 18 18 17.105 18 16 C 18 14.895 18.895 14 20 14 z"></path>
+                    </svg>
+                    <div>License</div>
+                </a>
+            </div>
+
+        </div>
+
+        <div id="SwitchPages_extra"></div>
+
+        <div id="backtop" onclick="totop()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">    
+                <path d="M 12 0.015625 C 8.924 0.015625 5.8471719 1.182125 3.5136719 3.515625 C -1.1533281 8.182625 -1.1533281 15.819328 3.5136719 20.486328 C 8.1806719 25.153328 15.817375 25.153328 20.484375 20.486328 C 25.151375 15.819328 25.151375 8.182625 20.484375 3.515625 C 18.150875 1.182125 15.076 0.015625 12 0.015625 z M 12 2.0117188 C 14.56325 2.0117188 17.125812 2.9851875 19.070312 4.9296875 C 22.959312 8.8186875 22.959312 15.181313 19.070312 19.070312 C 15.181313 22.959312 8.8186875 22.959312 4.9296875 19.070312 C 1.0406875 15.181313 1.0406875 8.8186875 4.9296875 4.9296875 C 6.8741875 2.9851875 9.43675 2.0117188 12 2.0117188 z M 12 4.9296875 L 4.9296875 12 L 12 19.070312 L 13.710938 17.359375 L 9.3476562 12.996094 L 19 13 L 19 11 L 9.3476562 11.003906 L 13.703125 6.6464844 L 12 4.9296875 z"></path>
+            </svg>
+        </div>
+
+        <script src="./assets/javascript.js"></script>
     </body>
 </html>
