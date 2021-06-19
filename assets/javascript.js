@@ -84,7 +84,7 @@ function totop () {
   
   // (C2) SHOW/HIDE BUTTON
   function togtop () {
-    if (window.scrollY >= 1200) {
+    if (window.scrollY >= 1000) {
       document.getElementById("backtop").classList.add("show");
     } else {
       document.getElementById("backtop").classList.remove("show");
