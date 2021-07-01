@@ -1,0 +1,25 @@
+.membersWrap-2h-GB4 {
+  min-width: unset;
+}
+
+.membersWrap-2h-GB4 .members-1998pB {
+  max-width: 65px;
+  min-width: 65px;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.membersWrap-2h-GB4 .members-1998pB:hover {
+  max-width: 240px;
+  min-width: 240px;
+}
+
+.membersWrap-2h-GB4 .members-1998pB .content-3YMskv:not(:hover) {
+  padding-top: 10px;
+}
+
+.membersWrap-2h-GB4 .members-1998pB .content-3YMskv:not(:hover) .membersGroup-v9BXpm {
+  height: 0px;
+  padding: 0%;
+}
+/*# sourceMappingURL=aomluh.css.map */

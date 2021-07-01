@@ -40,6 +40,38 @@ body > main {
   padding: 6px;
 }
 
+body > main > div:only-child:not([id="404"]) {
+  margin-top: 1.4rem;
+}
+
+body > main [class="404 major"] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -175%);
+          transform: translate(-50%, -175%);
+  font-size: 3rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1.3rem;
+  text-align: center;
+}
+
+body > main [class="404 minor"] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  font-size: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1.3rem;
+  text-align: center;
+}
+
 body > main .gy {
   padding: 6px;
   border-radius: 6px;
@@ -325,6 +357,7 @@ html.scss code[codetype="css"], html.css code[codetype="scss"] {
   top: 8px;
   position: fixed;
   z-index: 11;
+  border-radius: 50%;
 }
 
 #Switchcode > .btn .ripple {
@@ -390,6 +423,7 @@ html.scss code[codetype="css"], html.css code[codetype="scss"] {
   top: 8px;
   position: fixed;
   z-index: 11;
+  border-radius: 50%;
 }
 
 #SwitchPages_button > .btn .ripple {

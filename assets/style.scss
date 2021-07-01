@@ -35,6 +35,29 @@ body{
     }
     &>main{
         position: relative;
+        &>div:only-child:not([id="404"]){
+            margin-top: 1.4rem;
+        }
+        [class="404 major"]{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -175%);
+            font-size: 3rem;
+            width: fit-content;
+            margin: 1.3rem;
+            text-align: center;
+        }
+        [class="404 minor"]{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -0%);
+            font-size: 2rem;
+            width: fit-content;
+            margin: 1.3rem;
+            text-align: center;
+        }
         .gy{
             padding: 6px;
             border-radius: 6px;
@@ -253,6 +276,7 @@ html.scss code[codetype="css"],html.css code[codetype="scss"]{
         top:   8px;
         position: fixed;
         z-index: 11;
+        border-radius: 50%;
         .ripple{
             height:  24px;
             width:   24px;
@@ -310,6 +334,7 @@ html.scss code[codetype="css"],html.css code[codetype="scss"]{
         top:   8px;
         position: fixed;
         z-index: 11;
+        border-radius: 50%;
         .ripple{
             height:  24px;
             width:   24px;
