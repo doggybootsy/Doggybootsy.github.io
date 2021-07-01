@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACI,cADU,CACV,YAAY,AAAA,MAAM,CAAC;EACf,aAAa,EAAE,WAAW;CAC7B;;AAHL,AAII,cAJU,CAIV,gBAAgB,CAAA;EACZ,OAAO,EAAE,KAAK;EACd,UAAU,EAAE,IAAI;CASnB;;AAfL,AAOQ,cAPM,CAIV,gBAAgB,CAGZ,WAAW,GAAC,yBAAyB,CAAA;EACjC,QAAQ,EAAE,KAAK;EACf,SAAS,EAAE,wBAAsB;CACpC;;AAVT,AAWQ,cAXM,CAIV,gBAAgB,CAOZ,yBAAyB,CAAA;EACrB,QAAQ,EAAE,KAAK;EACf,SAAS,EAAE,wBAAsB;CACpC",
-    "sources": [
-        "pinhomebutton.scss"
-    ],
-    "names": [],
-    "file": "pinhomebutton.css"
-}
