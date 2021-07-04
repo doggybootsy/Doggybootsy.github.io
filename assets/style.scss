@@ -10,7 +10,7 @@ $scrollbar_track: rgb(202, 202, 202);
 
 body{
     margin: 0;
-    background: #{$white2};
+    background: #{$white2} !important;
     overflow: hidden auto;
     div.top{
         height: 46px;
