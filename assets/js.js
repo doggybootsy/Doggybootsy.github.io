@@ -57,7 +57,9 @@ if( localStorage.getItem("customcss") ){
 }
 if(document.querySelector('#clearcustomcss')){
     document.querySelector('#clearcustomcss').addEventListener("click", () => {
-        localStorage.setItem('customcss', '')
+        localStorage.setItem('customcss', `html > body > #appmount > main{
+    padding-right: 50px;
+}`)
         document.querySelector('#customcss').value = ''
         if( document.querySelector('#stylecustomcss') ){
             document.querySelector('#stylecustomcss').remove()
