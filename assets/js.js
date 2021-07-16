@@ -1,4 +1,3 @@
-//set modes
 if(localStorage){
     if (localStorage.getItem("mode") == null) {
         localStorage.setItem('mode', 'Default')
@@ -15,9 +14,7 @@ if(localStorage){
         }
     } 
 } else{
-    // no local storage
     if(!localStorage){
-        // switch mode
         document.querySelector('html').setAttribute('mode', 'dark')
     }
 }
@@ -37,7 +34,6 @@ if(localStorage.getItem('mode') == 'Default'){
         document.querySelector('[value="Default"]').remove()
     }
 }
-// custom css
 if(document.querySelector('#savecustomcss')){
     document.querySelector('#savecustomcss').addEventListener("click", () => {
         localStorage.setItem('customcss', document.querySelector('#customcss').value)   
@@ -64,15 +60,14 @@ if(document.querySelector('#clearcustomcss')){
         }
     })
 }
-// snippets
 if (document.querySelector('html[snippets]')){
     getsnippets()
 }
 function getsnippets(){
     fetch("/snippets.json", {
-        method: "GET", // POST, PUT, DELETE, etc.
-        mode: "same-origin", // same-origin, no-cors
-        cache: "reload", // no-store, reload, no-cache, force-cache, or only-if-cached
+        method: "GET",
+        mode: "same-origin",
+        cache: "reload",
     }).then(response=>response.json()).then(data=>{
         for (const item of document.querySelectorAll('.snippets:not(.multi)')) {
             item.children[0].innerHTML = '<div>' + data[item.getAttribute('id')].name +  `</div><div class="get_url">
@@ -144,7 +139,6 @@ if(document.querySelector('.copy_code')){
         })
     }
 }
-// Hash url
 const targetNode = document.querySelector('main');
 const config = { attributes: true, childList: true, subtree: true };
 const callback = function(mutationsList, observer) {
@@ -171,7 +165,6 @@ const callback = function(mutationsList, observer) {
 };
 const observer = new MutationObserver(callback);
 observer.observe(targetNode, config);
-// hash
 function locationHashChanged() {
     if(window.location.hash !== '') {
         if ( document.querySelector('.snippets#'+window.location.hash.replace('#','')) ) {
