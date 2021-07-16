@@ -91,7 +91,7 @@
     "cmmbh": {
         "name": "Change mention message background hue",
         "author": "unknown81311",
-        "css": [".tutorialContainer-2sGCg9 {\r\n    position: sticky;\r\n    z-index: 10;\r\n    background-color: var(--background-tertiary);\r\n    padding: 5px 0;\r\n    box-shadow: 0 0 10px 10px var(--background-tertiary);\r\n    margin-bottom: 10px;\r\n}"],
-        "scss": [".tutorialContainer-2sGCg9 {\r\n    position: sticky;\r\n    z-index: 10;\r\n    background-color: var(--background-tertiary);\r\n    padding: 5px 0;\r\n    box-shadow: 0 0 10px 10px var(--background-tertiary);\r\n    margin-bottom: 10px;\r\n}"]
+        "css": [":root {\r\n    --mention-hue: 187;\r\n}\r\n\r\n.mentioned-xhSam7 .repliedMessage-VokQwo:before{\r\n    border-color:hsla(var(--mention-hue), 73%, 46%);\r\n}\r\n.mentioned-xhSam7,.menu-3sdvDG,.mouse-mode.full-motion .mentioned-xhSam7:hover,.message-2qnXI6.mentioned-xhSam7.selected-2P5D_Z{\r\n  background-color:hsla(var(--mention-hue), 73%, 46%,0.1);\r\n}\r\n.mentioned-xhSam7:before,.menu-3sdvDG:before{\r\n  background-color:hsla(var(--mention-hue), 73%, 46%);\r\n}"],
+        "scss": [":root {\r\n    --mention-hue: 187;\r\n}\r\n\r\n.mentioned-xhSam7 .repliedMessage-VokQwo:before{\r\n    border-color:hsla(var(--mention-hue), 73%, 46%);\r\n}\r\n.mentioned-xhSam7,.menu-3sdvDG,.mouse-mode.full-motion .mentioned-xhSam7:hover,.message-2qnXI6.mentioned-xhSam7.selected-2P5D_Z{\r\n  background-color:hsla(var(--mention-hue), 73%, 46%,0.1);\r\n}\r\n.mentioned-xhSam7:before,.menu-3sdvDG:before{\r\n  background-color:hsla(var(--mention-hue), 73%, 46%);\r\n}"]
     }
 }
