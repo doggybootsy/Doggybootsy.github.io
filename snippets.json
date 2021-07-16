@@ -88,8 +88,8 @@
         "css": [".tutorialContainer-2sGCg9 {\r\n    position: sticky;\r\n    z-index: 10;\r\n    background-color: var(--background-tertiary);\r\n    padding: 5px 0;\r\n    box-shadow: 0 0 10px 10px var(--background-tertiary);\r\n    margin-bottom: 10px;\r\n}"],
         "scss": [".tutorialContainer-2sGCg9 {\r\n    position: sticky;\r\n    z-index: 10;\r\n    background-color: var(--background-tertiary);\r\n    padding: 5px 0;\r\n    box-shadow: 0 0 10px 10px var(--background-tertiary);\r\n    margin-bottom: 10px;\r\n}"]
     },
-    "cmhh": {
-        "name": "Change message hover hue",
+    "crmbh": {
+        "name": "Change replied message background hue",
         "author": "unknown81311",
         "css": [".tutorialContainer-2sGCg9 {\r\n    position: sticky;\r\n    z-index: 10;\r\n    background-color: var(--background-tertiary);\r\n    padding: 5px 0;\r\n    box-shadow: 0 0 10px 10px var(--background-tertiary);\r\n    margin-bottom: 10px;\r\n}"],
         "scss": [".tutorialContainer-2sGCg9 {\r\n    position: sticky;\r\n    z-index: 10;\r\n    background-color: var(--background-tertiary);\r\n    padding: 5px 0;\r\n    box-shadow: 0 0 10px 10px var(--background-tertiary);\r\n    margin-bottom: 10px;\r\n}"]
