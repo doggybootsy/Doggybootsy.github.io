@@ -29,34 +29,35 @@
         "css": [".jumpToPresentBar-G1R9s6 {\r\n  visibility: hidden;\r\n  bottom: 15px;\r\n}\r\n.jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d {\r\n  visibility: visible;\r\n  padding: 2px;\r\n  background-color: var(--background-tertiary);\r\n  border-radius: 50%;\r\n  transform: scale(1.7);\r\n}\r\n.jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d:hover, .jumpToPresentBar-G1R9s6 .barButtonIcon-3t4V3d:focus {\r\n  opacity: .4;\r\n}"],
         "scss": [".jumpToPresentBar-G1R9s6{\r\n    visibility: hidden;\r\n    bottom:15px;\r\n    .barButtonIcon-3t4V3d{\r\n        visibility: visible;\r\n        padding:2px;\r\n        background-color: var(--background-tertiary);\r\n        border-radius: 50%;\r\n        transform: scale(1.7);\r\n        &:hover, &:focus{\r\n            opacity: .4;\r\n        }\r\n    }\r\n}"]
     },
-    "rsff": {
-        "name": "Remove stuff from form",
+    "rfff": {
+        "name": "Remove file from form",
         "author": "Doggybootsy",
-        "file": {
-            "name": "file",
-            "css": [".attachWrapper-2TRKBi{\r\n  display:none;\r\n}"],
-            "scss": [".attachWrapper-2TRKBi{\r\n  display:none;\r\n}"]
-        },
-        "gift": {
-            "name": "gift",
-            "css": [".buttons-3JBrkn>[aria-label][tabindex]{\r\n    display:none;\r\n}"],
-            "scss": [".buttons-3JBrkn>[aria-label][tabindex]{\r\n    display:none;\r\n}"]
-        },
-        "gif": {
-            "name": "gif",
-            "css": [".buttons-3JBrkn>[aria-label][tabindex]+.buttonContainer-28fw2U{\r\n    display:none;\r\n}"],
-            "scss": [".buttons-3JBrkn>[aria-label][tabindex]+.buttonContainer-28fw2U{\r\n    display:none;\r\n}"]
-        },
-        "stickers": {
-            "name": "stickers",
-            "css": [".stickerButton-3OEgwj{\r\n  display:none;\r\n}"],
-            "scss": [".stickerButton-3OEgwj{\r\n  display:none;\r\n}"]
-        },
-        "emoji": {
-            "name": "emoji",
-            "css": [".emojiButton-pET4wH{\r\n  display:none;\r\n}"],
-            "scss": [".emojiButton-pET4wH{\r\n  display:none;\r\n}"]
-        }
+        "css": [".attachWrapper-2TRKBi{\r\n  display:none;\r\n}"],
+        "scss": [".attachWrapper-2TRKBi{\r\n  display:none;\r\n}"]
+    },
+    "rgtff": {
+        "name": "Remove gift from form",
+        "author": "Doggybootsy",
+        "css": [".buttons-3JBrkn>[aria-label][tabindex]{\r\n    display:none;\r\n}"],
+        "scss": [".buttons-3JBrkn>[aria-label][tabindex]{\r\n    display:none;\r\n}"]
+    },
+    "rgff": {
+        "name": "Remove gif from form",
+        "author": "Doggybootsy",
+        "css": [".buttons-3JBrkn>[aria-label][tabindex]+.buttonContainer-28fw2U{\r\n    display:none;\r\n}"],
+        "scss": [".buttons-3JBrkn>[aria-label][tabindex]+.buttonContainer-28fw2U{\r\n    display:none;\r\n}"]
+    },
+    "rsff": {
+        "name": "Remove stickers from form",
+        "author": "Doggybootsy",
+        "css": [".stickerButton-3OEgwj{\r\n  display:none;\r\n}"],
+        "scss": [".stickerButton-3OEgwj{\r\n  display:none;\r\n}"]
+    },
+    "reff": {
+        "name": "Remove emoji from emoji",
+        "author": "Doggybootsy",
+        "css": [".emojiButton-pET4wH{\r\n  display:none;\r\n}"],
+        "scss": [".emojiButton-pET4wH{\r\n  display:none;\r\n}"]
     },
     "msbab": {
         "name": "Make switches be a button",
