@@ -4,6 +4,8 @@ html[mode="light"] {
   --background-secondary: rgb(190, 190, 190);
   --background-secondary-alt: rgb(212, 212, 212);
   --text-color: rgb(43, 48, 54);
+  --bold-bolder: rgb(0, 0, 0);
+  --pre-scrollbar-track: rgb(77, 77, 83);
 }
 
 html[mode="dark"] {
@@ -11,7 +13,8 @@ html[mode="dark"] {
   --background-secondary: rgb(61, 61, 61);
   --background-secondary-alt: rgb(53, 55, 59);
   --text-color: rgb(231, 237, 245);
-  --pre-scrollbar-track: rgb(77, 77, 83);
+  --bold-bolder: rgb(255, 255, 255);
+  --pre-scrollbar-track: rgb(219, 219, 230);
 }
 
 html[codetype="css"] g.scss {
@@ -259,12 +262,13 @@ html > body > #appmount > main > .ver {
 html > body > #appmount > #switchcodetype {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
   height: 38px;
   width: 38px;
   cursor: pointer;
   border-radius: 50%;
   background: var(--background-secondary);
+  border: 2px var(--bold-bolder) solid;
 }
 
 html > body > #appmount > #switchcodetype svg {
@@ -276,5 +280,11 @@ html > body > #appmount > #switchcodetype svg {
 html textarea {
   background: var(--background-secondary-alt);
   color: var(--text-color);
+  padding: .5rem;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-corner {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
