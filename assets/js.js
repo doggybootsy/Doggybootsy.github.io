@@ -108,28 +108,29 @@ if(localStorage){
         localStorage.setItem('codetype', 'css')
     }
 }
-if(document.querySelector('.copy_code')){
-    for (const item of document.querySelectorAll('.copy_code')) {
-        item.addEventListener("click", () => {
-            const str = item.parentElement.children[1].innerText
-            const el = document.createElement('textarea');
-            el.value = str;
-            el.setAttribute('readonly', '');
-            el.style.position = 'absolute';
-            el.style.left = '-9999px';
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-        })
-    }
-}
+
 const targetNode = document.querySelector('main');
 const config = { attributes: true, childList: true, subtree: true };
 const callback = function(mutationsList, observer) {
     for(const mutation of mutationsList) {
         if (mutation.type === 'childList') {
             if(document.querySelector('.get_url>svg')){
+                if(document.querySelector('.copy_code')){
+                    for (const item of document.querySelectorAll('.copy_code')) {
+                        item.addEventListener("click", () => {
+                            const str = item.parentElement.children[1].innerText
+                            const el = document.createElement('textarea');
+                            el.value = str;
+                            el.setAttribute('readonly', '');
+                            el.style.position = 'absolute';
+                            el.style.left = '-9999px';
+                            document.body.appendChild(el);
+                            el.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(el);
+                        })
+                    }
+                }
                 for (const item of document.querySelectorAll('.get_url>svg')) {
                     item.addEventListener("click", () => {
                         const str = window.location.origin + `/snippets/#${item.parentElement.parentElement.parentElement.getAttribute('id')}`
@@ -151,20 +152,14 @@ const callback = function(mutationsList, observer) {
 const observer = new MutationObserver(callback);
 observer.observe(targetNode, config);
 function locationHashChanged() {
-    if(window.location.hash !== '') {
-        if ( document.querySelector('.snippets'+window.location.hash) ) {
+    setInterval(() => {
+        if (document.getElementById(`${window.location.hash.replace('#','')}`)){
+            document.getElementById(`${window.location.hash.replace('#','')}`).classList.add('hashed')
             document.querySelector('main').classList.add('hashed')
-            document.querySelector(`.snippets ${window.location.hash}`).classList.add('hashed')
-            setTimeout(() => {
-                document.title = `${document.querySelector(window.location.hash).children[0].children[0].innerText} | DB`
-            }, 30);
+        } if(document.querySelector('.hashed') && !document.getElementById(`${window.location.hash.replace('#','')}`)){
+            document.querySelector('.hashed').classList.remove('hashed')
+            document.querySelector('main').classList.remove('hashed')
         }
-    } else{
-        if( window.location.hash === '' && document.querySelector('main.hashed')){
-            document.querySelector('main.hashed').classList.remove('hashed')
-            document.querySelector('.snippets.hashed').classList.remove('hashed')
-        }
-    }
+    }, 100);
 }
-window.onhashchange = locationHashChanged;
 locationHashChanged()
