@@ -6,6 +6,7 @@ html[mode="light"] {
   --text-color: rgb(43, 48, 54);
   --bold-bolder: rgb(0, 0, 0);
   --pre-scrollbar-track: rgb(77, 77, 83);
+  color-scheme: light;
 }
 
 html[mode="light"] .hljs-comment, html[mode="light"] .hljs-quote, html[mode="light"] .hljs-variable {
@@ -51,6 +52,7 @@ html[mode="dark"] {
   --text-color: rgb(231, 237, 245);
   --bold-bolder: rgb(255, 255, 255);
   --pre-scrollbar-track: rgb(219, 219, 230);
+  color-scheme: dark;
 }
 
 html[mode="dark"] .hljs-keyword, html[mode="dark"] .hljs-literal, html[mode="dark"] .hljs-name, html[mode="dark"] .hljs-symbol {
