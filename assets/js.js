@@ -179,3 +179,11 @@ function locationHashChanged() {
     }, 100);
 }
 locationHashChanged()
+
+fetch("/site.json", {
+    cache: "no-cache",
+}).then(response=>response.json()).then(data=>{
+    if ( data.banner.show === true ) {
+        if ( data.banner[document.querySelector('title').innerText.toLowerCase()] !== undefined ) document.getElementById('appmount').insertAdjacentHTML('beforebegin', `<div id="banner"> ${data.banner[document.querySelector('title').innerText.toLowerCase()]} </div>`);
+    }
+})

@@ -147,6 +147,20 @@ html > body {
   background: var(--background-primary);
 }
 
+html > body #banner {
+  text-align: center;
+  padding: .5rem;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background: var(--background-primary);
+}
+
+html > body #banner + #appmount nav {
+  top: 2rem !important;
+}
+
 html > body > #appmount > nav {
   position: -webkit-sticky;
   position: sticky;
