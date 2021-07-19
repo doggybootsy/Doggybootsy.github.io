@@ -65,9 +65,7 @@ if (document.querySelector('html[snippets]')){
 }
 function getsnippets(){
     fetch("/snippets.json", {
-        method: "GET",
-        mode: "same-origin",
-        cache: "reload",
+        cache: "no-cache",
     }).then(response=>response.json()).then(data=>{
         document.querySelector('html[snippets] main').innerHTML = ''
         Object.keys(data).forEach(key => {
@@ -90,7 +88,7 @@ function getsnippets(){
         });
         hljs.highlightAll();
     }).catch(function() {
-        document.querySelector('html[snippets] main').innerHTML += `Unable to connect to <a href="https://doggybootsy.github.io/snippets.json">https://doggybootsy.github.io/snippets.json</a>`
+        document.querySelector('html[snippets] main').innerHTML = `Unable to connect to <a href="https://doggybootsy.github.io/snippets.json">https://doggybootsy.github.io/snippets.json</a>`
     });
 }
 if(document.querySelector('#switchcodetype')){
