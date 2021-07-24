@@ -85,11 +85,11 @@ function getsnippets(){
     <button class="copy_code">copy</button>
 </div>
 `
-        });
-        hljs.highlightAll();
+        })
+        hljs.highlightAll()
     }).catch(function() {
         document.querySelector('html[snippets] main').innerHTML = `Unable to connect to <a href="https://doggybootsy.github.io/snippets.json">https://doggybootsy.github.io/snippets.json</a>`
-    });
+    })
 }
 if(document.querySelector('#switchcodetype')){
     document.querySelector('#switchcodetype').addEventListener("click", () => {
@@ -125,8 +125,8 @@ if(localStorage){
     }
 }
 
-const targetNode = document.querySelector('main');
-const config = { attributes: true, childList: true, subtree: true };
+const targetNode = document.querySelector('main')
+const config = { attributes: true, childList: true, subtree: true }
 const callback = function(mutationsList, observer) {
     for(const mutation of mutationsList) {
         if (mutation.type === 'childList') {
@@ -135,38 +135,38 @@ const callback = function(mutationsList, observer) {
                     for (const item of document.querySelectorAll('.copy_code')) {
                         item.addEventListener("click", () => {
                             const str = item.parentElement.children[1].innerText
-                            const el = document.createElement('textarea');
-                            el.value = str;
-                            el.setAttribute('readonly', '');
-                            el.style.position = 'absolute';
-                            el.style.left = '-9999px';
-                            document.body.appendChild(el);
-                            el.select();
-                            document.execCommand('copy');
-                            document.body.removeChild(el);
+                            const el = document.createElement('textarea')
+                            el.value = str
+                            el.setAttribute('readonly', '')
+                            el.style.position = 'absolute'
+                            el.style.left = '-9999px'
+                            document.body.appendChild(el)
+                            el.select()
+                            document.execCommand('copy')
+                            document.body.removeChild(el)
                         })
                     }
                 }
                 for (const item of document.querySelectorAll('.get_url>svg')) {
                     item.addEventListener("click", () => {
                         const str = window.location.origin + `/snippets/#${item.parentElement.parentElement.parentElement.getAttribute('id')}`
-                        const el = document.createElement('textarea');
-                        el.value = str;
-                        el.setAttribute('readonly', '');
-                        el.style.position = 'absolute';
-                        el.style.left = '-9999px';
-                        document.body.appendChild(el);
-                        el.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(el);
+                        const el = document.createElement('textarea')
+                        el.value = str
+                        el.setAttribute('readonly', '')
+                        el.style.position = 'absolute'
+                        el.style.left = '-9999px'
+                        document.body.appendChild(el)
+                        el.select()
+                        document.execCommand('copy')
+                        document.body.removeChild(el)
                     })
                 }
             }
         }
     }
-};
-const observer = new MutationObserver(callback);
-observer.observe(targetNode, config);
+}
+const observer = new MutationObserver(callback)
+observer.observe(targetNode, config)
 function locationHashChanged() {
     setInterval(() => {
         if (document.getElementById(`${window.location.hash.replace('#','')}`)){
@@ -176,14 +176,31 @@ function locationHashChanged() {
             document.querySelector('.hashed').classList.remove('hashed')
             document.querySelector('main').classList.remove('hashed')
         }
-    }, 100);
+    }, 100)
 }
 locationHashChanged()
-
 fetch("/site.json", {
     cache: "no-cache",
 }).then(response=>response.json()).then(data=>{
     if ( data.banner.show === true ) {
-        if ( data.banner[document.querySelector('title').innerText.toLowerCase()] !== undefined ) document.getElementById('appmount').insertAdjacentHTML('beforebegin', `<div id="banner"> ${data.banner[document.querySelector('title').innerText.toLowerCase()]} </div>`);
+        if ( data.banner[document.querySelector('title').innerText.toLowerCase()] !== undefined ) document.getElementById('appmount').insertAdjacentHTML('beforebegin', `<div id="banner"> ${data.banner[document.querySelector('title').innerText.toLowerCase()]} </div>`)
+    }
+    if ( document.querySelector('.ver') ) {
+        document.querySelector('.ver').innerText = `${data.main.version.date} • ${data.main.version.num}`
     }
 })
+function checkifsiteisuptodate(version) {
+    fetch("/site.json", {
+        cache: "no-cache",
+    }).then(response=>response.json()).then(data=>{
+        if (data.main.version.num != version) {
+            alert(`Please restart the website your version ( ${version} ) is out of date`)
+            window.location.reload()
+        }
+    })
+}
+let version = 2.1
+checkifsiteisuptodate(version)
+setInterval(() => {
+    checkifsiteisuptodate(version)
+}, 120000)

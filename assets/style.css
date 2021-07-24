@@ -145,6 +145,7 @@ html > body {
   margin: 0;
   font-family: 'whitney', sans-serif;
   background: var(--background-primary);
+  overflow: hidden scroll;
 }
 
 html > body #banner {
@@ -174,6 +175,57 @@ html > body > #appmount > nav {
   z-index: 1;
 }
 
+html > body > #appmount > nav [href="https://betterdiscord.app/developer/Doggybootsy"] {
+  position: absolute;
+  right: 80px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  border-radius: 50%;
+}
+
+html > body > #appmount > nav [href="https://betterdiscord.app/developer/Doggybootsy"] svg {
+  margin-top: 4px;
+  width: 26px;
+  height: 26px;
+  padding: 1px;
+  fill: var(--text-color);
+}
+
+html > body > #appmount > nav [href="/snippets/"] {
+  position: absolute;
+  right: 44px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  border-radius: 50%;
+}
+
+html > body > #appmount > nav [href="/snippets/"] svg {
+  margin-top: 4px;
+  width: 26px;
+  height: 26px;
+  padding: 1px;
+  fill: var(--text-color);
+}
+
+html > body > #appmount > nav [href="/settings/"] {
+  position: absolute;
+  right: 8px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  border-radius: 50%;
+}
+
+html > body > #appmount > nav [href="/settings/"] svg {
+  margin-top: 5px;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  fill: var(--text-color);
+}
+
 html > body > #appmount > nav .home a {
   position: absolute;
   top: 50%;
@@ -198,24 +250,6 @@ html > body > #appmount > nav .home + div {
   padding: 0 10px;
 }
 
-html > body > #appmount > nav .home + div + a {
-  width: 28px;
-  height: 28px;
-  position: absolute;
-  right: 8px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  top: 50%;
-  border-radius: 50%;
-}
-
-html > body > #appmount > nav .home + div + a svg {
-  width: 24px;
-  height: 24px;
-  padding: 2px;
-  fill: var(--text-color);
-}
-
 html > body > #appmount > nav a {
   text-decoration: none;
   color: var(--text-color);
@@ -233,6 +267,55 @@ html > body > #appmount > main {
 
 html > body > #appmount > main.hashed .snippets:not(.hashed) {
   display: none;
+}
+
+html > body > #appmount > main #submit_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 200px;
+  padding: 10px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+html > body > #appmount > main #submit_modal:not([style="display: none;"]) + div {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: '';
+  background: rgba(0, 0, 0, 0.8);
+}
+
+html > body > #appmount > main #submit_modal > .top {
+  padding-bottom: .5rem;
+}
+
+html > body > #appmount > main #submit_modal > .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html > body > #appmount > main #submit_modal .spacer {
+  width: 100%;
+}
+
+html > body > #appmount > main [action="snippetrequest"] {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+html > body > #appmount > main [action="snippetrequest"] textarea {
+  width: calc(100% - 30px);
+  resize: vertical;
 }
 
 html > body > #appmount > main .snippets {
