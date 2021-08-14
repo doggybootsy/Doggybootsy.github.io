@@ -1,6 +1,5 @@
-@import url(/assets/fonts/fonts.css);
-
 html {
+    scroll-behavior: smooth;
     &[mode="light"]{
         --background-primary: rgb(243, 240, 240);
         --background-secondary: rgb(190, 190, 190);
@@ -132,6 +131,38 @@ html {
                 top: 2rem !important;
             }
         }
+        &>#Modal {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            .backdrop {
+                position: fixed;
+                top: 40px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 10;
+                background: rgba($color: #000000, $alpha: .35);
+                z-index: 0;
+            }
+            .main {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                div {
+                    text-align: center;
+                    font-size: 1.2rem;
+                }
+                input {
+                    width: 200px;
+                }
+            }
+        }
         &>#appmount{
             &>nav{
                 position: sticky;
@@ -183,24 +214,26 @@ html {
                         fill: var(--text-color);
                     }
                 }
-                .home{
-                    a{
-                        position: absolute;
-                        top: 50%;
-                        left: 8px;
-                        transform: translateY(-50%);
-                        font-size: 28px;
-                    }
-                    &+div{
-                        text-align: right;
-                        font-size: 18px;
-                        position: absolute;
-                        top: 50%;
-                        left: 170px;
-                        transform: translateY(-50%);
-                        height: fit-content;
-                        width: calc(100% - 230px);
-                        padding: 0 10px;
+                .home a{
+                    position: absolute;
+                    top: 50%;
+                    left: 8px;
+                    transform: translateY(-50%);
+                    font-size: 28px;
+                }
+                .login {
+                    position: absolute;
+                    right: 115px;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    svg{
+                        margin-top: 5px;
+                        width:  26px;
+                        height: 26px;
+                        padding: 1px;
+                        fill: var(--text-color);
                     }
                 }
                 a{
@@ -217,43 +250,6 @@ html {
                 position: relative;
                 &.hashed  .snippets:not(.hashed){
                     display: none;
-                }
-                #submit_modal {
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                    width: 200px;
-                    padding: 10px;
-                    background: var(--background-secondary);
-                    border-radius: 8px;
-                    z-index: 1;
-                    &:not([style="display: none;"])+div {
-                        position: fixed;
-                        top: 40px;
-                        right: 0;
-                        left: 0;
-                        bottom: 0;
-                        content: '';
-                        background: rgba($color: #000000, $alpha: .8);
-                    }
-                    &>.top {
-                        padding-bottom: .5rem;
-                    }
-                    &>.bottom {
-                        display: flex;
-                    }
-                    .spacer{
-                        width: 100%;
-                    }
-                }
-                [action="snippetrequest"]{
-                    display: grid;
-                    grid-template-columns: 50% 50%;
-                    textarea {
-                        width: calc(100% - 30px);
-                        resize: vertical;
-                    }
                 }
                 .snippets{
                     position: relative;
@@ -281,7 +277,7 @@ html {
                         &::first-letter{
                             text-transform: uppercase;
                         }
-                        &+pre{
+                        &~pre{
                             background: var(--background-secondary-alt);
                             padding: .6rem;
                             padding-bottom: 0;
@@ -289,6 +285,9 @@ html {
                             margin: 0;
                             overflow: auto;
                             max-height: 11rem;
+                            &:first-of-type {
+                                margin-bottom: 10px;
+                            }
                             &::-webkit-scrollbar {
                                 width: 8px;
                                 display: none;
@@ -406,3 +405,13 @@ html {
     }
 }
 *::-webkit-scrollbar-corner{display: none;}
+
+
+@keyframes gradient-name {
+    0%, 200% {
+        background-position: 0 0;
+    }
+    99.999999999999999% {
+        background-position: 130% 0;
+    }
+}

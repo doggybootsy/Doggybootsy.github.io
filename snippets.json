@@ -69,7 +69,7 @@
         "name": "Pin home button",
         "author": "Doggybootsy",
         "css": [".guilds-1SWlCJ .tree-2wKJdG:focus {\r\n  outline-color: transparent;\r\n}\r\n.guilds-1SWlCJ .scroller-1Bvpku {\r\n  contain: unset;\r\n  margin-top: 56px;\r\n}\r\n.guilds-1SWlCJ .scroller-1Bvpku .powerclock + .tutorialContainer-2sGCg9 {\r\n  position: fixed;\r\n  transform: translate3d(0, -76px, 0);\r\n}\r\n.guilds-1SWlCJ .scroller-1Bvpku .tutorialContainer-2sGCg9 {\r\n  position: fixed;\r\n  transform: translate3d(0, -56px, 0);\r\n}"],
-        "scss": [".guilds-1SWlCJ{\r\n    .tree-2wKJdG:focus {\r\n        outline-color: transparent;\r\n    }\r\n    .scroller-1Bvpku{\r\n        contain: unset;\r\n        margin-top: 56px;\r\n        .powerclock+.tutorialContainer-2sGCg9{\r\n            position: fixed;\r\n            transform: translate3d(0, -76px, 0);\r\n        }\r\n        .tutorialContainer-2sGCg9{\r\n            position: fixed;\r\n            translate3d(0, -56px, 0);\r\n        }\r\n    }\r\n}"]
+        "scss": [".guilds-1SWlCJ{\r\n    .tree-2wKJdG:focus {\r\n        outline-color: transparent;\r\n    }\r\n    .scroller-1Bvpku{\r\n        contain: unset;\r\n        margin-top: 56px;\r\n        .powerclock+.tutorialContainer-2sGCg9{\r\n            position: fixed;\r\n            transform: translate3d(0, -76px, 0);\r\n        }\r\n        .tutorialContainer-2sGCg9{\r\n            position: fixed;\r\n            transform: translate3d(0, -56px, 0);\r\n        }\r\n    }\r\n}"]
     },
     "rbm": {
         "name": "Remove Blocked messages",
