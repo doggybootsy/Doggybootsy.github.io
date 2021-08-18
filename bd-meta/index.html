@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html style="color-scheme: dark;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div>
+            <div>
+                <div><span>Name</svg></span></div>
+                <div><span>The theme/plugin name</span></div>
+            </div><input type="text" name="name" id="name">
+            <div>
+                <div><span>Description</span></div>
+                <div><span>The theme/plugin description</span></div>
+            </div><input type="text" name="description" id="description">
+            <div>
+                <div><span>Version</span></div>
+                <div><span>Your theme/plugin version</span></div>
+            </div><input type="text" name="version" id="version">
+            <div>
+                <div><span>Author</span></div>
+                <div><span>Your name</span></div>
+            </div><input type="text" name="author" id="author">
+            <div>
+                <div><span>AuthorLink</span></div>
+                <div><span>A link for when the user clicks your name</span></div>
+            </div><input type="text" name="authorLink" id="authorLink">
+            <div>
+                <div><span>AuthorId</span></div>
+                <div><span>Your discord id</span></div>
+            </div><input type="text" name="authorId" id="authorId">
+            <div>
+                <div><span>UpdateUrl</span></div>
+                <div><span>A url checked for updates (Not added yet)</span></div>
+            </div><input type="text" name="updateUrl" id="updateUrl">
+            <div>
+                <div><span>Website</span></div>
+                <div><span>Your website</span></div>
+            </div><input type="text" name="website" id="website">
+            <div>
+                <div><span>Source</span></div>
+                <div><span>The source for your theme/plugin</span></div>
+            </div><input type="text" name="source" id="source">
+            <div>
+                <div><span>Invite</span></div>
+                <div><span>A invite code to your server</span></div>
+            </div><input type="text" name="invite" id="invite">
+            <div>
+                <div><span>Donate</span></div>
+                <div><span>A link so user's can donate</span></div>
+            </div><input type="text" name="donate" id="donate">
+            <div>
+                <div><span>Patreon</span></div>
+                <div><span>Your Patreon link</span></div>
+            </div><input type="text" name="patreon" id="patreon">
+        </div>
+        <div>
+            <span>Name, Description, Version, Author and Source are required</span>
+            <pre><code id="Meta"></code></pre>
+        </div>
+        <button>Copy</button>
+        <style>#Meta {color: #6a9955;}pre{background: #1e1e1e;padding: .5rem;border-radius: .5rem;}body {background: rgb(37, 37, 38);display: grid;grid-template-columns: 300px calc(100% - 300px);}button {position: absolute;right: 5px;}path {fill: red;}</style>
+        <script async defer>const required=["name","description","author","version","source"];Object.keys(required).forEach(a=>{document.getElementById(required[a]).required=!0}),document.querySelector("button").addEventListener("click",()=>{const a=document.createElement("textarea");a.value=document.querySelector("#Meta").innerText,document.body.appendChild(a),a.select(),document.execCommand("copy"),a.remove()});for(const a of document.querySelectorAll("input")){function b(){document.querySelector("button").style.top=`${document.querySelector("body>div:nth-child(2)>span").offsetHeight+document.querySelector("#Meta").parentElement.offsetHeight+32}px`,document.querySelector("#Meta").innerText=`/**\n @name ${document.getElementById("name").value}\n @description ${document.getElementById("description").value}\n @version ${document.getElementById("version").value}\n @author ${document.getElementById("author").value}\n @source ${document.getElementById("source").value}${""==document.getElementById("authorLink").value?"":`\n @authorLink ${document.getElementById("authorLink").value}`}${""==document.getElementById("authorId").value?"":`\n @authorId ${document.getElementById("authorId").value}`}${""==document.getElementById("updateUrl").value?"":`\n @updateUrl ${document.getElementById("updateUrl").value}`}${""==document.getElementById("website").value?"":`\n @website ${document.getElementById("website").value}`}${""==document.getElementById("invite").value?"":`\n @invite ${document.getElementById("invite").value}`}${""==document.getElementById("donate").value?"":`\n @donate ${document.getElementById("donate").value}`}${""==document.getElementById("patreon").value?"":`\n @patreon ${document.getElementById("patreon").value}`}\n */`}b(),a.addEventListener("input",()=>{b()})}</script>
+    </body>
+</html>
