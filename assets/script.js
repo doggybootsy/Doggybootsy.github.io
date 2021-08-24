@@ -278,7 +278,7 @@
                             child: [
                                 createElement('iframe', {
                                     id: 'preview',
-                                    src: `/assets/themePreview/`,
+                                    src: `/assets/themepreview/`,
                                     style: 'width: 100%; border: none; height: calc(100vh - 53px); position: sticky; top: 0;'
                                 })
                             ]
