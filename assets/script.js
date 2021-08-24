@@ -1,6 +1,5 @@
 (async () => {
-    window.sus = {
-        'ඞ': 'ඞ',
+    ඞ = {
         range: (start, end) => new Array(end-start+1).fill().map((el, ind) => ind + start),
         ToClipboard: (str) =>{
             const el = document.createElement('textarea')
@@ -14,8 +13,9 @@
             document.body.removeChild(el)
         }
     }
+    sus = 'ඞ'
     // Stupid stuff
-    let snippets = {}
+    let snippets
     let codetype
     // Elements
     const html = document.children[0]
@@ -58,6 +58,19 @@
     let layer
     let key
     let Render = () => {
+        // Create Theme CSS
+        window.CreateThemeCSS = (css) => {
+            if (css === "Clear") document.getElementById('preview').contentWindow.document.head.children.import.innerHTML = ''
+            else document.getElementById('preview').contentWindow.document.head.children.import.innerHTML += css = css == undefined ? '' : css
+        }
+        window.GenerateCSS = () => {
+            CreateThemeCSS("Clear")
+            for (const ite of document.querySelectorAll('.category')) {
+                if (document.getElementById('Custom_Wordmark').checked) CreateThemeCSS(`@import url("${location.origin}/assets/fonts/discord.css");`)
+                if (ite.id == 'Rounded_Corners') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `body{\n  background-color: transparent;\n}\n#app-mount{\n  border-radius: ${ite.children[1].children[0].value}px;\n}` : '')
+                if (ite.id == 'Custom_Wordmark_text') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `.wordmark-2iDDfm svg {width: 0px;}\n.wordmark-2iDDfm::after {\n    position: absolute;\n    font-family: "discord";\n    content: "${ite.children[1].children[0].value}";\n    top: 3px;\n    font-size: 14px;\n    font-weight: normal;\n    color: var(--wordmark-text-color);\n    height: 19px;\n    width: 235px;\n    line-height: 20px;\n}` : '')
+            }
+        }
         key = location.hash.replace('#','')
         codetype = localStorage.getItem('codetype') ?? 'css'
         // Codeblock
@@ -68,7 +81,7 @@
                         createElement('div', {}, `${snippets[key].name} | ${snippets[key].author}`),
                         createElement('div', {
                             className: 'get_url',
-                            onclick: () => sus.ToClipboard(`${location.href}#${key}`),
+                            onclick: () => ඞ.ToClipboard(`${location.href}#${key}`),
                             innerHTML: '<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg>'
                         })
                     ]
@@ -79,7 +92,7 @@
                             child: [
                                 createElement('code', {
                                     className: `nohighlight`,
-                                }, `${sus.range(1, `${snippets[key][codetype]}`.split(/\r\n|\r|\n/).length)}`.replaceAll(`,`, `\n`))
+                                }, `${ඞ.range(1, `${snippets[key][codetype]}`.split(/\r\n|\r|\n/).length)}`.replaceAll(`,`, `\n`))
                             ]
                         }),
                         createElement('pre', {
@@ -142,7 +155,7 @@
                         createElement('div', {
                             child: [
                                 createElement('button', {
-                                    onclick: (e) => sus.ToClipboard(`${location.origin}${location.pathname}#SharedCustomCSS==${btoa(e.target.parentElement.previousSibling.value)}`)
+                                    onclick: (e) => ඞ.ToClipboard(`${location.origin}${location.pathname}#SharedCustomCSS==${btoa(e.target.parentElement.previousSibling.value)}`)
                                 }, 'share'),
                                 createElement('button', {
                                     style: 'margin-left: 20px',
@@ -153,6 +166,122 @@
                                     }
                                 }, 'reset')
                             ]  
+                        })
+                    ] : location.pathname === '/discord/bd-meta/' ? [] : location.pathname === '/discord/theme-maker/' ? [
+                        createElement('div', {
+                            child: [
+                                createElement('div', {
+                                    className: 'category',
+                                    id: 'Rounded_Corners',
+                                    child: [
+                                        createElement('div', {
+                                            child: [
+                                                createElement('span', {}, 'Rounded corners'),
+                                                createElement('div', {
+                                                    className: "switch",
+                                                    child: [
+                                                        createElement('input', {
+                                                            type: 'checkbox',
+                                                            id: 'Rounded_Corner',
+                                                            oninput: (e) => {
+                                                                let slider = e.target.parentElement.parentElement.nextSibling.children[0]
+                                                                slider.disabled = slider.disabled === true ? false : true
+                                                                GenerateCSS()
+                                                            }
+                                                        }),
+                                                        createElement('span', {
+                                                            className: "slider"
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        }),
+                                        createElement('div', {
+                                            child: [
+                                                createElement('input', {
+                                                    type: "range",
+                                                    min: "1",
+                                                    max: "25",
+                                                    value: "6",
+                                                    disabled: true,
+                                                    oninput: (e) => {
+                                                        e.target.nextSibling.innerText = `${e.target.value}px`
+                                                        GenerateCSS()
+                                                    }
+                                                }),
+                                                createElement('span', {}, "6px"),
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                createElement('div', {
+                                    className: 'category',
+                                    id: 'Custom_Wordmark_text',
+                                    child: [
+                                        createElement('div', {
+                                            child: [
+                                                createElement('span', {}, 'Custom wordmark'),
+                                                createElement('div', {
+                                                    className: "switch",
+                                                    child: [
+                                                        createElement('input', {
+                                                            type: 'checkbox',
+                                                            id: 'Custom_Wordmark',
+                                                            oninput: (e) => {
+                                                                let slider = e.target.parentElement.parentElement.nextSibling.children[0]
+                                                                slider.disabled = slider.disabled === true ? false : true
+                                                                GenerateCSS()
+                                                            }
+                                                        }),
+                                                        createElement('span', {
+                                                            className: "slider"
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        }),
+                                        createElement('div', {
+                                            child: [
+                                                createElement('input', {
+                                                    placeholder: 'Discord',
+                                                    disabled: true,
+                                                    oninput: () => {
+                                                        GenerateCSS()
+                                                    }
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                createElement('div', {
+                                    id: 'Zoom_level',
+                                    child: [
+                                        createElement('span', {}, "Zoom"),
+                                        createElement('input', {
+                                            type: "range",
+                                            step: 0.05,
+                                            value: .75,
+                                            min: .5,
+                                            max: 1.5,
+                                            oninput: (e) => {
+                                                document.getElementById('preview').contentWindow.document.head.children.zoom.innerHTML = `html{transform: scale(${document.getElementById('Zoom_level').children[1].value});transform-origin: 0 0;width:  calc(100% / ${document.getElementById('Zoom_level').children[1].value});height: calc(100% / ${document.getElementById('Zoom_level').children[1].value});}`
+                                                e.target.nextSibling.innerText = `${e.target.value}%`
+                                            }
+                                        }),
+                                        createElement('span', {}, ".75%"),
+                                    ]
+                                })
+                            ]
+                        }),
+                        createElement('div', { 
+                            className: 'preview_wrapper',
+                            child: [
+                                createElement('iframe', {
+                                    id: 'preview',
+                                    src: `/assets/themePreview/`,
+                                    style: 'width: 100%; border: none; height: calc(100vh - 53px); position: sticky; top: 0;'
+                                })
+                            ]
                         })
                     ] : []
                 }),
@@ -179,54 +308,54 @@
         if (location.pathname === '/discord/snippets/') {
             hljs.highlightAll()
         }
+        // Dropdowns
+        for (const ele of document.querySelectorAll('.dropdown')) {
+            ele.addEventListener('click', () => {
+                // People do the unthinkable
+                if (ele.classList.contains('open')) {
+                    ele.classList.remove('open')
+                    if (document.getElementById('menu')) {
+                        document.getElementById('menu').remove()
+                        document.getElementById('menu').nextSibling.remove()
+                    }
+                } else {
+                    ele.classList.add('open')
+                    layer.appendChild(createElement('div', {
+                        id: "menu",
+                        tabindex: 1,
+                        child: ele.id == "Discord" ? [
+                            createElement('a', {href: "/discord/snippets/"}, "Snippets"),
+                            createElement('a', {href: "/discord/theme-maker/", hidden: true}, "Theme maker"),
+                            createElement('a', {href: "/discord/bd-meta/"}, "BD Meta maker")
+                        ] : ele.id == "Site" ? [
+                            createElement('a', {href: "/settings/"}, "Settings")
+                        ] : [
+                            createElement('span', {}, "Error")
+                        ]
+                    }))
+                    const menu = document.getElementById('menu')
+                    menu.setAttribute('style', `position: fixed; z-index: 100; width: 150px;`)
+                    menu.style.top = `${ele.getBoundingClientRect().y + 40}px`
+                    menu.style.left = `${ele.getBoundingClientRect().x + (ele.offsetWidth - menu.offsetWidth)}px`
+                    layer.appendChild(createElement('div', {
+                        style: `position: fixed; left: 0; right: 0; bottom: 0; top: 0; z-index: 1`,
+                        id: 'bound',
+                        onclick: () => {
+                            window.onscroll = () => {}
+                            ele.classList.remove('open')
+                            document.getElementById('bound').remove()
+                            menu.remove()
+                        }
+                    }))
+                }
+            })
+        }
     }
     Render()
     window.addEventListener("hashchange", () => {
         root.remove()
         Render()
     }, false);
-    // Dropdowns
-    for (const ele of document.querySelectorAll('.dropdown')) {
-        ele.addEventListener('click', () => {
-            // People do the unthinkable
-            if (ele.classList.contains('open')) {
-                ele.classList.remove('open')
-                if (document.getElementById('menu')) {
-                    document.getElementById('menu').remove()
-                    document.getElementById('menu').nextSibling.remove()
-                }
-            } else {
-                ele.classList.add('open')
-                layer.appendChild(createElement('div', {
-                    id: "menu",
-                    tabindex: 1,
-                    child: ele.id == "Discord" ? [
-                        createElement('a', {href: "/discord/snippets/"}, "Snippets"),
-                        createElement('a', {href: "/discord/theme-maker/", hidden: true}, "Theme maker"),
-                        createElement('a', {href: "/discord/bd-meta/"}, "BD Meta maker")
-                    ] : ele.id == "Site" ? [
-                        createElement('a', {href: "/settings/"}, "Settings")
-                    ] : [
-                        createElement('span', {}, "Error")
-                    ]
-                }))
-                const menu = document.getElementById('menu')
-                menu.setAttribute('style', `position: fixed; z-index: 100; width: 150px;`)
-                menu.style.top = `${ele.getBoundingClientRect().y + 40}px`
-                menu.style.left = `${ele.getBoundingClientRect().x + (ele.offsetWidth - menu.offsetWidth)}px`
-                layer.appendChild(createElement('div', {
-                    style: `position: fixed; left: 0; right: 0; bottom: 0; top: 0; z-index: 1`,
-                    id: 'bound',
-                    onclick: () => {
-                        window.onscroll = () => {}
-                        ele.classList.remove('open')
-                        document.getElementById('bound').remove()
-                        menu.remove()
-                    }
-                }))
-            }
-        })
-    }
     // Snippets page
     html.setAttribute('lang', navigator.languages[1])
     html.setAttribute('pathname', location.pathname)

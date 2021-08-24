@@ -170,9 +170,10 @@ kbd {
     position: fixed;
     left: 10px;
     bottom: 10px;
-    width:  50px;
-    height: 50px;
+    width:  40px;
+    height: 40px;
     padding: 5px;
+    cursor: pointer;
     box-sizing: content-box;
     border-radius: 50%;
     background-color: var(--background-secondary);
@@ -225,6 +226,75 @@ snippets {
                     padding: 3px 5px;
                 }
             }
+        }
+    }
+}
+[pathname="/discord/theme-maker/"] main {
+    display: grid;
+    grid-template-columns: 250px auto;
+    iframe {
+        background: black;
+    }
+}
+.category > div:first-child{
+    display: flex;
+    .switch {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+    & + div {
+        [type="range"] {
+            width: 190px;
+        }
+    }
+}
+html {
+    background: transparent;
+    border-radius: 50px
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 1rem;
+    transform: translateY(2px);
+    input { 
+        position: absolute;
+        margin: 0;
+        width:  28px;
+        height: 1rem;
+        z-index: 1;
+        opacity: 0;
+        &:checked + .slider:before {
+            transform: translateX(12px);
+        }
+        &:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+        &:checked + .slider {
+            background-color: #2196F3;
+        }
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 30px;
+        &::before {
+            position: absolute;
+            content: "";
+            height: calc(1rem - 4px);
+            width:  calc(1rem - 4px);
+            left:   2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .2s;
+            border-radius: 30px;
         }
     }
 }

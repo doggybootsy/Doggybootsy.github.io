@@ -177,9 +177,10 @@ kbd:hover:active {
   position: fixed;
   left: 10px;
   bottom: 10px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   padding: 5px;
+  cursor: pointer;
   box-sizing: content-box;
   border-radius: 50%;
   background-color: var(--background-secondary);
@@ -233,6 +234,77 @@ snippets > div pre:last-child {
 snippets > div pre:last-child code {
   background-color: var(--background-primary);
   padding: 3px 5px;
+}
+
+[pathname="/discord/theme-maker/"] main {
+  display: grid;
+  grid-template-columns: 250px auto;
+}
+[pathname="/discord/theme-maker/"] main iframe {
+  background: black;
+}
+
+.category > div:first-child {
+  display: flex;
+}
+.category > div:first-child .switch {
+  margin-left: auto;
+  margin-right: 10px;
+}
+.category > div:first-child + div [type=range] {
+  width: 190px;
+}
+
+html {
+  background: transparent;
+  border-radius: 50px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 1rem;
+  transform: translateY(2px);
+}
+.switch input {
+  position: absolute;
+  margin: 0;
+  width: 28px;
+  height: 1rem;
+  z-index: 1;
+  opacity: 0;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(12px);
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+.switch input:checked + .slider {
+  background-color: #2196F3;
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+.switch .slider::before {
+  position: absolute;
+  content: "";
+  height: calc(1rem - 4px);
+  width: calc(1rem - 4px);
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
