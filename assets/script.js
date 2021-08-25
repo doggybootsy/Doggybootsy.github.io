@@ -30,7 +30,7 @@
             window.onscroll = () => window.scrollTo(0, scrollTop)
         }
         // Show dev stuff
-        if (location.host != 'doggybootsy.github.io') for (const ite of document.querySelectorAll('[hidden]')) ite.hidden = false
+        if (location.host != 'doggybootsy.github.io' || localStorage.getItem('IsDev') == true) for (const ite of document.querySelectorAll('[hidden]')) ite.hidden = false
     }).observe(body, {childList: true,attributes: true,subtree: true})
     // Fetch snippets
     if (location.pathname === '/discord/snippets/') {
@@ -250,9 +250,7 @@
                                                 createElement('input', {
                                                     placeholder: 'Discord',
                                                     disabled: true,
-                                                    oninput: () => {
-                                                        GenerateCSS()
-                                                    }
+                                                    oninput: () => GenerateCSS()
                                                 })
                                             ]
                                         })
