@@ -231,9 +231,18 @@ snippets {
 }
 [pathname="/discord/theme-maker/"] main {
     display: grid;
-    grid-template-columns: 250px auto;
-    iframe {
-        background: black;
+    grid-template-columns: 250px calc(100vw - 250px);
+    &>:first-child {
+        padding-bottom: 97px;
+    }
+    .preview_wrapper {
+        width: calc(100vw - 280px);
+        top: 45px;
+        position: fixed;
+        right: 5px;
+        iframe {
+            background: black;
+        }
     }
 }
 .category {
@@ -302,5 +311,23 @@ html {
     }
 }
 #Zoom_level {
-    margin-top: 40px;
+    margin-top: 70px;
+}
+#Download {
+    position: fixed;
+    width: 250px;
+    bottom: 10px;
+    background-color: var(--background-primary);
+    &>:first-child {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    &>:nth-child(2) {
+        display: grid;
+        grid-template-columns: calc(50% - 10px) 10px calc(50% - 10px) 10px;
+        margin-bottom: 5px;
+    }
+    &>:last-child>button {
+        width: calc(100% - 10px);
+    }
 }

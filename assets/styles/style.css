@@ -238,9 +238,18 @@ snippets > div pre:last-child code {
 
 [pathname="/discord/theme-maker/"] main {
   display: grid;
-  grid-template-columns: 250px auto;
+  grid-template-columns: 250px calc(100vw - 250px);
 }
-[pathname="/discord/theme-maker/"] main iframe {
+[pathname="/discord/theme-maker/"] main > :first-child {
+  padding-bottom: 97px;
+}
+[pathname="/discord/theme-maker/"] main .preview_wrapper {
+  width: calc(100vw - 280px);
+  top: 45px;
+  position: fixed;
+  right: 5px;
+}
+[pathname="/discord/theme-maker/"] main .preview_wrapper iframe {
   background: black;
 }
 
@@ -311,7 +320,26 @@ html {
 }
 
 #Zoom_level {
-  margin-top: 40px;
+  margin-top: 70px;
+}
+
+#Download {
+  position: fixed;
+  width: 250px;
+  bottom: 10px;
+  background-color: var(--background-primary);
+}
+#Download > :first-child {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#Download > :nth-child(2) {
+  display: grid;
+  grid-template-columns: calc(50% - 10px) 10px calc(50% - 10px) 10px;
+  margin-bottom: 5px;
+}
+#Download > :last-child > button {
+  width: calc(100% - 10px);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -63,12 +63,17 @@
             if (css === "Clear") document.getElementById('preview').contentWindow.document.head.children.import.innerHTML = ''
             else document.getElementById('preview').contentWindow.document.head.children.import.innerHTML += css = css == undefined ? '' : css
         }
+        let one_time
         window.GenerateCSS = () => {
             CreateThemeCSS("Clear")
+            one_time = 0
             for (const ite of document.querySelectorAll('.category')) {
-                if (document.getElementById('Custom_Wordmark').checked) CreateThemeCSS(`@import url("${location.origin}/assets/fonts/discord.css");`)
-                if (ite.id == 'Rounded_Corners') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `body{\n  background-color: transparent;\n}\n#app-mount{\n  border-radius: ${ite.children[1].children[0].value}px;\n}` : '')
-                if (ite.id == 'Custom_Wordmark_text') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `.wordmark-2iDDfm svg {width: 0px;}\n.wordmark-2iDDfm::after {\n    position: absolute;\n    font-family: "discord";\n    content: "${ite.children[1].children[0].value}";\n    top: 3px;\n    font-size: 14px;\n    font-weight: normal;\n    color: var(--text-muted);\n    height: 19px;\n    width: 235px;\n    line-height: 20px;\n}` : '')
+                if (document.getElementById('Custom_Wordmark').checked  && one_time == 0) {
+                    one_time++
+                    CreateThemeCSS(`@import url("${location.origin}/assets/fonts/discord.css");\n`)
+                }
+                if (ite.id == 'Rounded_Corners') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `body{\n  background-color: transparent;\n}\n#app-mount{\n  border-radius: ${ite.children[1].children[0].value}px;\n}\n` : '')
+                if (ite.id == 'Custom_Wordmark_text') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `.wordmark-2iDDfm svg {width: 0px;}\n.wordmark-2iDDfm::after {\n    position: absolute;\n    font-family: "discord";\n    content: "${ite.children[1].children[0].value}";\n    top: 3px;\n    font-size: 14px;\n    font-weight: normal;\n    color: var(--text-muted);\n    height: 19px;\n    width: 235px;\n    line-height: 20px;\n}\n` : '')
             }
         }
         key = location.hash.replace('#','')
@@ -264,11 +269,52 @@
                                             min: .5,
                                             max: 1.5,
                                             oninput: (e) => {
-                                                document.getElementById('preview').contentWindow.document.head.children.zoom.innerHTML = `html{transform: scale(${document.getElementById('Zoom_level').children[1].value});transform-origin: 0 0;width:  calc(100% / ${document.getElementById('Zoom_level').children[1].value});height: calc(100% / ${document.getElementById('Zoom_level').children[1].value});}`
+                                                e.target.parentElement.parentElement.nextSibling.children[0].contentWindow.document.head.children.zoom.innerHTML = `html{transform: scale(${e.target.value});transform-origin: 0 0;width:  calc(100% / ${e.target.value});height: calc(100% / ${e.target.value});}`
                                                 e.target.nextSibling.innerText = `${e.target.value}%`
                                             }
                                         }),
                                         createElement('span', {}, ".75%"),
+                                    ]
+                                }),
+                                createElement('div', {
+                                    id: 'Download',
+                                    child: [
+                                        createElement('h2', {}, "Download"),
+                                        createElement('div', {
+                                            child: [
+                                                createElement('input', {
+                                                    id: 'themes_name',
+                                                    placeholder: 'Theme name'
+                                                }),
+                                                createElement('div', {}),
+                                                createElement('input', {
+                                                    id: 'themes_author',
+                                                    placeholder: 'Your name'
+                                                })
+                                            ]
+                                        }),
+                                        createElement('div', {
+                                            child: [
+                                                createElement('button', {
+                                                    onclick: () => {
+                                                        var name = document.getElementById('themes_name').value
+                                                        var author = document.getElementById('themes_author').value
+                                                        body.append(
+                                                            createElement('a', {
+                                                                href: URL.createObjectURL(new Blob([`/**\n * @name ${name}\n * @description Theme generated by Doggybootsy's Theme maker\n * @version 1\n * @author ${author}\n */\n${document.getElementById('preview').contentWindow.document.head.children.import.innerHTML}`], {type: 'text/plain'})),
+                                                                download: `${name}.theme.css`,
+                                                                id: 'Download_'
+                                                            })
+                                                        )
+                                                        setTimeout(() => {
+                                                            let a = body.children.Download_
+                                                            a.click()
+                                                            a.remove()
+                                                        }, 100);
+                                                    }
+                                                }, "Download")
+                                            ]
+                                        })
                                     ]
                                 })
                             ]
