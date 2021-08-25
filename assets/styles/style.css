@@ -244,6 +244,9 @@ snippets > div pre:last-child code {
   background: black;
 }
 
+.category {
+  margin-bottom: 10px;
+}
 .category > div:first-child {
   display: flex;
 }
@@ -305,6 +308,10 @@ html {
   background-color: white;
   transition: 0.2s;
   border-radius: 30px;
+}
+
+#Zoom_level {
+  margin-top: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

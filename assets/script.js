@@ -68,7 +68,7 @@
             for (const ite of document.querySelectorAll('.category')) {
                 if (document.getElementById('Custom_Wordmark').checked) CreateThemeCSS(`@import url("${location.origin}/assets/fonts/discord.css");`)
                 if (ite.id == 'Rounded_Corners') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `body{\n  background-color: transparent;\n}\n#app-mount{\n  border-radius: ${ite.children[1].children[0].value}px;\n}` : '')
-                if (ite.id == 'Custom_Wordmark_text') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `.wordmark-2iDDfm svg {width: 0px;}\n.wordmark-2iDDfm::after {\n    position: absolute;\n    font-family: "discord";\n    content: "${ite.children[1].children[0].value}";\n    top: 3px;\n    font-size: 14px;\n    font-weight: normal;\n    color: var(--wordmark-text-color);\n    height: 19px;\n    width: 235px;\n    line-height: 20px;\n}` : '')
+                if (ite.id == 'Custom_Wordmark_text') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `.wordmark-2iDDfm svg {width: 0px;}\n.wordmark-2iDDfm::after {\n    position: absolute;\n    font-family: "discord";\n    content: "${ite.children[1].children[0].value}";\n    top: 3px;\n    font-size: 14px;\n    font-weight: normal;\n    color: var(--text-muted);\n    height: 19px;\n    width: 235px;\n    line-height: 20px;\n}` : '')
             }
         }
         key = location.hash.replace('#','')
