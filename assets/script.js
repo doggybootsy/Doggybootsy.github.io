@@ -53,7 +53,6 @@
     // Share Custom css
     if (hash.startsWith('#SharedCustomCSS==')) {
         localStorage.setItem('CustomCSS', atob(hash.replace('#SharedCustomCSS==', '')))
-        hash = ''
     }
     // Render
     let root
