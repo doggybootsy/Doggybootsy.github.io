@@ -144,7 +144,7 @@
                     ]
                 }),
                 createElement('main', {
-                    child: pathname.startsWith('/') ? [
+                    child: pathname == '/' ? [
                         createElement('h1', {
                             style: "position: fixed; top: calc(50% + 40px); left: 50%; transform: translate(-50%, -50%); margin: 0; font-size: 3em;"
                         }, "Doggybootsy")
