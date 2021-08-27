@@ -438,7 +438,7 @@
             hljs.highlightAll()
             root.append(createElement('div', {
                 id: "Request",
-                style: 'padding: 10px 10px 10px 70px; font-size: .75em',
+                style: 'padding: 25px 10px 25px 70px; font-size: .75em',
                 child: [
                     "Have a snippet yourself you want added, request one ",
                     createElement('a', {
