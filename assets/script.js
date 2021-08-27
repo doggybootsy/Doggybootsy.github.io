@@ -31,7 +31,7 @@
             window.onscroll = () => window.scrollTo(0, scrollTop)
         }
         // Show dev stuff
-        if (location.host != 'doggybootsy.github.io' || localStorage.getItem('IsDev') == true) for (const ite of document.querySelectorAll('[hidden]')) ite.hidden = false
+        if (location.host != 'doggybootsy.github.io' || localStorage.getItem('IsDev') == "true") for (const ite of document.querySelectorAll('[hidden]')) ite.hidden = false
     }).observe(body, {childList: true,attributes: true,subtree: true})
     // Fetch snippets
     if (pathname === '/discord/snippets/') {
@@ -397,8 +397,11 @@
                                             e.target.nextSibling.innerText = ''
                                             Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`CSS\`${Snippet.scss == '' ? '. No SCSS provided' : Snippet.css == Snippet.scss ? '. SCSS was the same as CSS' : ''}`, Snippet.css)
                                             setTimeout(() => {
-                                                if (Snippet.css != Snippet.scss) Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`SCSS\``, Snippet.scss)
-                                                else if (Snippet.scss != '') Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`SCSS\``, Snippet.scss)
+                                                if (Snippet.css == Snippet.scss) return
+                                                else {
+                                                    if (Snippet.scss == '') return
+                                                    Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`SCSS\``, Snippet.scss)
+                                                }
                                             }, 100);
                                         }
                                         else {
