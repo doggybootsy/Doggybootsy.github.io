@@ -1,4 +1,5 @@
 (async () => {
+    const {pathname, origin, hash, href} = location
     ඞ = {
         range: (start, end) => new Array(end-start+1).fill().map((el, ind) => ind + start),
         ToClipboard: (str) =>{
@@ -13,7 +14,7 @@
             document.body.removeChild(el)
         }
     }
-    sus = 'ඞ'
+    sus = ඞ
     // Stupid stuff
     let snippets
     let codetype
@@ -33,7 +34,7 @@
         if (location.host != 'doggybootsy.github.io' || localStorage.getItem('IsDev') == true) for (const ite of document.querySelectorAll('[hidden]')) ite.hidden = false
     }).observe(body, {childList: true,attributes: true,subtree: true})
     // Fetch snippets
-    if (location.pathname === '/discord/snippets/') {
+    if (pathname === '/discord/snippets/') {
         await fetch("/snippets.json", {
             cache: "no-cache",
         }).then(response=>response.json()).then(data => snippets = data)
@@ -47,9 +48,9 @@
         return node
     }
     // Share Custom css
-    if (location.hash.startsWith('#SharedCustomCSS==')) {
-        localStorage.setItem('CustomCSS', atob(location.hash.replace('#SharedCustomCSS==', '')))
-        location.hash = ''
+    if (hash.startsWith('#SharedCustomCSS==')) {
+        localStorage.setItem('CustomCSS', atob(hash.replace('#SharedCustomCSS==', '')))
+        hash = ''
     }
     // Render
     let root
@@ -70,13 +71,13 @@
             for (const ite of document.querySelectorAll('.category')) {
                 if (document.getElementById('Custom_Wordmark').checked  && one_time == 0) {
                     one_time++
-                    CreateThemeCSS(`@import url("${location.origin}/assets/fonts/discord.css");\n`)
+                    CreateThemeCSS(`@import url("${origin}/assets/fonts/discord.css");\n`)
                 }
                 if (ite.id == 'Rounded_Corners') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `body{\n  background-color: transparent;\n}\n#app-mount{\n  border-radius: ${ite.children[1].children[0].value}px;\n}\n` : '')
                 if (ite.id == 'Custom_Wordmark_text') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `.wordmark-2iDDfm svg {width: 0px;}\n.wordmark-2iDDfm::after {\n    position: absolute;\n    font-family: "discord";\n    content: "${ite.children[1].children[0].value}";\n    top: 3px;\n    font-size: 14px;\n    font-weight: normal;\n    color: var(--text-muted);\n    height: 19px;\n    width: 235px;\n    line-height: 20px;\n}\n` : '')
             }
         }
-        key = location.hash.replace('#','')
+        key = hash.replace('#','')
         codetype = localStorage.getItem('codetype') ?? 'css'
         // Codeblock
         const codeblock = (key) => {return createElement('snippets', {
@@ -86,7 +87,7 @@
                         createElement('div', {}, `${snippets[key].name} | ${snippets[key].author}`),
                         createElement('div', {
                             className: 'get_url',
-                            onclick: () => ඞ.ToClipboard(`${location.href}#${key}`),
+                            onclick: () => ඞ.ToClipboard(`${href}#${key}`),
                             innerHTML: '<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg>'
                         })
                     ]
@@ -143,11 +144,11 @@
                     ]
                 }),
                 createElement('main', {
-                    child: location.pathname === '/' ? [
+                    child: pathname === '/' ? [
                         createElement('h1', {
                             style: "position: fixed; top: calc(50% + 40px); left: 50%; transform: translate(-50%, -50%); margin: 0; font-size: 3em;"
                         }, "Doggybootsy")
-                    ] : location.pathname === '/discord/snippets/' && location.hash.replace('#','') === '' ? Object.keys(snippets).map(key => codeblock(key)) : location.pathname === '/discord/snippets/' && location.hash.replace('#','') !== '' ? [codeblock(key)] : location.pathname === '/settings/' ? [
+                    ] : pathname === '/discord/snippets/' && hash.replace('#','') === '' ? Object.keys(snippets).map(key => codeblock(key)) : pathname === '/discord/snippets/' && hash.replace('#','') !== '' ? [codeblock(key)] : pathname === '/settings/' ? [
                         createElement("textarea", {
                             value: localStorage.getItem('CustomCSS') ?? '',
                             placeholder: 'Custom css here',
@@ -160,7 +161,7 @@
                         createElement('div', {
                             child: [
                                 createElement('button', {
-                                    onclick: (e) => ඞ.ToClipboard(`${location.origin}${location.pathname}#SharedCustomCSS==${btoa(e.target.parentElement.previousSibling.value)}`)
+                                    onclick: (e) => ඞ.ToClipboard(`${origin}${pathname}#SharedCustomCSS==${btoa(e.target.parentElement.previousSibling.value)}`)
                                 }, 'share'),
                                 createElement('button', {
                                     style: 'margin-left: 20px',
@@ -172,7 +173,7 @@
                                 }, 'reset')
                             ]  
                         })
-                    ] : location.pathname === '/discord/bd-meta/' ? [] : location.pathname === '/discord/theme-maker/' ? [
+                    ] : pathname === '/discord/bd-meta/' ? [] : pathname === '/discord/theme-maker/' ? [
                         createElement('div', {
                             child: [
                                 createElement('div', {
@@ -327,10 +328,92 @@
                                 })
                             ]
                         })
+                    ] : pathname === '/discord/request/' ? [
+                        createElement('div', {
+                            id: "top",
+                            child: [
+                                createElement('div', {
+                                    child: [
+                                        "Snippet name",
+                                        createElement('input', {
+                                            id: 'Name',
+                                            placeholder: 'required'
+                                        })
+                                    ]
+                                }),
+                                createElement('div', {
+                                    child: [
+                                        "Your name",
+                                        createElement('input', {
+                                            id: 'Author',
+                                            placeholder: 'required'
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        createElement('div', {
+                            id: "button",
+                            child: [
+                                createElement('div', {
+                                    child: [
+                                        createElement('div', {}, "CSS"),
+                                        createElement('textarea', {
+                                            id: 'css',
+                                            placeholder: 'required'
+                                        })
+                                    ]
+                                }),
+                                createElement('div', {
+                                    child: [
+                                        createElement('div', {}, "SCSS"),
+                                        createElement('textarea', {
+                                            id: 'scss',
+                                            placeholder: 'If there\'s no SCSS leave blank'
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        createElement('div', {
+                            child: [
+                                createElement('button', {
+                                    onclick: (e) => {
+                                        let Snippet = {
+                                            name: document.getElementById('Name').value,
+                                            author: document.getElementById('Author').value,
+                                            css: document.getElementById('css').value,
+                                            scss: document.getElementById('scss').value,
+                                            webhook: (content, file) => {
+                                                var formData = new FormData()
+                                                formData.append("file", new File([new Blob([file])], `${Snippet.name}.css`))
+                                                formData.append("content", content)
+                                                var xhr = new XMLHttpRequest()
+                                                xhr.open("POST", atob("aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvODgwNjY5NjQyNzgyMjg1ODc0LzgxQk50Sy1JWU05RHcxTjIyYVJtMkZxX0xianFrbU5JU1RKamJ3RV8tWFJneVE2cGdHbXAzVG8zeGFVSUpIVEpfMXpU"))
+                                                xhr.send(formData)
+                                            }
+                                        }
+                                        if (Snippet.name != '' || Snippet.author != '' || Snippet.css != '') {
+                                            e.target.nextSibling.innerText = ''
+                                            Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`CSS\`${Snippet.scss == '' ? '. No SCSS provided' : Snippet.css == Snippet.scss ? '. SCSS was the same as CSS' : ''}`, Snippet.css)
+                                            setTimeout(() => {
+                                                if (Snippet.css != Snippet.scss || Snippet.scss != '') {
+                                                    Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`SCSS\``, Snippet.scss)
+                                                }
+                                            }, 100);
+                                        }
+                                        else {
+                                            e.target.nextSibling.innerText = ' Please enter a Name, Author, and css'
+                                        }
+                                    }
+                                }, "Submit"),
+                                createElement('span', {}, '')
+                            ]
+                        })
                     ] : []
                 }),
                 createElement('div', {
-                    child: location.pathname === '/discord/snippets/' ? [
+                    child: pathname === '/discord/snippets/' ? [
                         createElement('div', {
                             id: 'CCT',
                             className: codetype,
@@ -349,9 +432,7 @@
         nav = root.children[0]
         main = root.children[1]
         layer = root.children[2]
-        if (location.pathname === '/discord/snippets/') {
-            hljs.highlightAll()
-        }
+        if (pathname === '/discord/snippets/') hljs.highlightAll()
         // Dropdowns
         for (const ele of document.querySelectorAll('.dropdown')) {
             ele.addEventListener('click', () => {
@@ -402,5 +483,5 @@
     }, false);
     // Snippets page
     html.setAttribute('lang', navigator.languages[1])
-    html.setAttribute('pathname', location.pathname)
+    html.setAttribute('pathname', pathname)
 })()

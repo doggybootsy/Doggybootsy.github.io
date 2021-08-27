@@ -331,3 +331,14 @@ html {
         width: calc(100% - 10px);
     }
 }
+#button, #top {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+    textarea {
+        width: calc(100% - 15px);
+        min-height: 25vh;
+        resize: vertical;
+        max-height: 75vh;
+    }
+}
