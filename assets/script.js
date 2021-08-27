@@ -144,11 +144,11 @@
                     ]
                 }),
                 createElement('main', {
-                    child: pathname === '/' ? [
+                    child: pathname.startsWith('/') ? [
                         createElement('h1', {
                             style: "position: fixed; top: calc(50% + 40px); left: 50%; transform: translate(-50%, -50%); margin: 0; font-size: 3em;"
                         }, "Doggybootsy")
-                    ] : pathname === '/discord/snippets/' && hash.replace('#','') === '' ? Object.keys(snippets).map(key => codeblock(key)) : pathname === '/discord/snippets/' && hash.replace('#','') !== '' ? [codeblock(key)] : pathname === '/settings/' ? [
+                    ] : pathname.startsWith('/discord/snippets/') && hash.replace('#','') === '' ? Object.keys(snippets).map(key => codeblock(key)) : pathname.startsWith('/discord/snippets/') && hash.replace('#','') !== '' ? [codeblock(key)] : pathname.startsWith('/settings/') ? [
                         createElement("textarea", {
                             value: localStorage.getItem('CustomCSS') ?? '',
                             placeholder: 'Custom css here',
@@ -173,7 +173,7 @@
                                 }, 'reset')
                             ]  
                         })
-                    ] : pathname === '/discord/bd-meta/' ? [] : pathname === '/discord/theme-maker/' ? [
+                    ] : pathname === '/discord/bd-meta/' ? [] : pathname.startsWith('/discord/theme-maker/') ? [
                         createElement('div', {
                             child: [
                                 createElement('div', {
@@ -328,7 +328,7 @@
                                 })
                             ]
                         })
-                    ] : pathname === '/discord/request/' ? [
+                    ] : pathname.startsWith('/discord/request/') ? [
                         createElement('div', {
                             id: "top",
                             child: [
