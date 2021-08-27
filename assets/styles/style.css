@@ -192,15 +192,18 @@ kbd:hover:active {
   display: none;
 }
 
-snippets > h2 {
+.snippets {
+  position: relative;
+}
+.snippets > h2 {
   font-size: 1em;
   display: flex;
 }
-snippets > h2 .get_url {
+.snippets > h2 .get_url {
   width: 19px;
   position: relative;
 }
-snippets > h2 .get_url svg {
+.snippets > h2 .get_url svg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -208,32 +211,37 @@ snippets > h2 .get_url svg {
   fill: var(--text-color);
   transition: opacity linear 0.1s;
 }
-snippets > h2:not(:hover) svg {
+.snippets > h2:not(:hover) svg {
   opacity: 0;
 }
-snippets > div {
+.snippets > div {
   display: flex;
   padding: 6px;
   border-radius: 6px;
   background-color: var(--background-secondary-alt);
   max-height: 13rem;
 }
-snippets > div pre {
+.snippets > div pre {
   border-radius: 6px;
   margin: 0;
   padding: 4px;
   background-color: var(--background-primary);
   overflow: hidden;
 }
-snippets > div pre:last-child {
+.snippets > div pre:last-child {
   overflow: auto;
   margin-left: 10px;
   padding-left: 0;
   width: 100%;
 }
-snippets > div pre:last-child code {
+.snippets > div pre:last-child code {
   background-color: var(--background-primary);
-  padding: 3px 5px;
+  padding: 12px 9px;
+}
+.snippets > button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 [pathname="/discord/theme-maker/"] main {

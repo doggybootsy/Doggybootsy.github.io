@@ -184,7 +184,8 @@ kbd {
         display: none;
     }
 }
-snippets {
+.snippets {
+    position: relative;
     & > h2 {
         font-size: 1em;
         display: flex;
@@ -223,10 +224,15 @@ snippets {
                 width: 100%;
                 code {
                     background-color: var(--background-primary);
-                    padding: 3px 5px;
+                    padding: 12px 9px;
                 }
             }
         }
+    }
+    & > button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
     }
 }
 [pathname="/discord/theme-maker/"] main {

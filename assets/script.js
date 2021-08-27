@@ -53,6 +53,7 @@
     // Share Custom css
     if (hash.startsWith('#SharedCustomCSS==')) {
         localStorage.setItem('CustomCSS', atob(hash.replace('#SharedCustomCSS==', '')))
+        location.hash = ''
     }
     // Render
     let root
@@ -82,7 +83,8 @@
         key = hash.replace('#','')
         codetype = localStorage.getItem('codetype') ?? 'css'
         // Codeblock
-        const codeblock = (key) => {return createElement('snippets', {
+        const codeblock = (key) => {return createElement('div', {
+            className: 'snippets',
             child: [
                 createElement('h2', {
                     child: [
@@ -112,7 +114,11 @@
                             ]
                         })
                     ]
-                })
+                }),
+                createElement('button', {
+                    className: 'copy',
+                    onclick: (e) => ඞ[1].ToClipboard(e.target.previousSibling.children[1].children[0].innerText)
+                }, 'Copy')
             ]
         })}
         // head
