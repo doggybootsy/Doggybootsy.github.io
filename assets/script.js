@@ -1,20 +1,23 @@
 (async () => {
     const {pathname, origin, hash, href} = location
-    ඞ = {
-        range: (start, end) => new Array(end-start+1).fill().map((el, ind) => ind + start),
-        ToClipboard: (str) =>{
-            const el = document.createElement('textarea')
-            el.value = str
-            el.setAttribute('readonly', '')
-            el.style.position = 'absolute'
-            el.style.left = '-9999px'
-            document.body.appendChild(el)
-            el.select()
-            document.execCommand('copy')
-            document.body.removeChild(el)
+    sus = "ඞ"
+    ඞ = [
+        sus,
+        {
+            range: (start, end) => new Array(end-start+1).fill().map((el, ind) => ind + start),
+            ToClipboard: (str) =>{
+                const el = document.createElement('textarea')
+                el.value = str
+                el.setAttribute('readonly', '')
+                el.style.position = 'absolute'
+                el.style.left = '-9999px'
+                document.body.appendChild(el)
+                el.select()
+                document.execCommand('copy')
+                document.body.removeChild(el)
+            } 
         }
-    }
-    sus = ඞ
+    ]
     // Stupid stuff
     let snippets
     let codetype
@@ -87,7 +90,7 @@
                         createElement('div', {}, `${snippets[key].name} | ${snippets[key].author}`),
                         createElement('div', {
                             className: 'get_url',
-                            onclick: () => ඞ.ToClipboard(`${href}#${key}`),
+                            onclick: () => ඞ[1].ToClipboard(`${href}#${key}`),
                             innerHTML: '<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg>'
                         })
                     ]
@@ -98,7 +101,7 @@
                             child: [
                                 createElement('code', {
                                     className: `nohighlight`,
-                                }, `${ඞ.range(1, `${snippets[key][codetype]}`.split(/\r\n|\r|\n/).length)}`.replaceAll(`,`, `\n`))
+                                }, `${ඞ[1].range(1, `${snippets[key][codetype]}`.split(/\r\n|\r|\n/).length)}`.replaceAll(`,`, `\n`))
                             ]
                         }),
                         createElement('pre', {
@@ -161,7 +164,7 @@
                         createElement('div', {
                             child: [
                                 createElement('button', {
-                                    onclick: (e) => ඞ.ToClipboard(`${origin}${pathname}#SharedCustomCSS==${btoa(e.target.parentElement.previousSibling.value)}`)
+                                    onclick: (e) => ඞ[1].ToClipboard(`${origin}${pathname}#SharedCustomCSS==${btoa(e.target.parentElement.previousSibling.value)}`)
                                 }, 'share'),
                                 createElement('button', {
                                     style: 'margin-left: 20px',
