@@ -397,9 +397,8 @@
                                             e.target.nextSibling.innerText = ''
                                             Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`CSS\`${Snippet.scss == '' ? '. No SCSS provided' : Snippet.css == Snippet.scss ? '. SCSS was the same as CSS' : ''}`, Snippet.css)
                                             setTimeout(() => {
-                                                if (Snippet.css != Snippet.scss || Snippet.scss != '') {
-                                                    Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`SCSS\``, Snippet.scss)
-                                                }
+                                                if (Snippet.css != Snippet.scss) Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`SCSS\``, Snippet.scss)
+                                                else if (Snippet.scss != '') Snippet.webhook(`\`${Snippet.name}\` was submitted by \`${Snippet.author}\`\n\`SCSS\``, Snippet.scss)
                                             }, 100);
                                         }
                                         else {
