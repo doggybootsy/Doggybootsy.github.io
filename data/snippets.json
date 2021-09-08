@@ -37,15 +37,15 @@
     },
     "rgtff": {
         "name": "Remove gift from form",
-        "author": "Doggybootsy",
-        "css": [".buttons-3JBrkn>[aria-label][tabindex]{\r\n    display:none;\r\n}"],
-        "scss": [".buttons-3JBrkn>[aria-label][tabindex]{\r\n    display:none;\r\n}"]
+        "author": "Mephiles",
+        "css": [".buttons-3JBrkn > .button-38aScr:not(.BD-TeX-plugin-button) > :not(.translateButton-DhP9x8){\r\n    display:none;\r\n}"],
+        "scss": [".buttons-3JBrkn > .button-38aScr:not(.BD-TeX-plugin-button) > :not(.translateButton-DhP9x8){\r\n    display:none;\r\n}"]
     },
     "rgff": {
         "name": "Remove gif from form",
-        "author": "Doggybootsy",
-        "css": [".buttons-3JBrkn>[aria-label][tabindex]+.buttonContainer-28fw2U{\r\n    display:none;\r\n}"],
-        "scss": [".buttons-3JBrkn>[aria-label][tabindex]+.buttonContainer-28fw2U{\r\n    display:none;\r\n}"]
+        "author": "Mephiles",
+        "css": [".buttonContainer-28fw2U:not(#sendAudioButtons):not(.send-button) .button-38aScr[aria-label]:not(.apateEncryptionKeyButton) .button-3AYNKb:not(.stickerButton-3OEgwj){\r\n    display:none;\r\n}"],
+        "scss": [".buttonContainer-28fw2U:not(#sendAudioButtons):not(.send-button) .button-38aScr[aria-label]:not(.apateEncryptionKeyButton) .button-3AYNKb:not(.stickerButton-3OEgwj){\r\n    display:none;\r\n}"]
     },
     "rsff": {
         "name": "Remove stickers from form",

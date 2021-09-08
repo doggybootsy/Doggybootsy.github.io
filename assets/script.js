@@ -1,23 +1,18 @@
 (async () => {
     const {pathname, origin, hash, href} = location
     sus = "ඞ"
-    ඞ = [
-        sus,
-        {
-            range: (start, end) => new Array(end-start+1).fill().map((el, ind) => ind + start),
-            ToClipboard: (str) =>{
-                const el = document.createElement('textarea')
-                el.value = str
-                el.setAttribute('readonly', '')
-                el.style.position = 'absolute'
-                el.style.left = '-9999px'
-                document.body.appendChild(el)
-                el.select()
-                document.execCommand('copy')
-                document.body.removeChild(el)
-            } 
-        }
-    ]
+    const range = (start, end) => new Array(end-start+1).fill().map((el, ind) => ind + start)
+    const ToClipboard = str => {
+        const el = document.createElement('textarea')
+        el.value = str
+        el.setAttribute('readonly', '')
+        el.style.position = 'absolute'
+        el.style.left = '-9999px'
+        document.body.appendChild(el)
+        el.select()
+        document.execCommand('copy')
+        document.body.removeChild(el)
+    } 
     // Stupid stuff
     let snippets
     let codetype
@@ -38,7 +33,7 @@
     }).observe(body, {childList: true,attributes: true,subtree: true})
     // Fetch snippets
     if (pathname === '/discord/snippets/') {
-        await fetch("/snippets.json", {
+        await fetch("/data/snippets.json", {
             cache: "no-cache",
         }).then(response=>response.json()).then(data => snippets = data)
     }
@@ -62,13 +57,14 @@
     let layer
     let key
     let Render = () => {
+        if(root)root.remove()
         // Create Theme CSS
-        window.CreateThemeCSS = (css) => {
+        CreateThemeCSS = (css) => {
             if (css === "Clear") document.getElementById('preview').contentWindow.document.head.children.import.innerHTML = ''
             else document.getElementById('preview').contentWindow.document.head.children.import.innerHTML += css = css == undefined ? '' : css
         }
         let one_time
-        window.GenerateCSS = () => {
+        GenerateCSS = () => {
             CreateThemeCSS("Clear")
             one_time = 0
             for (const ite of document.querySelectorAll('.category')) {
@@ -91,7 +87,7 @@
                         createElement('div', {}, `${snippets[key].name} | ${snippets[key].author}`),
                         createElement('div', {
                             className: 'get_url',
-                            onclick: () => ඞ[1].ToClipboard(`${href}#${key}`),
+                            onclick: () => ToClipboard(`${href}#${key}`),
                             innerHTML: '<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg>'
                         })
                     ]
@@ -102,7 +98,7 @@
                             child: [
                                 createElement('code', {
                                     className: `nohighlight`,
-                                }, `${ඞ[1].range(1, `${snippets[key][codetype]}`.split(/\r\n|\r|\n/).length)}`.replaceAll(`,`, `\n`))
+                                }, `${range(1, `${snippets[key][codetype]}`.split(/\r\n|\r|\n/).length)}`.replaceAll(`,`, `\n`))
                             ]
                         }),
                         createElement('pre', {
@@ -117,7 +113,7 @@
                 }),
                 createElement('button', {
                     className: 'copy',
-                    onclick: (e) => ඞ[1].ToClipboard(e.target.previousSibling.children[1].children[0].innerText)
+                    onclick: (e) => ToClipboard(e.target.previousSibling.children[1].children[0].innerText)
                 }, 'Copy')
             ]
         })}
@@ -169,7 +165,7 @@
                         createElement('div', {
                             child: [
                                 createElement('button', {
-                                    onclick: (e) => ඞ[1].ToClipboard(`${origin}${pathname}#SharedCustomCSS==${btoa(e.target.parentElement.previousSibling.value)}`)
+                                    onclick: (e) => ToClipboard(`${origin}${pathname}#SharedCustomCSS==${btoa(e.target.parentElement.previousSibling.value)}`)
                                 }, 'share'),
                                 createElement('button', {
                                     style: 'margin-left: 20px',
@@ -420,7 +416,7 @@
                                 createElement('span', {}, '')
                             ]
                         })
-                    ] : []
+                    ] : ["Error"]
                 }),
                 createElement('div', {
                     child: pathname === '/discord/snippets/' ? [
@@ -462,9 +458,10 @@
                 // People do the unthinkable
                 if (ele.classList.contains('open')) {
                     ele.classList.remove('open')
-                    if (document.getElementById('menu')) {
-                        document.getElementById('menu').remove()
-                        document.getElementById('menu').nextSibling.remove()
+                    const menu = document.getElementById('menu')
+                    if (menu) {
+                        menu.remove()
+                        menu.nextSibling.remove()
                     }
                 } else {
                     ele.classList.add('open')
@@ -499,14 +496,8 @@
                 }
             })
         }
-        
     }
     Render()
-    window.addEventListener("hashchange", () => {
-        root.remove()
-        Render()
-    }, false);
-    // Snippets page
     html.setAttribute('lang', navigator.languages[1])
     html.setAttribute('pathname', pathname)
 })()

@@ -295,14 +295,14 @@ html {
   z-index: 1;
   opacity: 0;
 }
-.switch input:checked + .slider:before {
-  transform: translateX(12px);
-}
 .switch input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px var(--main-color);
 }
 .switch input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--main-color);
+}
+.switch input:checked + .slider.slider::before {
+  transform: translateX(12px);
 }
 .switch .slider {
   position: absolute;

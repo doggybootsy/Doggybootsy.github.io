@@ -1,0 +1,20 @@
+{
+  "name": "doggybootsy.github.io",
+  "version": "1.0.0",
+  "description": "My personal github.io site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:build": "sass ./assets/styles/style.scss:./assets/styles/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doggybootsy/doggybootsy.github.io.git"
+  },
+  "author": "Doggybootsy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doggybootsy/doggybootsy.github.io/issues"
+  },
+  "homepage": "https://doggybootsy.github.io/"
+}
