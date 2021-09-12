@@ -1,1 +1,22 @@
-{}
+{
+    "rnr": {
+        "name": "Remove No Role",
+        "author": "Doggybootsy",
+        "mods": ["bd"],
+        "info": {
+            "raw": "https://raw.githubusercontent.com/doggybootsy/BDPlugins/main/Removenorole/Removenorole.plugin.js",
+            "src": "https://github.com/doggybootsy/BDPlugins/blob/main/Removenorole/Removenorole.plugin.js",
+            "bd": "https://betterdiscord.app/plugin/RemoveNoRole"
+        }
+    },
+    "bmp": {
+        "name": "Better Media Player",
+        "author": "unknown81311 & Doggybootsy",
+        "mods": ["bd"],
+        "info": {
+            "raw": "https://raw.githubusercontent.com/unknown81311/BetterMediaPlayer/main/BetterMediaPlayer.plugin.js",
+            "src": "https://github.com/unknown81311/BetterMediaPlayer/blob/main/BetterMediaPlayer.plugin.js",
+            "bd": "https://betterdiscord.app/plugin/BetterMediaPlayer"
+        }
+    }
+}

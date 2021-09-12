@@ -1,8 +1,5 @@
 (async () => {
-    const {pathname, origin, hash, href} = location
-    sus = "ඞ"
-    const range = (start, end) => new Array(end-start+1).fill().map((el, ind) => ind + start)
-    const ToClipboard = str => {
+    const {pathname, origin, hash, href} = location, ToClipboard = str => {
         const el = document.createElement('textarea')
         el.value = str
         el.setAttribute('readonly', '')
@@ -13,31 +10,20 @@
         document.execCommand('copy')
         document.body.removeChild(el)
     } 
-    // Stupid stuff
     let snippets
     let codetype
-    // Elements
-    const html = document.children[0]
-    const head = html.children[0]
-    const body = html.children[1]
-    // Mutation observer
+    const html = document.children[0], head = html.children[0], body = html.children[1]
     new MutationObserver(() => {
-        // Horrible tempt at stoping scrolling
         if (document.getElementById('bound') && !document.getElementById('bound').classList.contains('l')) {
             document.getElementById('bound').classList.add('l')
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            window.onscroll = () => window.scrollTo(0, scrollTop)
         }
-        // Show dev stuff
-        if (location.host != 'doggybootsy.github.io' || localStorage.getItem('IsDev') == "true") for (const ite of document.querySelectorAll('[hidden]')) ite.hidden = false
+        if (location.host != 'doggybootsy.github.io' || localStorage.getItem('IsDev') == "true") for(const ite of document.querySelectorAll('[hidden]')) ite.hidden = false
     }).observe(body, {childList: true,attributes: true,subtree: true})
-    // Fetch snippets
     if (pathname === '/discord/snippets/') {
         await fetch("/data/snippets.json", {
             cache: "no-cache",
         }).then(response=>response.json()).then(data => snippets = data)
     }
-    // Create Element
     function createElement(type, props, ...text) {
         const node = document.createElement(type)
         Object.assign(node, props)
@@ -45,40 +31,14 @@
         node.append(...text)
         return node
     }
-    // Share Custom css
     if (hash.startsWith('#SharedCustomCSS==')) {
         localStorage.setItem('CustomCSS', atob(hash.replace('#SharedCustomCSS==', '')))
         location.hash = ''
     }
-    // Render
-    let root
-    let nav
-    let main
-    let layer
-    let key
-    let Render = () => {
+    let root,nav,main,layer,key,Render = () => {
         if(root)root.remove()
-        // Create Theme CSS
-        CreateThemeCSS = (css) => {
-            if (css === "Clear") document.getElementById('preview').contentWindow.document.head.children.import.innerHTML = ''
-            else document.getElementById('preview').contentWindow.document.head.children.import.innerHTML += css = css == undefined ? '' : css
-        }
-        let one_time
-        GenerateCSS = () => {
-            CreateThemeCSS("Clear")
-            one_time = 0
-            for (const ite of document.querySelectorAll('.category')) {
-                if (document.getElementById('Custom_Wordmark').checked  && one_time == 0) {
-                    one_time++
-                    CreateThemeCSS(`@import url("${origin}/assets/fonts/discord.css");\n`)
-                }
-                if (ite.id == 'Rounded_Corners') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `body{\n  background-color: transparent;\n}\n#app-mount{\n  border-radius: ${ite.children[1].children[0].value}px;\n}\n` : '')
-                if (ite.id == 'Custom_Wordmark_text') CreateThemeCSS(ite.children[0].children[1].children[0].checked === true ? `.wordmark-2iDDfm svg {width: 0px;}\n.wordmark-2iDDfm::after {\n    position: absolute;\n    font-family: "discord";\n    content: "${ite.children[1].children[0].value}";\n    top: 3px;\n    font-size: 14px;\n    font-weight: normal;\n    color: var(--text-muted);\n    height: 19px;\n    width: 235px;\n    line-height: 20px;\n}\n` : '')
-            }
-        }
         key = hash.replace('#','')
         codetype = localStorage.getItem('codetype') ?? 'css'
-        // Codeblock
         const codeblock = (key) => {return createElement('div', {
             className: 'snippets',
             child: [
@@ -95,13 +55,6 @@
                 createElement('div', {
                     child: [
                         createElement('pre', {
-                            child: [
-                                createElement('code', {
-                                    className: `nohighlight`,
-                                }, `${range(1, `${snippets[key][codetype]}`.split(/\r\n|\r|\n/).length)}`.replaceAll(`,`, `\n`))
-                            ]
-                        }),
-                        createElement('pre', {
                             onscroll: (e) => e.target.previousSibling.scrollTop = e.target.scrollTop,
                             child: [
                                 createElement('code', {
@@ -117,12 +70,10 @@
                 }, 'Copy')
             ]
         })}
-        // head
         head.append(createElement('style', {
             id: "CustomCSS",
             innerHTML: localStorage.getItem('CustomCSS') ?? ''
         }))
-        // Main body
         body.insertBefore(createElement('div', {
             id: 'root',
             child: [
@@ -176,161 +127,6 @@
                                     }
                                 }, 'reset')
                             ]  
-                        })
-                    ] : pathname === '/discord/bd-meta/' ? [] : pathname.startsWith('/discord/theme-maker/') ? [
-                        createElement('div', {
-                            child: [
-                                createElement('div', {
-                                    className: 'category',
-                                    id: 'Rounded_Corners',
-                                    child: [
-                                        createElement('div', {
-                                            child: [
-                                                createElement('span', {}, 'Rounded corners'),
-                                                createElement('div', {
-                                                    className: "switch",
-                                                    child: [
-                                                        createElement('input', {
-                                                            type: 'checkbox',
-                                                            id: 'Rounded_Corner',
-                                                            oninput: (e) => {
-                                                                let slider = e.target.parentElement.parentElement.nextSibling.children[0]
-                                                                slider.disabled = slider.disabled === true ? false : true
-                                                                GenerateCSS()
-                                                            }
-                                                        }),
-                                                        createElement('span', {
-                                                            className: "slider"
-                                                        })
-                                                    ]
-                                                })
-                                            ]
-                                        }),
-                                        createElement('div', {
-                                            child: [
-                                                createElement('input', {
-                                                    type: "range",
-                                                    min: "1",
-                                                    max: "25",
-                                                    value: "6",
-                                                    disabled: true,
-                                                    oninput: (e) => {
-                                                        e.target.nextSibling.innerText = `${e.target.value}px`
-                                                        GenerateCSS()
-                                                    }
-                                                }),
-                                                createElement('span', {}, "6px"),
-                                            ]
-                                        })
-                                    ]
-                                }),
-                                createElement('div', {
-                                    className: 'category',
-                                    id: 'Custom_Wordmark_text',
-                                    child: [
-                                        createElement('div', {
-                                            child: [
-                                                createElement('span', {}, 'Custom wordmark'),
-                                                createElement('div', {
-                                                    className: "switch",
-                                                    child: [
-                                                        createElement('input', {
-                                                            type: 'checkbox',
-                                                            id: 'Custom_Wordmark',
-                                                            oninput: (e) => {
-                                                                let slider = e.target.parentElement.parentElement.nextSibling.children[0]
-                                                                slider.disabled = slider.disabled === true ? false : true
-                                                                GenerateCSS()
-                                                            }
-                                                        }),
-                                                        createElement('span', {
-                                                            className: "slider"
-                                                        })
-                                                    ]
-                                                })
-                                            ]
-                                        }),
-                                        createElement('div', {
-                                            child: [
-                                                createElement('input', {
-                                                    placeholder: 'Discord',
-                                                    disabled: true,
-                                                    oninput: () => GenerateCSS()
-                                                })
-                                            ]
-                                        })
-                                    ]
-                                }),
-                                createElement('div', {
-                                    id: 'Zoom_level',
-                                    child: [
-                                        createElement('span', {}, "Zoom"),
-                                        createElement('input', {
-                                            type: "range",
-                                            step: 0.05,
-                                            value: .75,
-                                            min: .5,
-                                            max: 1.5,
-                                            oninput: (e) => {
-                                                e.target.parentElement.parentElement.nextSibling.children[0].contentWindow.document.head.children.zoom.innerHTML = `html{transform: scale(${e.target.value});transform-origin: 0 0;width:  calc(100% / ${e.target.value});height: calc(100% / ${e.target.value});}`
-                                                e.target.nextSibling.innerText = `${e.target.value}%`
-                                            }
-                                        }),
-                                        createElement('span', {}, ".75%"),
-                                    ]
-                                }),
-                                createElement('div', {
-                                    id: 'Download',
-                                    child: [
-                                        createElement('h2', {}, "Download"),
-                                        createElement('div', {
-                                            child: [
-                                                createElement('input', {
-                                                    id: 'themes_name',
-                                                    placeholder: 'Theme name'
-                                                }),
-                                                createElement('div', {}),
-                                                createElement('input', {
-                                                    id: 'themes_author',
-                                                    placeholder: 'Your name'
-                                                })
-                                            ]
-                                        }),
-                                        createElement('div', {
-                                            child: [
-                                                createElement('button', {
-                                                    onclick: () => {
-                                                        var name = document.getElementById('themes_name').value
-                                                        var author = document.getElementById('themes_author').value
-                                                        body.append(
-                                                            createElement('a', {
-                                                                href: URL.createObjectURL(new Blob([`/**\n * @name ${name}\n * @description Theme generated by Doggybootsy's Theme maker\n * @version 1\n * @author ${author}\n */\n${document.getElementById('preview').contentWindow.document.head.children.import.innerHTML}`], {type: 'text/plain'})),
-                                                                download: `${name}.theme.css`,
-                                                                id: 'Download_'
-                                                            })
-                                                        )
-                                                        setTimeout(() => {
-                                                            let a = body.children.Download_
-                                                            a.click()
-                                                            a.remove()
-                                                        }, 100);
-                                                    }
-                                                }, "Download")
-                                            ]
-                                        })
-                                    ]
-                                })
-                            ]
-                        }),
-                        createElement('div', { 
-                            className: 'preview_wrapper',
-                            child: [
-                                createElement('iframe', {
-                                    id: 'preview',
-                                    src: `/assets/themepreview/`,
-                                    style: 'width: 100%; border: none; height: calc(100vh - 53px); position: sticky; top: 0;'
-                                })
-                            ]
                         })
                     ] : pathname.startsWith('/discord/request/') ? [
                         createElement('div', {
@@ -438,7 +234,7 @@
         nav = root.children[0]
         main = root.children[1]
         layer = root.children[2]
-        if (pathname === '/discord/snippets/') {
+        if (window.hljs != null) {
             hljs.highlightAll()
             root.append(createElement('div', {
                 id: "Request",
@@ -452,10 +248,8 @@
                 ]
             }))
         }
-        // Dropdowns
         for (const ele of document.querySelectorAll('.dropdown')) {
             ele.addEventListener('click', () => {
-                // People do the unthinkable
                 if (ele.classList.contains('open')) {
                     ele.classList.remove('open')
                     const menu = document.getElementById('menu')
@@ -470,9 +264,7 @@
                         tabindex: 1,
                         child: ele.id == "Discord" ? [
                             createElement('a', {href: "/discord/snippets/"}, "Snippets"),
-                            createElement('a', {href: "/discord/theme-maker/", hidden: true}, "Theme maker"),
-                            createElement('a', {href: "/discord/bd-meta/"}, "BD meta maker"),
-                            createElement('a', {href: "/discord/request/", hidden: true}, "Snippet request")
+                            createElement('a', {href: "/discord/invite/"}, "Discord invite"),
                         ] : ele.id == "Site" ? [
                             createElement('a', {href: "/settings/"}, "Settings")
                         ] : [
@@ -487,7 +279,6 @@
                         style: `position: fixed; left: 0; right: 0; bottom: 0; top: 0; z-index: 1`,
                         id: 'bound',
                         onclick: () => {
-                            window.onscroll = () => {}
                             ele.classList.remove('open')
                             document.getElementById('bound').remove()
                             menu.remove()
